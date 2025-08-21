@@ -1,29 +1,14 @@
 <section class="hero-section overflow-hidden">
-  <div class="shapes">
-    {% if section.settings.shape1 != blank %}
-      <div class="shape shape-1"><img src="{{ section.settings.shape1 | image_url }}" alt="shape"></div>
-    {% endif %}
-    {% if section.settings.shape2 != blank %}
-      <div class="shape shape-2"><img src="{{ section.settings.shape2 | image_url }}" alt="shape"></div>
-    {% endif %}
-    {% if section.settings.shape3 != blank %}
-      <div class="shape shape-3"><img src="{{ section.settings.shape3 | image_url }}" alt="shape"></div>
-    {% endif %}
-  </div>
-
   <div class="container">
     <div class="row align-items-center">
       <!-- Left Content -->
       <div class="col-lg-7 col-md-12">
         <div class="hero-content">
           <div class="section-heading mb-40">
-            <h4 class="sub-heading wow fade-in-bottom" data-wow-delay="200ms">
-              <span class="heading-icon"><i class="fa-sharp fa-solid fa-bolt"></i></span>
-              {{ section.settings.sub_heading }}
-            </h4>
-            <h2 class="section-title wow fade-in-bottom" data-wow-delay="400ms">
+            <h1 class="section-title wow fade-in-bottom" data-wow-delay="400ms">
               {{ section.settings.main_heading }}
-            </h2>
+            </h1>
+            <p>Premium skincare made just for men — with global<br> quality and Indian sensibility.</p>
           </div>
 
           <div class="hero-btn-wrap">
@@ -31,19 +16,6 @@
               <a href="{{ section.settings.button_link }}" class="ed-primary-btn">
                 {{ section.settings.button_label }}
               </a>
-            {% endif %}
-
-            {% if section.settings.video_url != blank %}
-              <div class="hero-video">
-                <div class="video-btn">
-                  <a class="video-popup venobox vbox-item" data-autoplay="true" data-vbtype="video" href="{{ section.settings.video_url }}">
-                    <div class="play-btn">
-                      <i class="fa-sharp fa-solid fa-play"></i>
-                    </div>
-                    {{ section.settings.video_label }}
-                  </a>
-                </div>
-              </div>
             {% endif %}
           </div>
 
@@ -55,27 +27,7 @@
                 {% endif %}
               {% endfor %}
             </ul>
-            <h5><span>{{ section.settings.enrollment_number }}</span> {{ section.settings.enrollment_text }}</h5>
-          </div>
-
-          <h4 class="bottom-text">{{ section.settings.bottom_text }}</h4>
-        </div>
-      </div>
-
-      <!-- Right Image -->
-      <div class="col-lg-5 col-md-12">
-        <div class="hero-img-wrap">
-          {% if section.settings.hero_img != blank %}
-            <div class="hero-img">
-              <img src="{{ section.settings.hero_img | image_url }}" alt="hero">
-            </div>
-          {% endif %}
-          {% if section.settings.hero_shape != blank %}
-            <div class="hero-img-shape"><img src="{{ section.settings.hero_shape | image_url }}" alt="shape"></div>
-          {% endif %}
-          <div class="hero-text-element">
-            <h3 class="title"><span class="number">{{ section.settings.counter_number }}</span>+</h3>
-            <p>{{ section.settings.counter_text }}</p>
+            <h5><span>100k</span> Happy Customers</h5>
           </div>
         </div>
       </div>
@@ -91,30 +43,19 @@
       "type": "text",
       "id": "main_heading",
       "label": "Main Heading",
-      "default": "Welcome to Our Store"
-    },
-    {
-      "type": "text",
-      "id": "sub_heading",
-      "label": "Sub Heading",
-      "default": "Your tagline goes here"
+      "default": "Look Good <br>Live Bold."
     },
     {
       "type": "text",
       "id": "button_label",
       "label": "Button Label",
-      "default": "Shop Now"
+      "default": "Try it today"
     },
     {
       "type": "url",
       "id": "button_link",
       "label": "Button Link"
     },
-    {
-      "type": "url",
-      "id": "video_url",
-      "label": "Video URL"
-    }
   ],
   "presets": [
     {
