@@ -4308,3 +4308,31 @@ text-component {
 	text-transform: inherit;
 	position: relative;
 }
+
+.hero-content .hero-btn-wrap {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	row-gap: 15px;
+	-moz-column-gap: 30px;
+	column-gap: 30px;
+	margin-bottom: 40px;
+}
+
+.ed-primary-btn {
+	background-color: linear-gradient(to bottom, #58718F 0%, #11182B 100%);
+	font-family: na;
+	color: #fff;
+	display: inline-flex;
+	align-items: center;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1;
+	padding: 17px 40px;
+	border-radius: 100px;
+	transition: all 0.3s ease-in-out;
+	overflow: hidden;
+	text-transform: capitalize;
+	position: relative;
+	z-index: 1;
+}
