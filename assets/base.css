@@ -4364,3 +4364,7 @@ ul {
   margin: 0px;
   padding: 0px;
 }
+
+.hero-content .hero-author ul li {
+  max-width: 100%;
+}
