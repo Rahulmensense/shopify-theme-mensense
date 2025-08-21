@@ -4278,3 +4278,7 @@ text-component {
     font-size: max(1rem, 100%);
   }
 }
+
+.header__row, .header[data-sticky-state=active], .header[data-sticky-state] {
+    background-color: #000;
+}
