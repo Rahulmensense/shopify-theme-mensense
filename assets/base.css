@@ -4337,3 +4337,7 @@ text-component {
 	z-index: 1;
   text-decoration: none;
 }
+
+.ed-primary-btn:hover {
+  color: #fff;
+}
