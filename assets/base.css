@@ -4321,7 +4321,7 @@ text-component {
 }
 
 .ed-primary-btn {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito Sans", sans-serif !important;
 	background: linear-gradient(to bottom, #58718F 0%, #11182B 100%);
 	font-family: na;
 	color: #fff;
