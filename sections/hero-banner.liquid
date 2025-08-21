@@ -6,26 +6,18 @@
         <div class="hero-content">
           <div class="section-heading mb-40">
             <h1 class="section-title wow fade-in-bottom" data-wow-delay="400ms">
-              {{ section.settings.main_heading }}
+              Look Good <br>Live Bold.
             </h1>
             <p>Premium skincare made just for men — with global<br> quality and Indian sensibility.</p>
           </div>
 
           <div class="hero-btn-wrap">
-            {% if section.settings.button_label != blank %}
-              <a href="{{ section.settings.button_link }}" class="ed-primary-btn">
-                {{ section.settings.button_label }}
-              </a>
-            {% endif %}
+            <a href="#" class="ed-primary-btn">Try it today</a>
           </div>
 
           <div class="hero-author">
             <ul>
-              {% for block in section.blocks %}
-                {% if block.settings.author_img != blank %}
-                  <li><img src="{{ block.settings.author_img | image_url }}" alt="author"></li>
-                {% endif %}
-              {% endfor %}
+              <li><img src="./assets/author-img" alt="author"></li>
             </ul>
             <h5><span>100k</span> Happy Customers</h5>
           </div>
