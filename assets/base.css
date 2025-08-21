@@ -4374,14 +4374,14 @@ ul {
 	font-size: 16px;
 	font-weight: 900;
   background: -webkit-linear-gradient(to bottom, #58718F 0%, #11182B 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: -webkit-linear-gradient(to bottom, #58718F 0%, #11182B 100%);
+  -webkit-text-fill-color: -webkit-linear-gradient(to bottom, #58718F 0%, #11182B 100%);
 }
 
 .hero-content .hero-author h5 span {
 	background: -webkit-linear-gradient(to bottom, #58718F 0%, #11182B 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: -webkit-linear-gradient(to bottom, #58718F 0%, #11182B 100%);
+  -webkit-text-fill-color: -webkit-linear-gradient(to bottom, #58718F 0%, #11182B 100%);
 	font-size: 20px;
   font-weight: 600;
   display: block;
