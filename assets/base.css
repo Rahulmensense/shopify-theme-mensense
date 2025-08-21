@@ -4278,3 +4278,12 @@ text-component {
     font-size: max(1rem, 100%);
   }
 }
+
+.hero-section {
+  width: 100%;
+  padding: 40px 0;
+  background-image: url(https://cdn.shopify.com/s/files/1/0949/0975/9774/files/banner-bg.png?v=1755610864);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
