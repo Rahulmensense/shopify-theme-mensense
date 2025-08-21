@@ -7,20 +7,11 @@
     {%- render 'stylesheets' -%}
 
     {%- if settings.favicon != blank -%}
-      <link
-        rel="icon"
-        type="image/png"
-        href="{{ settings.favicon | image_url: width: 32, height: 32 }}"
-      >
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" >
     {%- endif -%}
 
     {% comment %} This a way to wait for main content to load when navigating to a new page so that the view transitions can work consistently {% endcomment %}
-    <link
-      rel="expect"
-      href="#MainContent"
-      blocking="render"
-      id="view-transition-render-blocker"
-    >
+    <link rel="expect" href="#MainContent" blocking="render" id="view-transition-render-blocker">
 
     {%- render 'meta-tags' -%}
     {%- render 'fonts' -%}
@@ -33,6 +24,10 @@
     {% endif %}
 
     {{ content_for_header }}
+
+    <!---Loading Bootstrap--->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
   </head>
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
