@@ -4373,6 +4373,7 @@ ul {
 .hero-content .hero-author h5 {
 	font-size: 16px;
 	font-weight: 900;
+  font-family: "Nunito Sans", sans-serif;
   background: linear-gradient(to right, #58718F 0%, #11182B 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
