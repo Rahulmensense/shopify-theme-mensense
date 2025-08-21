@@ -3,6 +3,7 @@
 }
 
 body {
+  font-family: "Nunito Sans", sans-serif !important;
   color: var(--color-foreground);
   background: var(--color-background);
   display: flex;
@@ -4367,4 +4368,17 @@ ul {
 
 .hero-content .hero-author ul li {
   max-width: 100%;
+}
+
+.hero-content .hero-author h5 {
+	font-size: 16px;
+	font-weight: 900;
+  color: linear-gradient(to bottom, #58718F 0%, #11182B 100%);
+}
+
+.hero-content .hero-author h5 span {
+	color: linear-gradient(to bottom, #58718F 0%, #11182B 100%);
+	font-size: 20px;
+  font-weight: 600;
+  display: block;
 }
