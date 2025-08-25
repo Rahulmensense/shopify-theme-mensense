@@ -4411,6 +4411,12 @@ ul {
   text-fill-color: transparent;
 }
 
+.about-img-wrap img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 
 
