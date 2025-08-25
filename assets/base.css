@@ -4440,9 +4440,16 @@ ul {
 }
 
 .section-heading .section-title {
-	font-size: 40px;
-	line-height: 1.2;
-	font-weight: 600;
+  background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 52px;
+  letter-spacing: -0.02em;
 	display: block;
 	margin-bottom: 0;
 	text-transform: inherit;
@@ -4456,4 +4463,11 @@ ul {
 .about-content .section-heading p {
   color: #000;
   font-size: 16px;
+  font-weight: 400;
+  font-family: 'Nunito Sans';
 }
+
+
+
+
+
