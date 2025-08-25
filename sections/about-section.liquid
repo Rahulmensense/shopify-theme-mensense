@@ -123,18 +123,27 @@
         {% endif %}
       </div>
       <div class="list-area-about">
-        <ul>
-          {% for block in section.blocks %}
-            <li>
-              {% if block.settings.icon != blank %}
-                <img src="{{ block.settings.icon | img_url: '32x32' }}" alt="icon">
-              {% else %}
-                <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/check-box-icon.png?v=1756114208" alt="icon">
-              {% endif %}
-              <p>{{ block.settings.text }}</p>
-            </li>
-          {% endfor %}
-        </ul>
+        {% if section.blocks.size > 0 %}
+          <ul>
+            {% for block in section.blocks %}
+              <li>
+                {% if block.settings.icon != blank %}
+                  <img src="{{ block.settings.icon | img_url: '32x32' }}" alt="icon">
+                {% else %}
+                  <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/check-box-icon.png?v=1756114208" alt="icon">
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                  <p>{{ block.settings.text }}</p>
+                {% else %}
+                  <p>Default Text</p>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>No items added yet.</p>
+        {% endif %}
       </div>
     </div>
   </div>
