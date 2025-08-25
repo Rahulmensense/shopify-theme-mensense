@@ -4529,6 +4529,9 @@ ul {
   color: #000000;
 }
 
-
-
+.section-area-gradient {
+  position: relative;
+  background: linear-gradient(181.62deg, #D5DCE4 2.5%, #F1F0EC 106.13%);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
 
