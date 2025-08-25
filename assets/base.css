@@ -4497,5 +4497,26 @@ ul {
     max-width: 100%;
 }
 
+.list-area-about {
+  width: 50%;
+}
 
+.list-area-about ul {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+}
+
+.list-area-about ul li {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.list-area-about ul li img {
+  max-width: 100%;
+}
 
