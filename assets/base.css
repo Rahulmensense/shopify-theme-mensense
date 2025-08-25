@@ -4390,9 +4390,10 @@ ul {
 }
 
 .text-gradient-banner-bottom {
-  position: absolute;
-  bottom: 0;
-  text-align: center;
+  text-align: left;
+  width: 100%;
+  height: auto;
+  margin-top: -165px;
 }
 
 .text-gradient-banner-bottom h2 {
