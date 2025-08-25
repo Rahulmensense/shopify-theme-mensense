@@ -4531,7 +4531,7 @@ ul {
 
 .section-area-gradient {
   position: relative;
-  background: linear-gradient(181.62deg, #D5DCE4 2.5%, #F1F0EC 106.13%);
+  background: linear-gradient(180deg, #f5f9fc 0%, #e6edf3 100%);
 }
 
 
