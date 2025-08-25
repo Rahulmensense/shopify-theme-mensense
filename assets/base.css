@@ -4397,12 +4397,20 @@ ul {
 }
 
 .text-gradient-banner-bottom h2 {
-  background:linear-gradient(90deg, #58718F 16%, #58718F 0%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-  font-size: 400px;
-  font-weight: 900;
-  display: block;
-  width: 100%;
-  line-height: normal;
+font-family: 'Nunito Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 431px;
+line-height: 519px;
+text-align: center;
+text-transform: lowercase;
+background: linear-gradient(184.01deg, #58718F 27.9%, rgba(88, 113, 143, 0.16) 56.39%, rgba(88, 113, 143, 0) 70.37%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
 }
+
+
+
+
