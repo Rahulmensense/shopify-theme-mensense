@@ -18,6 +18,14 @@
         "button_link": ""
       }
     },
+    "about_section_fiWBLy": {
+      "type": "about-section",
+      "name": "About Section",
+      "settings": {
+        "heading": "The Mensense Difference",
+        "description": "Why choose a product that doesn’t understand your skin? At Mensense, every formulation is designed to perform — no matter your schedule, skin type, or climate."
+      }
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -290,18 +298,16 @@
         "padding-block-end": 48
       }
     },
-    "about_section_fiWBLy": {
-      "type": "about-section",
-      "name": "About Section",
-      "settings": {
-        "heading": "The Mensense Difference",
-        "description": "Why choose a product that doesn’t understand your skin? At Mensense, every formulation is designed to perform — no matter your schedule, skin type, or climate."
-      }
+    "story_section_MKYiRe": {
+      "type": "story-section",
+      "name": "Story Section",
+      "settings": {}
     }
   },
   "order": [
     "hero_banner_8GhXde",
     "about_section_fiWBLy",
+    "story_section_MKYiRe",
     "hero_jVaWmY",
     "product_list_fa6P9H"
   ]
