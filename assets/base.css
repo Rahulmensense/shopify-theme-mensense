@@ -4534,6 +4534,11 @@ ul {
   background: linear-gradient(180deg, #fff 0%, #e6edf3 100%);
 }
 
+.pb-60 {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
 .products-we-create-after-shap-one:after {
   content: "";
   position: absolute;
