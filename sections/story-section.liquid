@@ -17,14 +17,14 @@
     },
     {
       "type": "text",
-      "id": "story_heading",
-      "label": "Story Heading",
+      "id": "heading",
+      "label": "About Heading Story Heading",
       "default": "Our Story"
     },
     {
       "type": "textarea",
-      "id": "story_text",
-      "label": "Story Text",
+      "id": "description",
+      "label": "About Description Story Text",
       "default": "Since 1922, our mission is..."
     },
     {
@@ -154,8 +154,12 @@
   <div class="container">
     <div class="row story-area mb-5 align-items-center">
       <div class="col-md-6">
-        <h3>{{ section.settings.story_heading }}</h3>
-        <p>{{ section.settings.story_text }}</p>
+        <div class="about-content">
+          <div class="section-heading mb-40">
+            <h2>{{ section.settings.heading }}</h2>
+            <p class="mt-20">{{section.settings.description }}</p>
+          </div>
+        </div>
       </div>
       <div class="col-md-6">
         <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/home-our-story-right1.png?v=1756129602" alt="Our story">
