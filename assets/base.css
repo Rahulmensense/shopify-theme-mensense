@@ -4534,4 +4534,11 @@ ul {
   background: linear-gradient(180deg, #f5f9fc 0%, #e6edf3 100%);
 }
 
+.products-we-create-after-shap-one:after {
+    background-image: url(https://cdn.shopify.com/s/files/1/0949/0975/9774/files/shap1.png?v=1756128174);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 26% auto;
+}
+
 
