@@ -4289,8 +4289,11 @@ text-component {
   background-repeat: no-repeat;
 }
 
-.mb-40 {
+.mt-85 {
   margin-top: 85px;
+}
+
+.mb-40 {
 	margin-bottom: 40px;
 }
 
@@ -4411,12 +4414,46 @@ ul {
   text-fill-color: transparent;
 }
 
+.pb-120 {
+	padding-bottom: 120px;
+}
+
+.pt-120 {
+	padding-top: 120px;
+}
+
+.about-img-wrap {
+	max-width: 582px;
+	width: 100%;
+	height: 500px;
+	position: relative;
+}
+
 .about-img-wrap img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+.md-40 {
+  margin-bottom: 40px;
+}
 
+.section-heading .section-title {
+	font-size: 40px;
+	line-height: 1.2;
+	font-weight: 600;
+	display: block;
+	margin-bottom: 0;
+	text-transform: inherit;
+	position: relative;
+}
 
+.mt-20 {
+	margin-top: 20px;
+}
 
+.about-content .section-heading p {
+  color: #000;
+  font-size: 16px;
+}
