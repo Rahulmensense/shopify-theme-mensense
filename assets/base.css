@@ -4438,7 +4438,7 @@ ul {
   margin-bottom: 40px;
 }
 
-.section-heading .section-title {
+.section-heading h2 {
   background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
