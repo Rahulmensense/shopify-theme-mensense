@@ -4497,8 +4497,6 @@ ul {
 
 .products-section .img-area-left-about-sec img {
     max-width: 100%;
-    width: 22px;
-    height: 22px;
 }
 
 .list-area-about {
@@ -4519,6 +4517,8 @@ ul {
 
 .list-area-about ul li img {
   max-width: 100%;
+  width: 22px;
+  height: 22px;
 }
 
 .list-area-about ul li p {
