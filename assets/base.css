@@ -4469,6 +4469,7 @@ ul {
 .sub.hadding-text {
   text-align: center;
   display: block;
+  margin-top: 28px;
   margin-bottom: 20px;
   font-family: 'Nunito Sans';
   font-style: normal;
@@ -4480,9 +4481,11 @@ ul {
 
 .products-section {
   display: flex;
+  gap: 35px;
   overflow: hidden;
   margin-top: 50px;
-  width: 70%;
+  width: 70% !important;
+  max-width: 70%;
   justify-content: center;
 }
 
