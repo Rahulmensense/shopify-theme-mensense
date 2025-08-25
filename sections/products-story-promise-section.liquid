@@ -1,0 +1,143 @@
+{% schema %}
+{
+  "name": "About & Products",
+  "tag": "section",
+  "class": "about-section pt-120 about-products-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "about_image",
+      "label": "About Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "About Heading",
+      "default": "The Mensense Difference"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "About Description",
+      "default": "Why choose a product that doesn’t understand your skin? At Mensense, every formulation is designed to perform — no matter your schedule, skin type, or climate."
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Products Main Heading",
+      "default": "We Don't Just Make Products. We Create Solutions,"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Products Left Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "list_item",
+      "name": "List Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Made For Men"
+        }
+      ]
+    }
+  ],
+}
+{% endschema %}
+
+<div class="container">
+  <div class="row align-items-center">
+    <!-- About Section -->
+    <div class="col-xl-7 col-lg-7 col-12">
+      <div class="about-img-wrap">
+        {% if section.settings.about_image != blank %}
+          <img src="{{ section.settings.about_image | img_url: 'master' }}" alt="About image">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/about-sec-img.png?v=1756107496" alt="About image">
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="col-xl-5 col-lg-5 col-12">
+      <div class="about-content">
+        <div class="section-heading mb-40">
+          <h2>{{ section.settings.heading }}</h2>
+          <p class="mt-20">{{ section.settings.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products We Create Section -->
+  
+  <div class="row mt-5">
+    <div class="sub hadding-text">
+      <h3>{{ section.settings.main_heading }}</h3>
+    </div>
+
+    <div class="products-section">
+      <!-- Left Side Image -->
+      <div class="img-area-left-about-sec">
+        {% if section.settings.left_image != blank %}
+          <img src="{{ section.settings.left_image | img_url: 'master' }}" alt="Left side image">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/products-we-img-left.png?v=1756114761" alt="Left side image">
+        {% endif %}
+      </div>
+
+      <!-- Right Side List -->
+      <div class="list-area-about">
+        <ul>
+          {% if section.blocks.size > 0 %}
+            {% for block in section.blocks %}
+              <li>
+                {% if block.settings.icon != blank %}
+                  <img src="{{ block.settings.icon | img_url: '32x32' }}" alt="icon">
+                {% else %}
+                  <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/check-box-icon.png?v=1756114208" alt="icon">
+                {% endif %}
+
+                <p>
+                  {% if block.settings.text != blank %}
+                    {{ block.settings.text }}
+                  {% else %}
+                    Default Text
+                  {% endif %}
+                </p>
+              </li>
+            {% endfor %}
+          {% else %}
+            <!-- If no blocks are added, fallback items -->
+            <li>
+              <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/check-box-icon.png?v=1756114208" alt="icon">
+              <p>Made For Men</p>
+            </li>
+            <li>
+              <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/check-box-icon.png?v=1756114208" alt="icon">
+              <p>One product. Multiple needs.</p>
+            </li>
+            <li>
+              <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/check-box-icon.png?v=1756114208" alt="icon">
+              <p>Global quality. Indian relevance.</p>
+            </li>
+            <li>
+              <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/check-box-icon.png?v=1756114208" alt="icon">
+              <p>Visible results in 5–6 months.</p>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
