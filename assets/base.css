@@ -4552,7 +4552,7 @@ ul {
   background-size: 26% auto;
 }
 
-.products-we-create-after-shap-one:before {
+.products-we-create-before-shap-one:before {
   content: "";
   position: absolute;
   left: 0px;
