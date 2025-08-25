@@ -4467,23 +4467,23 @@ ul {
 }
 
 .sub.hadding-text {
-  text-align: center;
-  display: block;
-  margin-top: 28px;
-  margin-bottom: 20px;
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  color: #000000;
+	text-align: center;
+	display: block;
+	margin-top: 28px;
+	margin-bottom: 45px;
+	font-family: Nunito Sans;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 36px;
+	color: #000;
 }
 
 .products-section {
 	display: flex;
-	gap: 47px;
+	gap: 95px;
 	margin-top: 50px;
-	width: 80% !important;
+	width: 70% !important;
 	max-width: 70%;
 	justify-content: center;
 	align-items: center;
@@ -4492,7 +4492,7 @@ ul {
 }
 
 .products-section .img-area-left-about-sec {
-    width: 50%;
+    width: 60%;
 }
 
 .products-section .img-area-left-about-sec img {
@@ -4500,7 +4500,7 @@ ul {
 }
 
 .list-area-about {
-  width: 50%;
+  width: 40%;
 }
 
 .list-area-about ul {
