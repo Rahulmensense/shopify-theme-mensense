@@ -4539,17 +4539,17 @@ ul {
   padding-bottom: 60px;
 }
 
-.products-we-create-after-shap-one:after {
-  content: "";
-  position: absolute;
-  right: 0px;
-  top: 0;
-	width: 440px;
-	height: 318px;
-  background-image: url(https://cdn.shopify.com/s/files/1/0949/0975/9774/files/shap1.png?v=1756128174);
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: 26% auto;
+.products-we-create-after-shap-one::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 490px;
+	height: 375px;
+	background-image: url(/cdn/shop/files/shap1.png?v=1756128174);
+	background-position: top right;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
 }
 
 .products-we-create-after-shap-one, .products-we-create-before-shap-one {
