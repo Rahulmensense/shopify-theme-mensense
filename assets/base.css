@@ -4466,7 +4466,33 @@ ul {
   font-family: 'Nunito Sans';
 }
 
+.sub.hadding-text {
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+}
 
+.products-section {
+  display: flex;
+  overflow: hidden;
+  margin-top: 50px;
+  width: 70%;
+  justify-content: center;
+}
+
+.products-section .img-area-left-about-sec {
+    width: 50%;
+}
+
+.products-section .img-area-left-about-sec img {
+    max-width: 100%;
+}
 
 
 
