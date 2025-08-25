@@ -4537,6 +4537,8 @@ ul {
 .products-we-create-after-shap-one:after {
   content: "";
   position: absolute;
+  right: 0px;
+  top: 0;
   width: 100%;
   height: 100%;
   background-image: url(https://cdn.shopify.com/s/files/1/0949/0975/9774/files/shap1.png?v=1756128174);
