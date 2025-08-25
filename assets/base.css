@@ -4552,6 +4552,10 @@ ul {
   background-size: 26% auto;
 }
 
+.products-we-create-after-shap-one, .products-we-create-before-shap-one {
+  position: relative;
+}
+
 .products-we-create-before-shap-one:before {
   content: "";
   position: absolute;
