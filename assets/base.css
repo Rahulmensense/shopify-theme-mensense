@@ -4480,13 +4480,15 @@ ul {
 }
 
 .products-section {
-  display: flex;
-  gap: 35px;
-  overflow: hidden;
-  margin-top: 50px;
-  width: 70% !important;
-  max-width: 70%;
-  justify-content: center;
+	display: flex;
+	gap: 47px;
+	margin-top: 50px;
+	width: 80% !important;
+	max-width: 70%;
+	justify-content: center;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
 }
 
 .products-section .img-area-left-about-sec {
@@ -4495,6 +4497,8 @@ ul {
 
 .products-section .img-area-left-about-sec img {
     max-width: 100%;
+    width: 22px;
+    height: 22px;
 }
 
 .list-area-about {
@@ -4502,8 +4506,7 @@ ul {
 }
 
 .list-area-about ul {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
+  display: flex;
   gap: 10px;
 }
 
@@ -4511,12 +4514,22 @@ ul {
   display: flex;
   gap: 20px;
   align-items: center;
-  background-color: #f7f7f7;
-  border-radius: 16px;
   padding: 18px;
 }
 
 .list-area-about ul li img {
   max-width: 100%;
 }
+
+.list-area-about ul li p {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 36px;
+  color: #000000;
+}
+
+
+
 
