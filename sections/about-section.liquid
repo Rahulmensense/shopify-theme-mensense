@@ -1,8 +1,8 @@
 {% schema %}
 {
-  "name": "About Section",
+  "name": "About & Products",
   "tag": "section",
-  "class": "about-section pt-120 pb-120",
+  "class": "about-products-section",
   "settings": [
     {
       "type": "image_picker",
@@ -12,20 +12,76 @@
     {
       "type": "text",
       "id": "heading",
-      "label": "Heading",
-      "default": "<h2>The Mensense <br/> Difference</h2>"
+      "label": "About Heading",
+      "default": "The Mensense Difference"
     },
     {
       "type": "textarea",
       "id": "description",
-      "label": "Description",
+      "label": "About Description",
       "default": "Why choose a product that doesn’t understand your skin? At Mensense, every formulation is designed to perform — no matter your schedule, skin type, or climate."
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Products Main Heading",
+      "default": "We Don't Just Make Products. We Create Solutions,"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Products Left Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "list_item",
+      "name": "List Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Made For Men"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "About Section",
-      "category": "Custom Sections"
+      "name": "About & Products",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "list_item",
+          "settings": {
+            "text": "Made For Men"
+          }
+        },
+        {
+          "type": "list_item",
+          "settings": {
+            "text": "One product. Multiple needs."
+          }
+        },
+        {
+          "type": "list_item",
+          "settings": {
+            "text": "Global quality. Indian relevance."
+          }
+        },
+        {
+          "type": "list_item",
+          "settings": {
+            "text": "Visible results in 5–6 months."
+          }
+        }
+      ]
     }
   ]
 }
@@ -33,7 +89,7 @@
 
 <div class="container">
   <div class="row align-items-center">
-    <!-- Left Image -->
+    <!-- About Section -->
     <div class="col-xl-7 col-lg-7 col-12">
       <div class="about-img-wrap">
         {% if section.settings.about_image != blank %}
@@ -43,14 +99,42 @@
         {% endif %}
       </div>
     </div>
-
-    <!-- Right Content -->
     <div class="col-xl-5 col-lg-5 col-12">
       <div class="about-content">
         <div class="section-heading mb-40">
           <h2>{{ section.settings.heading }}</h2>
           <p class="mt-20">{{ section.settings.description }}</p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products We Create Section -->
+  <div class="row">
+    <div class="sub hadding-text">
+      <h3>{{ section.settings.main_heading }}</h3>
+    </div>
+    <div class="products-section">
+      <div class="img-area-left-about-sec">
+        {% if section.settings.left_image != blank %}
+          <img src="{{ section.settings.left_image | img_url: 'master' }}" alt="Left side image">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/products-we-img-left.png?v=1756114761" alt="Left side image">
+        {% endif %}
+      </div>
+      <div class="list-area-about">
+        <ul>
+          {% for block in section.blocks %}
+            <li>
+              {% if block.settings.icon != blank %}
+                <img src="{{ block.settings.icon | img_url: '32x32' }}" alt="icon">
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/check-box-icon.png?v=1756114208" alt="icon">
+              {% endif %}
+              <p>{{ block.settings.text }}</p>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>
