@@ -4552,4 +4552,17 @@ ul {
   background-size: 26% auto;
 }
 
+.products-we-create-after-shap-one:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://cdn.shopify.com/s/files/1/0949/0975/9774/files/shap2.png?v=1756129147);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 26% auto;
+}
+
 
