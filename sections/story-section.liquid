@@ -169,20 +169,56 @@
 </div>
 
 <!-- 3️⃣ Our Promise Section -->
-<div class="container">
-  <div class="row promise-area text-center">
-    <div class="col-12 mb-4">
-      <h3>{{ section.settings.promise_heading }}</h3>
-      <p>{{ section.settings.promise_text }}</p>
-    </div>
-    {% for block in section.blocks %}
-      {% if block.type == 'promise_item' %}
-        <div class="col-md-3 col-6 promise-box">
-          <img src="{{ block.settings.promise_icon | img_url: '64x64' }}" alt="">
-          <p>{{ block.settings.promise_text }}</p>
+<div class="our-promise-sec">
+  <div class="container">
+    <div class="row promise-area text-center">
+      <div class="col-12 mb-4">
+        <h3>{{ section.settings.promise_heading }}</h3>
+        <p>{{ section.settings.promise_text }}</p>
+      </div>
+      <div class="col-md-12 col-lg-8 col-xl-8 col-12 d-flex justify-content-center">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="promise-item">
+              <div class="promise-icon">
+                <i class="flaticon-shortcuts"></i>
+                <div class="promise-icon-shape">
+                  <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/promise-icon-shape1.png?v=1756133159" alt="No shortcuts">
+                </div>
+              </div>
+              <div class="promise-content">
+                <h4 class="title">No shortcuts</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="promise-item">
+              <div class="promise-icon">
+                <i class="flaticon-shortcuts"></i>
+                <div class="promise-icon-shape">
+                  <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/promise-icon-shape2.png?v=1756133159" alt="No gimmicks">
+                </div>
+              </div>
+              <div class="promise-content">
+                <h4 class="title">No gimmicks</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="promise-item">
+              <div class="promise-icon">
+                <i class="flaticon-shortcuts"></i>
+                <div class="promise-icon-shape">
+                  <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/promise-icon-shape3.png?v=1756133159" alt="serious skincare">
+                </div>
+              </div>
+              <div class="promise-content">
+                <h4 class="title">Just serious skincare that works</h4>
+              </div>
+            </div>
+          </div>
         </div>
-      {% endif %}
-    {% endfor %}
+      </div>
+    </div>
   </div>
 </div>
-
