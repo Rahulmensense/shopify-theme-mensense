@@ -4532,9 +4532,6 @@ ul {
 .section-area-gradient {
   position: relative;
   background: linear-gradient(181.62deg, #D5DCE4 2.5%, #F1F0EC 106.13%);
-  transform: matrix(1, 0, 0, -1, 0, 0);
-  height: 1931px;
-  left: calc(50% - 2025px/2 - 19.5px);
 }
 
 
