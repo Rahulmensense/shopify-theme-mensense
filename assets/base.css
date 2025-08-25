@@ -4397,7 +4397,7 @@ ul {
 }
 
 .text-gradient-banner-bottom h2 {
-  background:linear-gradient( #58718F 0%, #2c3e50 16%);
+  background:linear-gradient( #58718F 100%, #2c3e50 16%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
   font-size: 400px;
