@@ -1,0 +1,118 @@
+<section class="dermatologist-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Column - Doctor Image -->
+      <div class="col-md-4 text-center">
+        {% if section.settings.doctor_image != blank %}
+          <img src="{{ section.settings.doctor_image | img_url: 'master' }}" alt="Doctor" class="img-fluid">
+        {% endif %}
+      </div>
+
+      <!-- Middle Column - Product + Heading -->
+      <div class="col-md-4 text-center">
+        <h3 class="mb-3">{{ section.settings.heading }}</h3>
+        {% if section.settings.product_image != blank %}
+          <img src="{{ section.settings.product_image | img_url: 'master' }}" alt="Product" class="img-fluid mb-3">
+        {% endif %}
+      </div>
+
+      <!-- Right Column - Feedback Slider -->
+      <div class="col-md-4">
+        <div class="feedback-slider">
+          {% for block in section.blocks %}
+            <div class="feedback-slide">
+              <p>{{ block.settings.review_text }}</p>
+
+              <!-- Star Rating -->
+              <div class="stars mb-2">
+                {% assign stars = block.settings.stars | plus: 0 %}
+                {% for i in (1..stars) %}
+                  ⭐
+                {% endfor %}
+              </div>
+
+              <strong>{{ block.settings.reviewer_name }}</strong>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Slider Init -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof jQuery !== "undefined" && jQuery().slick) {
+      $('.feedback-slider').slick({
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: false,
+        dots: true,
+        fade: false,
+        slidesToShow: 1
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Dermatologist Approval Slider",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "doctor_image",
+      "label": "Doctor Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Dermatologist Approved"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feedback",
+      "name": "Feedback Slide",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry..."
+        },
+        {
+          "type": "number",
+          "id": "stars",
+          "label": "Star Rating (1-5)",
+          "default": 5,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "default": "Jidan"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dermatologist Approval Slider",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
