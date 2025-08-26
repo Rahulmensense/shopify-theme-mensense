@@ -4653,3 +4653,7 @@ ul {
   color: #1D283D;
   display: flex;
 }
+
+p{
+  font-size:16px;
+}
