@@ -1,43 +1,45 @@
 <section class="dermatologist-section py-5">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="dermatologist-bg-gradient">
+      <div class="row align-items-center">
 
-      <!-- Left Column - Doctor Image -->
-      <div class="col-md-4 text-center">
-        {% if section.settings.doctor_image != blank %}
-          <img src="{{ section.settings.doctor_image | img_url: 'master' }}" alt="Doctor" class="img-fluid">
-        {% endif %}
-      </div>
-
-      <!-- Middle Column - Product + Heading -->
-      <div class="col-md-4 text-center">
-        <h3 class="mb-3">{{ section.settings.heading }}</h3>
-        {% if section.settings.product_image != blank %}
-          <img src="{{ section.settings.product_image | img_url: 'master' }}" alt="Product" class="img-fluid mb-3">
-        {% endif %}
-      </div>
-
-      <!-- Right Column - Feedback Slider -->
-      <div class="col-md-4">
-        <div class="feedback-slider">
-          {% for block in section.blocks %}
-            <div class="feedback-slide">
-              <p>{{ block.settings.review_text }}</p>
-
-              <!-- Star Rating -->
-              <div class="stars mb-2">
-                {% assign stars = block.settings.stars | plus: 0 %}
-                {% for i in (1..stars) %}
-                  ⭐
-                {% endfor %}
-              </div>
-
-              <strong>{{ block.settings.reviewer_name }}</strong>
-            </div>
-          {% endfor %}
+        <!-- Left Column - Doctor Image -->
+        <div class="col-md-4 text-center">
+          {% if section.settings.doctor_image != blank %}
+            <img src="{{ section.settings.doctor_image | img_url: 'master' }}" alt="Doctor" class="img-fluid">
+          {% endif %}
         </div>
-      </div>
 
+        <!-- Middle Column - Product + Heading -->
+        <div class="col-md-4 text-center">
+          <h3 class="mb-3">{{ section.settings.heading }}</h3>
+          {% if section.settings.product_image != blank %}
+            <img src="{{ section.settings.product_image | img_url: 'master' }}" alt="Product" class="img-fluid mb-3">
+          {% endif %}
+        </div>
+
+        <!-- Right Column - Feedback Slider -->
+        <div class="col-md-4">
+          <div class="feedback-slider">
+            {% for block in section.blocks %}
+              <div class="feedback-slide">
+                <p>{{ block.settings.review_text }}</p>
+
+                <!-- Star Rating -->
+                <div class="stars mb-2">
+                  {% assign stars = block.settings.stars | plus: 0 %}
+                  {% for i in (1..stars) %}
+                    ⭐
+                  {% endfor %}
+                </div>
+
+                <strong>{{ block.settings.reviewer_name }}</strong>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
