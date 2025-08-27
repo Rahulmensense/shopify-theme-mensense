@@ -619,25 +619,24 @@
     "slideshow_xDVfCD"
   ],
 
-    "approval_slider_9XkLzQ": {
-        "type": "approval-slider",
-        "name": "Dermatologist Approval Slider",
+  "dermatologist_slider_9XKLZQ": {
+    "type": "dermatologist-approval-slider",
+    "settings": {
+      "doctor_image": "",
+      "heading": "Dermatologist Approved",
+      "product_image": ""
+    },
+    "blocks": {
+      "1": {
+        "type": "feedback",
         "settings": {
-            "doctor_image": "",
-            "heading": "Dermatologist Approved",
-            "product_image": ""
-        },
-        "blocks": [
-            {
-                "type": "feedback",
-                "settings": {
-                    "stars": 5,
-                    "review": "Lorem Ipsum is simply dummy text...",
-                    "reviewer_name": "Jidan"
-                }
-            }
-        ]
+          "stars": 5,
+          "review_text": "Lorem Ipsum is simply dummy text...",
+          "reviewer_name": "Jidan"
+        }
+      }
     }
+  }
 
 }
 
