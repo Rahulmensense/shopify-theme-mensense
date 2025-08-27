@@ -24,42 +24,22 @@
             {% for block in section.blocks %}
               <div class="feedback-slide">
                 <p>{{ block.settings.review_text }}</p>
-
-                <!-- Star Rating -->
                 <div class="stars mb-2">
                   {% assign stars = block.settings.stars | plus: 0 %}
                   {% for i in (1..stars) %}
                     ⭐
                   {% endfor %}
                 </div>
-
                 <strong>{{ block.settings.reviewer_name }}</strong>
               </div>
             {% endfor %}
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
 
-<!-- Slider Init -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    if (typeof jQuery !== "undefined" && jQuery().slick) {
-      $('.feedback-slider').slick({
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        arrows: false,
-        dots: true,
-        fade: false,
-        slidesToShow: 1
-      });
-    }
-  });
-</script>
 
 {% schema %}
 {

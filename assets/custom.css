@@ -372,7 +372,23 @@ ul {
   display: flex;
 }
 
+.dermatologist-bg-gradient {
+  background: linear-gradient(360deg, rgba(255, 255, 255, 0) 7.05%, #8FB1DA 98.72%);
+  border-radius: 32px;
+}
+
 .dermatologist-bg-gradient h3 {
   color: #000;
-  font-size: 20px;
+  font-size: 26px;
 }
+
+.feedback-slide {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
