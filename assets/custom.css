@@ -371,3 +371,8 @@ ul {
   color: #1D283D;
   display: flex;
 }
+
+.dermatologist-bg-gradient h3 {
+  color: #000;
+  font-size: 20px;
+}
