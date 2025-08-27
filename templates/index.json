@@ -37,7 +37,6 @@
         "promise_text": "Every product. Every drop. Held to the highest global benchmarks. Because your skin deserves better. And so do you."
       }
     },
-
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -313,19 +312,9 @@
     "derm_approval_slider": {
       "type": "dermatologist-approval-slider",
       "settings": {
-        "doctor_image": "",
+        "doctor_image": "shopify://shop_images/doctor-image.png",
         "heading": "Dermatologist Approved",
-        "product_image": ""
-      },
-      "blocks": {
-        "1": {
-          "type": "feedback",
-          "settings": {
-            "stars": 5,
-            "review_text": "Lorem Ipsum is simply dummy text...",
-            "reviewer_name": "Jidan"
-          }
-        }
+        "product_image": "shopify://shop_images/product-image-home-testi.png"
       }
     }
   },
@@ -337,7 +326,4 @@
     "product_list_fa6P9H",
     "derm_approval_slider"
   ]
-
 }
-
-
