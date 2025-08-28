@@ -123,7 +123,7 @@
         "product_image": "shopify://shop_images/product-image-home-testi.png"
       }
     },
-    "product_list_fa6P9H": {
+    "product_list_AqXfrj": {
       "type": "product-list",
       "blocks": {
         "static-header": {
@@ -160,7 +160,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_YFtzcL": {
+            "product_list_text_YyiER6": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
@@ -168,9 +168,9 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h4",
+                "type_preset": "rte",
                 "font": "var(--font-body--family)",
-                "font_size": "",
+                "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -186,7 +186,7 @@
               },
               "blocks": {}
             },
-            "product_list_button_MWeP9V": {
+            "product_list_button_dRrwYA": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
               "settings": {
@@ -202,8 +202,8 @@
             }
           },
           "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
+            "product_list_text_YyiER6",
+            "product_list_button_dRrwYA"
           ]
         },
         "static-product-card": {
@@ -224,7 +224,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_card_gallery_677WP3": {
+            "product_card_gallery_PT8JrJ": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -240,11 +240,11 @@
               },
               "blocks": {}
             },
-            "product_title_YXxMTj": {
+            "product_title_CffLN6": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
-                "width": "100%",
+                "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "rte",
@@ -265,7 +265,7 @@
               },
               "blocks": {}
             },
-            "price_JQzVV4": {
+            "price_9hJfLH": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -290,25 +290,25 @@
             }
           },
           "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
+            "product_card_gallery_PT8JrJ",
+            "product_title_CffLN6",
+            "price_9hJfLH"
           ]
         }
       },
-      "name": "Featured collection",
+      "name": "t:names.products_carousel",
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
+        "collection": "",
+        "layout_type": "carousel",
         "carousel_on_mobile": false,
-        "max_products": 8,
+        "max_products": 6,
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 8,
         "rows_gap": 24,
         "icons_style": "arrow",
-        "icons_shape": "none",
+        "icons_shape": "circle",
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
@@ -324,6 +324,6 @@
     "story_section_MKYiRe",
     "hero_jVaWmY",
     "derm_approval_slider",
-    "product_list_fa6P9H"
+    "product_list_AqXfrj"
   ]
 }
