@@ -21,25 +21,28 @@
         <!-- Right Column - Feedback Slider -->
         <div class="col-md-4">
           <div class="feedback-slider">
-            {% for block in section.blocks %}
-              <div class="feedback-slide">
-                <p>{{ block.settings.review_text }}</p>
-                <div class="stars mb-2">
-                  {% assign stars = block.settings.stars | plus: 0 %}
-                  {% for i in (1..stars) %}
-                    ⭐
-                  {% endfor %}
-                </div>
-                <strong>{{ block.settings.reviewer_name }}</strong>
-              </div>
-            {% endfor %}
+            <div class="feedback-slide">
+              <p>"Amazing product! My skin feels fresh and protected."</p>
+              <div class="stars mb-2">⭐⭐⭐⭐⭐</div>
+              <strong>Ravi Sharma</strong>
+            </div>
+            <div class="feedback-slide">
+              <p>"Lightweight and non-greasy. Perfect for daily use."</p>
+              <div class="stars mb-2">⭐⭐⭐⭐</div>
+              <strong>Neha Kapoor</strong>
+            </div>
+            <div class="feedback-slide">
+              <p>"Dermatologist approved and it shows. Highly recommended!"</p>
+              <div class="stars mb-2">⭐⭐⭐⭐⭐</div>
+              <strong>Dr. Aman Verma</strong>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </section>
-
 
 {% schema %}
 {
@@ -62,32 +65,6 @@
       "label": "Product Image"
     }
   ],
-  "blocks": [
-    {
-      "type": "feedback",
-      "name": "Feedback Slide",
-      "settings": [
-        {
-          "type": "textarea",
-          "id": "review_text",
-          "label": "Review Text",
-          "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s unchanged."
-        },
-        {
-          "type": "number",
-          "id": "stars",
-          "label": "Star Rating (1-5)",
-          "default": 5
-        },
-        {
-          "type": "text",
-          "id": "reviewer_name",
-          "label": "Reviewer Name",
-          "default": "Jidan"
-        }
-      ]
-    }
-  ],
   "presets": [
     {
       "name": "Derm Approval Slider",
@@ -96,3 +73,4 @@
   ]
 }
 {% endschema %}
+

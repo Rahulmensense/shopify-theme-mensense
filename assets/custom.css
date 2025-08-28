@@ -382,13 +382,107 @@ ul {
   font-size: 26px;
 }
 
-.feedback-slide {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  height: auto;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
+.feedback-slider {
+  display: block;
+  visibility: visible;
+  overflow: visible;
 }
+
+/* === Dermatologist Section === */
+.dermatologist-section {
+  background: #f5f9fc;
+  padding: 60px 0;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.dermatologist-bg-gradient {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  border-radius: 12px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dermatologist-section h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.dermatologist-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* === Feedback Slider === */
+.dermatologist-section {
+  background: #f5f9fc;
+  padding: 60px 0;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.dermatologist-bg-gradient {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  border-radius: 12px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dermatologist-section h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.dermatologist-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.feedback-slider {
+  margin-top: 20px;
+}
+
+.feedback-slide {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.feedback-slide p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.feedback-slide .stars {
+  font-size: 18px;
+  color: #f5a623;
+  margin-bottom: 8px;
+}
+
+.feedback-slide strong {
+  display: block;
+  font-weight: 600;
+  color: #222;
+}
+
+@media (max-width: 768px) {
+  .dermatologist-section .col-md-4 {
+    margin-bottom: 30px;
+  }
+
+  .dermatologist-section h3 {
+    font-size: 20px;
+  }
+
+  .feedback-slide {
+    padding: 15px;
+  }
+}
+
 
