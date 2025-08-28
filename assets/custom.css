@@ -649,13 +649,23 @@ ul {
 }
 
 .footer-bottom {
-    text-align: center;
-    font-size: 16px;
-    color: #F1F0EC;
-    padding-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  text-align: center;
+  font-size: 16px;
+  color: #F1F0EC;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.developed-by {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
 }
 
 
