@@ -570,8 +570,8 @@ ul {
 
 .ms-footer {
   color: #fff;
-  padding: 40px 20px;
- background-image: linear-gradient(93.62deg, to right, #58718F , #11182B);
+  padding: 40px 0px;
+  background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
 }
 
 .ms-footer .tagline {
