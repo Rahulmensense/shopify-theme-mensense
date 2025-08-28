@@ -609,13 +609,13 @@ ul {
 }
 
 .footer-links ul li {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .footer-links ul li a {
   color: #F1F0EC;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .footer-links ul li a:hover {
