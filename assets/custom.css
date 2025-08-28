@@ -469,6 +469,7 @@ ul {
   display: block;
   font-weight: 600;
   color: #222;
+  font-size: 12px;
 }
 
 @media (max-width: 768px) {
