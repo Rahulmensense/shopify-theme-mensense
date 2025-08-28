@@ -574,6 +574,15 @@ ul {
   background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
 }
 
+.footer-log a {
+  display: flex;
+  text-decoration: underline;
+}
+
+.footer-log a img {
+  max-width: 100%;
+}
+
 .ms-footer .tagline {
   font-size: 16px;
   margin-bottom: 20px;
