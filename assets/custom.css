@@ -575,6 +575,8 @@ ul {
 }
 
 .footer-log a {
+  width: 240px;
+  margin-bottom: 18px;
   display: flex;
   text-decoration: underline;
 }
@@ -586,8 +588,10 @@ ul {
 .ms-footer .tagline {
   font-size: 16px;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
   font-weight: 500;
+  color: #F1F0EC;
+  font-family: Nunito Sans;
 }
 
 .footer-columns {
