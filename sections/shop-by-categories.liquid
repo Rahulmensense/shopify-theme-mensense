@@ -1,0 +1,94 @@
+<section class="shop-by-categories py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">{{ section.settings.heading }}</h2>
+    <div class="row">
+      {% for block in section.blocks %}
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="product-card position-relative text-center">
+            <a href="{{ block.settings.product.url }}">
+              <img src="{{ block.settings.product.featured_image | img_url: 'medium' }}" alt="{{ block.settings.product.title }}" class="img-fluid mb-2">
+              <h5>{{ block.settings.product.title }}</h5>
+              <p class="price">₹{{ block.settings.product.price | money_without_currency }}</p>
+            </a>
+
+            <!-- Like Button -->
+            <button class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2" aria-label="Like">
+              ❤️
+            </button>
+
+            <!-- Add to Cart -->
+            <form method="post" action="/cart/add">
+              <input type="hidden" name="id" value="{{ block.settings.product.variants.first.id }}">
+              <button type="submit" class="btn btn-primary btn-sm mt-2">Add to Cart</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% if section.settings.button_text != blank %}
+      <div class="text-center mt-4">
+        <a href="{{ section.settings.button_link }}" class="btn btn-dark">{{ section.settings.button_text }}</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Shop By Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Shop By Categories"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product Card",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Shop By Categories",
+      "category": "Products",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

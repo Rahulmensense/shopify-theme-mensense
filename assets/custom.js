@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
-  if ($('.slider').length > 0 && !$('.slider').hasClass('slick-initialized')) {
-    $('.slider').slick({
+  if ($('.feedback-slider').length > 0 && !$('.feedback-slider').hasClass('slick-initialized')) {
+    $('.feedback-slider').slick({
       autoplay: true,
       autoplaySpeed: 3000,
       arrows: true,
@@ -11,4 +11,3 @@ window.addEventListener("load", function () {
     });
   }
 });
-
