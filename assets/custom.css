@@ -594,31 +594,24 @@ ul {
   font-family: Nunito Sans;
 }
 
-.footer-columns {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-bottom: 30px;
-}
-
-.footer-column h4 {
+.footer-links h4 {
   font-size: 14px;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
 
-.footer-column ul {
+.footer-links ul {
   list-style: none;
   padding: 0;
 }
 
-.footer-column ul li a {
+.footer-links ul li a {
   color: #ccc;
   text-decoration: none;
   font-size: 13px;
 }
 
-.footer-column ul li a:hover {
+.footer-links ul li a:hover {
   color: #fff;
 }
 
