@@ -569,10 +569,9 @@ ul {
 /*----- FOOTER CSS -----*/
 
 .ms-footer {
-  background-color: #111;
   color: #fff;
   padding: 40px 20px;
-  font-family: 'Helvetica Neue', sans-serif;
+ background-image: linear-gradient(93.62deg, to right, #58718F , #11182B);
 }
 
 .ms-footer .tagline {
