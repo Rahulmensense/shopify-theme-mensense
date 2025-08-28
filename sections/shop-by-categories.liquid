@@ -22,14 +22,14 @@
         <h3 class="product-title">{{ product.title }}</h3>
         <p class="product-price">{{ product.price | money }}</p>
 
-        <div class="product-actions">
+        <div class="product-actions-icons">
           <form method="post" action="/cart/add">
             <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-            <button type="submit" class="btn add-to-cart">Add to Cart</button>
+            <button type="submit" class="icon-btn" title="Add to Cart">🛒</button>
           </form>
 
-          <button class="btn like-button" aria-label="Like this product">❤️</button>
-          <a href="{{ product.url }}" class="btn view-details">View Details</a>
+          <button class="icon-btn" title="Like">❤️</button>
+          <a href="{{ product.url }}" class="icon-btn" title="View Details">🔍</a>
         </div>
       </div>
     {% endfor %}
