@@ -608,6 +608,10 @@ ul {
   padding: 0;
 }
 
+.footer-links ul li {
+  margin-top: 15px;
+}
+
 .footer-links ul li a {
   color: #F1F0EC;
   text-decoration: none;
