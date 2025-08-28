@@ -4,35 +4,37 @@
       <div class="row align-items-center">
 
         <!-- Left Column - Doctor Image -->
-        <div class="col-md-4 text-center">
-          {% if section.settings.doctor_image != blank %}
-            <img src="{{ section.settings.doctor_image | img_url: 'master' }}" alt="Doctor" class="img-fluid">
-          {% endif %}
+        <div class="col-md-5 col-lg-6 col-12 text-center">
+          <div class="doctor-hading">
+            {% if section.settings.doctor_image != blank %}
+              <img src="{{ section.settings.doctor_image | img_url: 'master' }}" alt="Doctor" class="img-fluid">
+            {% endif %}
+            <h3 class="mb-3">{{ section.settings.heading }}</h3>
+          </div>
         </div>
 
         <!-- Middle Column - Product + Heading -->
-        <div class="col-md-4 text-center">
-          <h3 class="mb-3">{{ section.settings.heading }}</h3>
+        <div class="col-md-6 col-lg-3 col-12 text-center">
           {% if section.settings.product_image != blank %}
             <img src="{{ section.settings.product_image | img_url: 'master' }}" alt="Product" class="img-fluid mb-3">
           {% endif %}
         </div>
 
         <!-- Right Column - Feedback Slider -->
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-3 col-12">
           <div class="feedback-slider">
             <div class="feedback-slide">
-              <p>"Amazing product! My skin feels fresh and protected."</p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s unchanged.</p>
               <div class="stars mb-2">⭐⭐⭐⭐⭐</div>
               <strong>Ravi Sharma</strong>
             </div>
             <div class="feedback-slide">
-              <p>"Lightweight and non-greasy. Perfect for daily use."</p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s unchanged.</p>
               <div class="stars mb-2">⭐⭐⭐⭐</div>
               <strong>Neha Kapoor</strong>
             </div>
             <div class="feedback-slide">
-              <p>"Dermatologist approved and it shows. Highly recommended!"</p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s unchanged.</p>
               <div class="stars mb-2">⭐⭐⭐⭐⭐</div>
               <strong>Dr. Aman Verma</strong>
             </div>

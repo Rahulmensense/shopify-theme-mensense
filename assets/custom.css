@@ -19,6 +19,7 @@
 	font-size: 96px;
 	font-weight: 800;
   color: #11182B;
+  text-align: left;
 }
 
 .section-heading .section-title {
@@ -366,46 +367,32 @@ ul {
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  line-height: nowrap;
+  line-height: normal;
   text-align: center;
   color: #1D283D;
-  display: flex;
+}
+
+
+/* === Dermatologist Section === */
+
+.dermatologist-section {
+  padding: 60px 0;
+  padding-top: 120px !important;
 }
 
 .dermatologist-bg-gradient {
-  background: linear-gradient(360deg, rgba(255, 255, 255, 0) 7.05%, #8FB1DA 98.72%);
-  border-radius: 32px;
+  background-image: linear-gradient(180deg, #8FB1DA, #ffffff02);
+  border-radius: 12px;
+  padding: 40px 20px;
 }
 
 .dermatologist-bg-gradient h3 {
-  color: #000;
-  font-size: 26px;
-}
-
-.feedback-slider {
-  display: block;
-  visibility: visible;
-  overflow: visible;
-}
-
-/* === Dermatologist Section === */
-.dermatologist-section {
-  background: #f5f9fc;
-  padding: 60px 0;
-  font-family: 'Helvetica Neue', sans-serif;
-}
-
-.dermatologist-bg-gradient {
-  background: linear-gradient(135deg, #e0f7fa, #ffffff);
-  border-radius: 12px;
-  padding: 40px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.dermatologist-section h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
+    color: #11182B;
+    font-size: 27px;
+    font-weight: 600;
+    text-align: left;
+    font-family: Nunito Sans;
+    display: block;
 }
 
 .dermatologist-section img {
@@ -415,48 +402,40 @@ ul {
 }
 
 /* === Feedback Slider === */
-.dermatologist-section {
-  background: #f5f9fc;
-  padding: 60px 0;
-  font-family: 'Helvetica Neue', sans-serif;
+.doctor-hading {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
-.dermatologist-bg-gradient {
-  background: linear-gradient(135deg, #e0f7fa, #ffffff);
-  border-radius: 12px;
-  padding: 40px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.dermatologist-section h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-}
-
-.dermatologist-section img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.doctor-hading img {
+  margin-top: -147px;
 }
 
 .feedback-slider {
+  display: block;
+  visibility: visible;
+  overflow: visible;
   margin-top: 20px;
 }
 
 .feedback-slide {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
   padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding-left: 0ox;
+  text-align: left;
+}
+
+.feedback-slider .slick-dots {
+  width: auto;
+  right: 17px;
+  bottom: 45px;
 }
 
 .feedback-slide p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 10px;
+    font-size: 16px;
+    color: #11182B;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
 }
 
 .feedback-slide .stars {
@@ -466,25 +445,45 @@ ul {
 }
 
 .feedback-slide strong {
-  display: block;
+  display: inline-block;
   font-weight: 600;
   color: #222;
-  font-size: 12px;
+  font-size: 20px;
+}
+
+.feedback-slider .slick-dots li button:before {
+  font-size: 25px;
 }
 
 .shop-by-categories {
-  padding: 40px 20px;
+  padding: 40px 0px;
 }
-.section-title {
+
+.shop-by-categories .section-title {
+  background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 52px;
+  letter-spacing: -0.02em;
+	display: block;
+	margin-bottom: 0;
+	text-transform: inherit;
+	position: relative;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
 }
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+  margin-top: 60px;
 }
+
 .product-card {
   border: 1px solid #eee;
   padding: 15px;
@@ -492,34 +491,60 @@ ul {
   transition: box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  border-radius: 15px;
 }
+
+.product-card .product-image-link {
+  position: relative;
+  width: 100%;
+  display: block;
+  margin-bottom: 22px;
+}
+
+.product-card:hover .product-image-link:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  background: #9eb3cbad;
+  left: 0;
+}
+
 .product-card:hover {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
 .product-image-link img {
   max-width: 100%;
   height: auto;
 }
+
 .product-title {
   font-size: 1.1rem;
   margin: 10px 0;
 }
+
 .product-price {
   color: #444;
   margin-bottom: 10px;
 }
+
 .product-actions-icons {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 40%;
+  right: 26%;
   display: flex;
   gap: 8px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
 .product-card:hover .product-actions-icons {
   opacity: 1;
 }
+
 .icon-btn {
   background: rgba(255,255,255,0.9);
   border: none;
@@ -530,9 +555,91 @@ ul {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
 }
+
 .icon-btn:hover {
   transform: scale(1.1);
 }
+
+.shop-all-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+/*----- FOOTER CSS -----*/
+
+.ms-footer {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.ms-footer .tagline {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 30px;
+}
+
+.footer-column h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-column ul li a:hover {
+  color: #fff;
+}
+
+.social-icons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.social-icons span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.social-icons a {
+  margin: 0 8px;
+  color: #ccc;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
 
 @media (max-width: 768px) {
   .dermatologist-section .col-md-4 {

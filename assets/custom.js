@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
     $('.feedback-slider').slick({
       autoplay: true,
       autoplaySpeed: 3000,
-      arrows: true,
+      arrows: false,
       dots: true,
       infinite: true,
       slidesToShow: 1,
