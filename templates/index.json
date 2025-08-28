@@ -115,6 +115,14 @@
         "padding-block-end": 72
       }
     },
+    "derm_approval_slider": {
+      "type": "dermatologist-approval-slider",
+      "settings": {
+        "doctor_image": "shopify://shop_images/doctor-image.png",
+        "heading": "Dermatologist Approved",
+        "product_image": "shopify://shop_images/product-image-home-testi.png"
+      }
+    },
     "product_list_fa6P9H": {
       "type": "product-list",
       "blocks": {
@@ -308,14 +316,6 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
-    },
-    "derm_approval_slider": {
-      "type": "dermatologist-approval-slider",
-      "settings": {
-        "doctor_image": "shopify://shop_images/doctor-image.png",
-        "heading": "Dermatologist Approved",
-        "product_image": "shopify://shop_images/product-image-home-testi.png"
-      }
     }
   },
   "order": [
@@ -323,7 +323,7 @@
     "about_section_fiWBLy",
     "story_section_MKYiRe",
     "hero_jVaWmY",
-    "product_list_fa6P9H",
-    "derm_approval_slider"
+    "derm_approval_slider",
+    "product_list_fa6P9H"
   ]
 }
