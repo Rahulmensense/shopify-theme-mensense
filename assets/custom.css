@@ -622,6 +622,10 @@ ul {
   color: #fff;
 }
 
+.footer-links {
+  padding: 20px 0;
+}
+
 .social-icons {
   text-align: center;
   margin-bottom: 20px;
