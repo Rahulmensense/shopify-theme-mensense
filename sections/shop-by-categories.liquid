@@ -11,27 +11,32 @@
 }
 {% endschema %}
 
-<div class="shop-by-categories">
-  <h2 class="section-title">Shop By Categories</h2>
-  <div class="product-grid">
-    {% for product in collections['all'].products limit:4 %}
-      <div class="product-card">
-        <a href="{{ product.url }}" class="product-image-link">
-          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
-        </a>
-        <h3 class="product-title">{{ product.title }}</h3>
-        <p class="product-price">{{ product.price | money }}</p>
+<section class="shop-by-categories">
+  <div class="container">
+    <h2 class="section-title">Shop By Categories</h2>
+    <div class="product-grid">
+      {% for product in collections['all'].products limit:4 %}
+        <div class="product-card">
+          <a href="{{ product.url }}" class="product-image-link">
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+          </a>
+          <h3 class="product-title">{{ product.title }}</h3>
+          <p class="product-price">{{ product.price | money }}</p>
 
-        <div class="product-actions-icons">
-          <form method="post" action="/cart/add">
-            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-            <button type="submit" class="icon-btn" title="Add to Cart">🛒</button>
-          </form>
+          <div class="product-actions-icons">
+            <form method="post" action="/cart/add">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+              <button type="submit" class="icon-btn" title="Add to Cart">🛒</button>
+            </form>
 
-          <button class="icon-btn" title="Like">❤️</button>
-          <a href="{{ product.url }}" class="icon-btn" title="View Details">🔍</a>
+            <button class="icon-btn" title="Like">❤️</button>
+            <a href="{{ product.url }}" class="icon-btn" title="View Details">🔍</a>
+          </div>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
+    <div class="shop-all-area">
+      <a href="#" class="ed-primary-btn">Shop now</a>
+    </div>
   </div>
-</div>
+</section>
