@@ -322,31 +322,6 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
-    },
-    "custom_faq_6Q9N3p": {
-      "type": "custom-faq",
-      "blocks": {
-        "faq_yKndH9": {
-          "type": "faq",
-          "settings": {
-            "question": "Are Your Products Cruelty Free?",
-            "answer": "Yes, all our products are 100% cruelty-free and ethically sourced."
-          }
-        },
-        "faq_PUNbcG": {
-          "type": "faq",
-          "settings": {
-            "question": "Are Your Products Cruelty Free?",
-            "answer": "Yes, all our products are 100% cruelty-free and ethically sourced."
-          }
-        }
-      },
-      "block_order": [
-        "faq_yKndH9",
-        "faq_PUNbcG"
-      ],
-      "name": "Custom FAQ",
-      "settings": {}
     }
   },
   "order": [
@@ -356,7 +331,6 @@
     "hero_jVaWmY",
     "derm_approval_slider",
     "shop_by_categories_8YbcDB",
-    "product_list_AqXfrj",
-    "custom_faq_6Q9N3p"
+    "product_list_AqXfrj"
   ]
 }
