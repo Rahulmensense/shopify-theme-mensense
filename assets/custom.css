@@ -640,6 +640,11 @@ ul {
   color: #333;
 }
 
+.faq-answer p {
+  color: #fff;
+  font-size: 16px;
+}
+
 .faq-answer.show {
   display: block;
 }
