@@ -1,6 +1,4 @@
-h1.about-wrapper,
-.about-wrapper h1,
-h1.page-title,
+.about-wrapper
 h1:has-text("About Us") {
   display: none !important;
 }
