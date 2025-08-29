@@ -605,6 +605,10 @@ ul {
   border-radius: 5px;
 }
 
+.faq-question.active {
+  background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
+}
+
 .faq-question .faq-toggle {
   position: absolute;
   right: 20px;
