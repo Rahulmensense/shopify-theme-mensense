@@ -594,7 +594,7 @@ ul {
 
 .faq-question {
   width: 100%;
-  background: #B5C4D4;
+  background: ##b5c4d438;
   border: none;
   padding: 15px;
   font-size: 16px;
@@ -608,8 +608,17 @@ ul {
 .faq-question .faq-toggle {
   position: absolute;
   right: 20px;
-  font-size: 18px;
-  transition: transform 0.3s ease;
+  font-size: 22px;
+  transition: transform .3s ease;
+  border: 1px solid #58718f;
+  padding: 0px;
+  border-radius: 50px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 22px;
+  margin-top: 2px;
+  color: #58718f;
 }
 
 .faq-question.active .faq-toggle {
