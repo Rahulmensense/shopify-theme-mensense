@@ -219,16 +219,16 @@
     color: var(--color);
   }
 
-  .header__row {
-    background-color: rgb(255 255 255 / 70%);
-  }
-
-  .header[data-sticky-state="active"] {
-    background-color: rgb(255 255 255 / 70%);
-  }
-
   .header[data-sticky-state] {
-    background-color: rgb(255 255 255 / 70%);
+    position: fixed;
+    top: -1px;
+    z-index: var(--layer-sticky);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.76);
+    opacity: 0.85;
+    box-shadow: 0 12px 6px rgba(0, 0, 0, .06);
+    backdrop-filter: blur(8.8px);
+    margin: 0 auto;
   }
 
 {% endstylesheet %}

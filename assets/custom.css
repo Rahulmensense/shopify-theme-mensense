@@ -566,12 +566,77 @@ ul {
   margin-top: 35px;
 }
 
+/*----- FAQ CSS -----*/
+
+.ms-faq {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  width: 100%;
+  background: #f5f5f5;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  font-weight: 500;
+}
+
+.faq-question .faq-toggle {
+  position: absolute;
+  right: 20px;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: none;
+  padding: 15px;
+  background: #fff;
+  font-size: 14px;
+  color: #333;
+}
+
+.faq-answer.show {
+  display: block;
+}
+
+
 /*----- FOOTER CSS -----*/
 
 .ms-footer {
-  color: #fff;
+  width: 100%;
+  height: 100%;
   padding: 40px 0px;
-  background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://cdn.shopify.com/s/files/1/0949/0975/9774/files/footer-bg.png?v=1756451213);
 }
 
 .footer-log a {
@@ -595,6 +660,7 @@ ul {
 }
 
 .footer-links h4 {
+  color: #fff;
   font-size: 20px;
   margin-bottom: 10px;
   font-weight: 600;
@@ -624,6 +690,7 @@ ul {
 
 .footer-links {
   padding: 20px 0;
+  margin-bottom: 90px;
 }
 
 .social-icons {

@@ -1,0 +1,58 @@
+<div class="ms-faq">
+  <h2 class="faq-title">Frequently Asked Questions</h2>
+  <ul class="faq-list">
+    {% for block in section.blocks %}
+      <li class="faq-item">
+        <button class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show');">
+          {{ block.settings.question }}
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>{{ block.settings.answer }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Custom FAQ",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Are Your Products Cruelty Free?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Yes, all our products are 100% cruelty-free and ethically sourced."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Custom FAQ",
+      "blocks": [
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
