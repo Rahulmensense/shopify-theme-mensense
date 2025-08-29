@@ -594,7 +594,7 @@ ul {
 
 .faq-question {
   width: 100%;
-  background: ##b5c4d438;
+  background: #b5c4d438;
   border: none;
   padding: 15px;
   font-size: 16px;
@@ -607,6 +607,7 @@ ul {
 
 .faq-question.active {
   background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
+  color: #fff;
 }
 
 .faq-question .faq-toggle {
@@ -627,6 +628,8 @@ ul {
 
 .faq-question.active .faq-toggle {
   transform: rotate(45deg);
+  border-color: #fff;
+  color: #fff;
 }
 
 .faq-answer {
