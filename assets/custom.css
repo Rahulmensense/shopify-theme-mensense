@@ -591,6 +591,16 @@ ul {
   text-fill-color: transparent;
 }
 
+.page-header-content .sub-title {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 96px;
+  text-transform: lowercase;
+  color: #11182B;
+}
+
 /*----- FAQ CSS -----*/
 
 .ms-faq {
