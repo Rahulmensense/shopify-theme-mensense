@@ -11,10 +11,56 @@
   "sections": {
     "about-us": {
       "type": "about-us",
-      "settings": {}
+      "settings": {
+        "heading": "About Us"
+      }
+    },
+    "about_us_RxxHtD": {
+      "type": "about-us",
+      "blocks": {
+        "mission_hfCDEE": {
+          "type": "mission",
+          "settings": {
+            "title": "Our Mission",
+            "description": "To empower men with skincare."
+          }
+        },
+        "vision_Y3pCDF": {
+          "type": "vision",
+          "settings": {
+            "title": "Our Vision",
+            "description": "Normalize self-care for men."
+          }
+        },
+        "team_3YCHnr": {
+          "type": "team",
+          "settings": {
+            "name": "Rahul",
+            "role": "Founder"
+          }
+        },
+        "faq_Pqhcby": {
+          "type": "faq",
+          "settings": {
+            "question": "Are your products cruelty-free?",
+            "answer": "Yes, 100% cruelty-free."
+          }
+        }
+      },
+      "block_order": [
+        "mission_hfCDEE",
+        "vision_Y3pCDF",
+        "team_3YCHnr",
+        "faq_Pqhcby"
+      ],
+      "name": "About Us Full Page",
+      "settings": {
+        "heading": "About Us"
+      }
     }
   },
   "order": [
-    "about-us"
+    "about-us",
+    "about_us_RxxHtD"
   ]
 }
