@@ -579,7 +579,7 @@ ul {
   background-repeat: no-repeat;
 }
 
-.page-header-content {
+.page-header-content h1.title {
   font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 600;
