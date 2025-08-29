@@ -574,6 +574,10 @@ ul {
   padding: 40px 20px;
 }
 
+.faq .section-heading h2 {
+  text-align: center;
+}
+
 .faq-title {
   text-align: center;
   font-size: 24px;
