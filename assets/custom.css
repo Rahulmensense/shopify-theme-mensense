@@ -582,8 +582,8 @@ ul {
 .page-header-content h1.title {
   font-family: 'Nunito Sans';
   font-style: normal;
-  font-weight: 600;
-  font-size: 117px;
+  font-weight: 800;
+  font-size: 65px;
   background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -592,13 +592,14 @@ ul {
 }
 
 .page-header-content .sub-title {
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 56px;
-  line-height: 96px;
-  text-transform: lowercase;
-  color: #11182B;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: normal;
+    text-transform: lowercase;
+    color: #11182b;
+    padding-bottom: 42px;
 }
 
 /*----- FAQ CSS -----*/
