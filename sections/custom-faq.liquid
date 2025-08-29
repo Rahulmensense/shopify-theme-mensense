@@ -1,5 +1,9 @@
 <div class="ms-faq">
-  <h2 class="faq-title">Frequently Asked Questions</h2>
+  <div class="about-content faq">
+    <div class="section-heading mb-40">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+  </div>
   <ul class="faq-list">
     {% for block in section.blocks %}
       <li class="faq-item">
@@ -19,7 +23,14 @@
 {
   "name": "Custom FAQ",
   "tag": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Faq Heading",
+      "default": "FAQ"
+    }
+  ],
   "blocks": [
     {
       "type": "faq",
@@ -46,10 +57,39 @@
       "name": "Custom FAQ",
       "blocks": [
         {
-          "type": "faq"
+          "type": "faq",
+          "settings": {
+            "question": "Are Your Products Cruelty Free?",
+            "answer": "Yes, all our products are 100% cruelty-free and ethically sourced."
+          }
         },
         {
-          "type": "faq"
+          "type": "faq",
+          "settings": {
+            "question": "Do You Offer International Shipping?",
+            "answer": "Yes, we ship globally. Delivery times may vary based on location."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Are Your Ingredients Natural?",
+            "answer": "Our products are formulated with high-quality natural and safe ingredients."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Can I Return a Product?",
+            "answer": "Yes, we offer a 7-day return policy. Please refer to our Return & Refund Policy."
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "How Can I Contact Support?",
+            "answer": "You can reach us via the Contact Us page or email us at support@mensense.com."
+          }
         }
       ]
     }
