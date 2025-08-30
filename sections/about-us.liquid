@@ -20,9 +20,6 @@
 </section>
 <!-- ./ page-header -->
 <div class="about-wrapper container">
-  {% if section.settings.heading != blank %}
-    <h1>{{ section.settings.heading }}</h1>
-  {% endif %}
 
   {% for block in section.blocks %}
     {% case block.type %}
