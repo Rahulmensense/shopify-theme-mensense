@@ -4,3 +4,20 @@
     <div><img src="..." /></div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  $('.product-image-slider').each(function(){
+    if (!$(this).hasClass('slick-initialized')) {
+      $(this).slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 1,
+        adaptiveHeight: true
+      });
+    }
+  });
+});
+
+</script>
