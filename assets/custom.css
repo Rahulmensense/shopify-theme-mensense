@@ -636,16 +636,34 @@ ul {
 }
 
 .brand-story-area .promise-content {
-    padding-top: 260px;
+    padding-top: 85px;
 }
 
 .brand-story-area .promise-content h4 {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 400;
-  font-size: 100px;
+  font-size: 111px;
   color: #000;
-  margin-top: 35px;
+  margin-top: 20px;
+}
+
+.about-brand-area-left-auto {
+    width: 1766px;
+    margin-left: auto;
+}
+
+.brand-story-text {
+  display: flex;
+  gap: 100px;
+}
+
+.brand-story-text .about-content {
+  width: width: 48%;
+}
+
+.brand-story-text .brand-story-right-img {
+  width: 46%;
 }
 
 
