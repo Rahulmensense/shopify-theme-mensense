@@ -21,7 +21,7 @@
 
     {% paginate collection.products by section.settings.products_per_page %}
       {% if collection.products_count > 0 %}
-        <div class="product-grid">
+        <div class="product-grid grid grid--uniform">
           {% for product in paginate.items %}
             <div class="product-card">
               <div class="product-image-slider slick-slider">
@@ -103,10 +103,36 @@
 {
   "name": "Product Grid",
   "settings": [
-    { "type": "range", "id": "products_per_page", "label": "Products per page", "min": 4, "max": 48, "step": 4, "default": 12 },
-    { "type": "range", "id": "slider_image_limit", "label": "Images per product (slider)", "min": 1, "max": 5, "step": 1, "default": 3 },
-    { "type": "checkbox", "id": "show_quick_add", "label": "Show quick add button", "default": false }
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Products per page",
+      "min": 4,
+      "max": 48,
+      "step": 4,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "slider_image_limit",
+      "label": "Images per product (slider)",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quick_add",
+      "label": "Show quick add button",
+      "default": false
+    }
   ],
-  "presets": [{ "name": "Product Grid" }]
+  "presets": [
+    {
+      "name": "Product Grid",
+      "category": "Collection"
+    }
+  ]
 }
 {% endschema %}
