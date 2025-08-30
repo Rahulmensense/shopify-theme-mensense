@@ -1,26 +1,28 @@
-<!-- Banner Section -->
-<section class="page-header about-area-bg">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 col-12 col-md-5">
-        <div class="banner-about-img">
-          <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/about-banner-img.png?v=1756464259" alt="About Image">
+{% if section.settings.show_banner %}
+  <section class="page-header about-area-bg">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-12 col-md-5">
+          <div class="banner-about-img">
+            <img src="{{ section.settings.banner_image | image_url }}" alt="About Image">
+          </div>
         </div>
-      </div>
-      <div class="col-lg-6 col-12 col-md-7">
-        <div class="page-header-content">
-          <h1 class="title">About Us</h1>
-          <h4 class="sub-title">Men needs skincare too</h4>
-          <div class="hero-btn-wrap">
-            <a href="#" class="ed-primary-btn">Shop</a>
+        <div class="col-lg-6 col-12 col-md-7">
+          <div class="page-header-content">
+            <h1 class="title">{{ section.settings.banner_heading }}</h1>
+            <h4 class="sub-title">{{ section.settings.banner_subheading }}</h4>
+            <div class="hero-btn-wrap">
+              <a href="{{ section.settings.banner_button_link }}" class="ed-primary-btn">
+                {{ section.settings.banner_button_text }}
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+{% endif %}
 
-<!-- Dynamic Blocks Section -->
 <div class="about-wrapper container">
   {% for block in section.blocks %}
     {% case block.type %}
@@ -55,63 +57,3 @@
     {% endcase %}
   {% endfor %}
 </div>
-
-{% schema %}
-{
-  "name": "About Us Full Page",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "mission",
-      "name": "Mission",
-      "settings": [
-        { "type": "text", "id": "title", "label": "Title" },
-        { "type": "textarea", "id": "description", "label": "Description" }
-      ]
-    },
-    {
-      "type": "vision",
-      "name": "Vision",
-      "settings": [
-        { "type": "text", "id": "title", "label": "Title" },
-        { "type": "textarea", "id": "description", "label": "Description" }
-      ]
-    },
-    {
-      "type": "team",
-      "name": "Team Member",
-      "settings": [
-        { "type": "text", "id": "name", "label": "Name" },
-        { "type": "text", "id": "role", "label": "Role" }
-      ]
-    },
-    {
-      "type": "faq",
-      "name": "FAQ Item",
-      "settings": [
-        { "type": "text", "id": "question", "label": "Question" },
-        { "type": "textarea", "id": "answer", "label": "Answer" }
-      ]
-    },
-    {
-      "type": "image",
-      "name": "Image Block",
-      "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image" }
-      ]
-    }
-  ],
-  "max_blocks": 20,
-  "presets": [
-    {
-      "name": "About Us Full Page",
-      "blocks": [
-        { "type": "mission", "settings": { "title": "Our Mission", "description": "To empower men with skincare." } },
-        { "type": "vision", "settings": { "title": "Our Vision", "description": "Normalize self-care for men." } },
-        { "type": "team", "settings": { "name": "Rahul", "role": "Founder" } },
-        { "type": "faq", "settings": { "question": "Are your products cruelty-free?", "answer": "Yes, 100% cruelty-free." } }
-      ]
-    }
-  ]
-}
-{% endschema %}
