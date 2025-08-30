@@ -724,16 +724,19 @@ ul {
 }
 
 .mission-text h2 {
-  font-size: 2rem;
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 20px;
+    font-size: 52px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    margin-top: 20px;
 }
 
 .mission-text p {
   color: #000;
+  font-weight: 500;
   line-height: 1.6;
-  font-size: 1rem;
+  font-size: 18px;
   text-align: center;
 }
 
