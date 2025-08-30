@@ -657,17 +657,25 @@ ul {
 
 .brand-story-text {
   display: flex;
+  gap: 30px;
   position: relative;
   z-index: 1;
 }
 
 .brand-story-text .about-content {
-  width: 49%;
+  width: 50%;
 }
 
 .brand-story-text .brand-story-right-img {
-  width: 52%;
-  margin-top: -225px;
+    width: 50%;
+    margin-top: -272px;
+}
+
+.brand-story-text p {
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Nunito Sans;
 }
 
 
