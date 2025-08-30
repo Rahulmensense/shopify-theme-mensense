@@ -8,25 +8,7 @@
             {% if section.settings.hero_subheading != blank %}
               <p class="sub-title">{{ section.settings.hero_subheading }}</p>
             {% endif %}
-            {% if section.settings.hero_button_text != blank and section.settings.hero_button_link != blank %}
-              <div class="hero-btn-wrap">
-                <a href="{{ section.settings.hero_button_link }}" class="ed-primary-btn">
-                  {{ section.settings.hero_button_text }}
-                </a>
-              </div>
-            {% endif %}
           </div>
-        </div>
-        <div class="col-12 col-lg-6">
-          {% if section.settings.hero_image != blank %}
-            <div class="hero-image">
-              <img
-                src="{{ section.settings.hero_image | image_url: width: 1100 }}"
-                alt="{{ section.settings.hero_heading | escape }}"
-                loading="lazy"
-              >
-            </div>
-          {% endif %}
         </div>
       </div>
     </div>
