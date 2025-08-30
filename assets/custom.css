@@ -609,6 +609,32 @@ ul {
   padding-bottom: 60px;
 }
 
+.brand-story-area::before {
+  content: "";
+  width: 440px;
+  height: 318px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-image: url(/cdn/shop/files/shap2.png?v=1756129147);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.brand-story-area::after {
+  content: "";
+  width: 440px;
+  height: 318px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-image: url(https://cdn.shopify.com/s/files/1/0949/0975/9774/files/about-brand-right-shap1.png?v=1756538185);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
 
 /*----- FAQ CSS -----*/
 
