@@ -1,0 +1,85 @@
+<section class="all-products-hero">
+  {% if section.settings.show_hero %}
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-12">
+          <div class="hero-copy">
+            <h1 class="title">{{ section.settings.hero_heading }}</h1>
+            {% if section.settings.hero_subheading != blank %}
+              <p class="sub-title">{{ section.settings.hero_subheading }}</p>
+            {% endif %}
+            {% if section.settings.hero_button_text != blank and section.settings.hero_button_link != blank %}
+              <div class="hero-btn-wrap">
+                <a href="{{ section.settings.hero_button_link }}" class="ed-primary-btn">
+                  {{ section.settings.hero_button_text }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-lg-6 col-12">
+          {% if section.settings.hero_image != blank %}
+            <div class="hero-image">
+              <img src="{{ section.settings.hero_image | image_url }}" alt="All Products Hero">
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "All Products Hero",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_hero",
+      "label": "Show hero",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "Heading",
+      "default": "All Products"
+    },
+    {
+      "type": "text",
+      "id": "hero_subheading",
+      "label": "Subheading",
+      "default": "Premium Skincare Made Just For Men — With Global Quality And Indian Sensibility"
+    },
+    {
+      "type": "text",
+      "id": "hero_button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "hero_button_link",
+      "label": "Button link",
+      "default": ""
+    }
+  ],
+  "presets": [
+    {
+      "name": "All Products Hero",
+      "settings": {
+        "show_hero": true,
+        "hero_heading": "All Products",
+        "hero_subheading": "Premium Skincare Made Just For Men — With Global Quality And Indian Sensibility",
+        "hero_button_text": "Shop Now",
+        "hero_button_link": "/collections/all"
+      }
+    }
+  ]
+}
+{% endschema %}

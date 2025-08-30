@@ -784,6 +784,46 @@ ul {
 }
 
 
+/*----- All Products Page CSS -----*/
+.sort-bar {
+  margin-bottom: 20px;
+}
+.sort-bar select {
+  padding: 8px;
+  font-size: 14px;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+.product-card {
+  border: 1px solid #eee;
+  padding: 10px;
+  text-align: center;
+}
+.product-image-slider img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.pagination-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.pagination-links a,
+.pagination-links span {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+}
+.pagination-links .current {
+  background-color: #000;
+  color: #fff;
+}
+
+
 /*----- FAQ CSS -----*/
 
 .faq-are {

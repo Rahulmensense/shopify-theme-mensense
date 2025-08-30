@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "all_products_hero": {
+      "type": "all-products-hero"
+    },
+    "main": {
+      "type": "main-collection-product-grid"
+    }
+  },
+  "order": [
+    "all_products_hero",
+    "main"
+  ]
+}

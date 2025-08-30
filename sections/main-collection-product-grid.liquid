@@ -1,0 +1,65 @@
+<section class="product-grid-section">
+  <div class="container">
+    <div class="sort-bar">
+      <label for="sort-by">Sort by:</label>
+      <select id="sort-by" name="sort-by" onchange="window.location.href=this.value">
+        <option value="{{ collection.url }}?sort_by=best-selling">Best selling</option>
+        <option value="{{ collection.url }}?sort_by=title-ascending">A-Z</option>
+        <option value="{{ collection.url }}?sort_by=title-descending">Z-A</option>
+        <option value="{{ collection.url }}?sort_by=price-ascending">Price, low to high</option>
+        <option value="{{ collection.url }}?sort_by=price-descending">Price, high to low</option>
+        <option value="{{ collection.url }}?sort_by=created-ascending">Oldest</option>
+        <option value="{{ collection.url }}?sort_by=created-descending">Newest</option>
+      </select>
+    </div>
+
+    <div class="product-grid">
+      {% for product in collection.products %}
+        <div class="product-card">
+          <div class="product-image-slider">
+            {% for image in product.images %}
+              <img src="{{ image | image_url }}" alt="{{ product.title }}">
+            {% endfor %}
+          </div>
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+          <a href="{{ product.url }}" class="btn">Add to Cart</a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="pagination">
+      {% paginate collection.products by 12 %}
+        {% if paginate.pages > 1 %}
+          <div class="pagination-links">
+            {% if paginate.previous %}
+              <a href="{{ paginate.previous.url }}">Previous</a>
+            {% endif %}
+            {% for part in paginate.parts %}
+              {% if part.is_link %}
+                <a href="{{ part.url }}">{{ part.title }}</a>
+              {% else %}
+                <span class="current">{{ part.title }}</span>
+              {% endif %}
+            {% endfor %}
+            {% if paginate.next %}
+              <a href="{{ paginate.next.url }}">Next</a>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endpaginate %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Collection Product Grid",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Main Collection Grid"
+    }
+  ]
+}
+{% endschema %}
