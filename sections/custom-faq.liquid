@@ -1,22 +1,24 @@
-<div class="ms-faq">
-  <div class="about-content faq">
-    <div class="section-heading mb-40">
-      <h2>{{ section.settings.heading }}</h2>
+<div class="faq-are">
+  <div class="ms-faq">
+    <div class="about-content faq">
+      <div class="section-heading mb-40">
+        <h2>{{ section.settings.heading }}</h2>
+      </div>
     </div>
+    <ul class="faq-list">
+      {% for block in section.blocks %}
+        <li class="faq-item">
+          <button class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show');">
+            {{ block.settings.question }}
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>{{ block.settings.answer }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
-  <ul class="faq-list">
-    {% for block in section.blocks %}
-      <li class="faq-item">
-        <button class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show');">
-          {{ block.settings.question }}
-          <span class="faq-toggle">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>{{ block.settings.answer }}</p>
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
 </div>
 
 {% schema %}
