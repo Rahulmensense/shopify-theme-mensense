@@ -592,14 +592,14 @@ ul {
 }
 
 .page-header-content .sub-title {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: normal;
-    text-transform: lowercase;
-    color: #11182b;
-    padding-bottom: 42px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: normal;
+  text-transform: lowercase;
+  color: #11182b;
+  padding-bottom: 42px;
 }
 
 .brand-story-area {
@@ -610,35 +610,35 @@ ul {
 }
 
 .brand-story-area:before {
-    content: "";
-    width: 410px;
-    height: 343px;
-    top: -43px;
-    left: 0;
-    position: absolute;
-    background-image: url(/cdn/shop/files/shap2.png?v=1756129147);
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+  content: "";
+  width: 410px;
+  height: 343px;
+  top: -43px;
+  left: 0;
+  position: absolute;
+  background-image: url(/cdn/shop/files/shap2.png?v=1756129147);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .brand-story-area:after {
-    content: "";
-    width: 1660px;
-    height: 100%;
-    top: 0;
-    right: 0;
-    position: absolute;
-    background-image: url(/cdn/shop/files/about-brand-right-shap1.png?v=1756538185);
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+  content: "";
+  width: 1465px;
+  height: 762px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-image: url(/cdn/shop/files/about-brand-right-shap1.png?v=1756538185);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .brand-story-area .promise-content {
-    padding-top: 85px;
-    position: relative;
-    z-index: 7;
+  padding-top: 85px;
+  position: relative;
+  z-index: 7;
 }
 
 .brand-story-area .promise-content h4 {
@@ -651,8 +651,8 @@ ul {
 }
 
 .about-brand-area-left-auto {
-    width: 1766px;
-    margin-left: auto;
+  width: 1766px;
+  margin-left: auto;
 }
 
 .brand-story-text {
@@ -667,8 +667,8 @@ ul {
 }
 
 .brand-story-text .brand-story-right-img {
-    width: 49%;
-    margin-top: -272px;
+  width: 49%;
+  margin-top: -272px;
 }
 
 .brand-story-text .about-content .section-heading h3 {
