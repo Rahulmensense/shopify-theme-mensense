@@ -604,16 +604,16 @@ ul {
 
 .brand-story-area {
   position: relative;
-  padding-top: 120px;
+  padding-top: 0px;
   background: #F1F0EC;
   padding-bottom: 60px;
 }
 
 .brand-story-area::before {
   content: "";
-  width: 440px;
-  height: 318px;
-  top: 0;
+  width: 1530px;
+  height: 866px;
+  top: -43px;
   left: 0;
   position: absolute;
   background-image: url(/cdn/shop/files/shap2.png?v=1756129147);
