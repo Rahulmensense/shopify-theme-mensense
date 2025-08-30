@@ -1,7 +1,7 @@
 <div class="product-grid">
   {% for product in collection.products %}
     <div class="product-card">
-      <div class="product-image-slider">
+      <div class="product-image-slider slick-slider">
         {% assign images = product.images | slice: 0, section.settings.slider_image_limit %}
         {% if images.size > 0 %}
           {% for image in images %}
@@ -15,7 +15,7 @@
             </div>
           {% endfor %}
         {% else %}
-          <div class="no-image">
+          <div>
             <a href="{{ product.url }}">
               <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
             </a>
