@@ -700,13 +700,13 @@ ul {
   position: relative;
 }
 
-.mission-section::before {
+.mission-section:before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  width: 440px;
-  height: 318px;
+  top: -424px;
+  width: 680px;
+  height: 528px;
   background-image: url(/cdn/shop/files/shap2.png?v=1756129147);
   background-position: top left;
   background-repeat: no-repeat;
