@@ -602,18 +602,6 @@ ul {
     padding-bottom: 42px;
 }
 
-.mission h2,
-.mission p,
-.vision h2,
-.vision p,
-.team-member h3,
-.team-member p,
-.faq-item button,
-.faq-item div {
-  display: block !important;
-  opacity: 1 !important;
-}
-
 
 /*----- FAQ CSS -----*/
 
