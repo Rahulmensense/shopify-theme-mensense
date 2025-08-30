@@ -637,6 +637,8 @@ ul {
 
 .brand-story-area .promise-content {
     padding-top: 85px;
+    position: relative;
+    z-index: 9;
 }
 
 .brand-story-area .promise-content h4 {
@@ -656,6 +658,8 @@ ul {
 .brand-story-text {
   display: flex;
   gap: 100px;
+  position: relative;
+  z-index: 1;
 }
 
 .brand-story-text .about-content {
@@ -664,6 +668,7 @@ ul {
 
 .brand-story-text .brand-story-right-img {
   width: 46%;
+  margin-top: -225px;
 }
 
 
