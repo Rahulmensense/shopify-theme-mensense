@@ -725,6 +725,8 @@ ul {
 
 .vision-text {
   margin-right: -70px;
+  margin-left: 0px;
+  position: relative;
 }
 
 .mission-text h2 {
