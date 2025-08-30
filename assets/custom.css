@@ -732,7 +732,7 @@ ul {
     margin-top: 20px;
 }
 
-.mission-text p {
+.row-are .mission-text .section-heading p {
   color: #000;
   font-weight: 500;
   line-height: 1.6;
