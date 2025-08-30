@@ -568,7 +568,9 @@ ul {
 
 
 /*----- ABOUT CSS START -----*/
-
+.about-wrapper h1 {
+  display: none !important;
+}
 
 .about-area-bg {
   width: 100%;
