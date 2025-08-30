@@ -1,6 +1,52 @@
 <section class="product-grid-section">
-  <div class="container">
+  <style>
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .buy-now-btn {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+    .product-card:hover .buy-now-btn {
+      opacity: 1;
+    }
+    .product-image-slider {
+      position: relative;
+      display: block;
+      height: 300px;
+      overflow: hidden;
+    }
+    .product-image-slider img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .product-image-slider img.is-active {
+      opacity: 1;
+      z-index: 1;
+    }
+  </style>
 
+  <div class="container">
     {% assign current_sort = collection.sort_by | default: collection.default_sort_by %}
 
     <div class="sort-bar">
@@ -19,100 +65,84 @@
       </select>
     </div>
 
-    <div class="product-grid">
-      {% for product in collection.products %}
-        <div class="product-card">
-          <a href="{{ product.url }}" class="product-image-slider" data-index="0">
-            {% assign images = product.images | slice: 0, section.settings.slider_image_limit %}
-            {% if images.size > 0 %}
-              {% for image in images %}
-                <img
-                  src="{{ image | image_url: width: 600 }}"
-                  alt="{{ product.title | escape }}"
-                  loading="lazy"
-                  class="slide{% if forloop.first %} is-active{% endif %}">
-              {% endfor %}
-            {% else %}
-              <div class="no-image">{{ 'products.product.image_not_available' | t }}</div>
-            {% endif %}
-          </a>
+    {% paginate collection.products by section.settings.products_per_page %}
+      <div class="product-grid">
+        {% for product in paginate.items %}
+          {% for i in (1..2) %}
+          <div class="product-card">
+            <a href="{{ product.url }}" class="product-image-slider" data-index="0">
+              {% assign images = product.images | slice: 0, section.settings.slider_image_limit %}
+              {% if images.size > 0 %}
+                {% for image in images %}
+                  <img
+                    src="{{ image | image_url: width: 600 }}"
+                    alt="{{ product.title | escape }}"
+                    loading="lazy"
+                    class="slide{% if forloop.first %} is-active{% endif %}">
+                {% endfor %}
+              {% else %}
+                <div class="no-image">{{ 'products.product.image_not_available' | t }}</div>
+              {% endif %}
+            </a>
 
-          <h3 class="product-title">
-            <a href="{{ product.url }}">{{ product.title }}</a>
-          </h3>
+            <h3 class="product-title">
+              <a href="{{ product.url }}">{{ product.title }}</a>
+            </h3>
 
-          <div class="price">
-            {% if product.compare_at_price_max > product.price %}
-              <span class="current">{{ product.price | money }}</span>
-              <span class="compare">{{ product.compare_at_price_max | money }}</span>
-            {% else %}
-              <span class="current">{{ product.price | money }}</span>
+            <div class="price">
+              {% if product.compare_at_price_max > product.price %}
+                <span class="current">{{ product.price | money }}</span>
+                <span class="compare">{{ product.compare_at_price_max | money }}</span>
+              {% else %}
+                <span class="current">{{ product.price | money }}</span>
+              {% endif %}
+            </div>
+
+            <button class="buy-now-btn" onclick="location.href='{{ product.url }}'">Buy Now</button>
+
+            {% if section.settings.show_quick_add and product.available %}
+              <form method="post" action="/cart/add" class="quick-add">
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                <button type="submit" class="btn">Add to cart</button>
+              </form>
             {% endif %}
           </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
 
-          {% if section.settings.show_quick_add and product.available %}
-            <form method="post" action="/cart/add" class="quick-add">
-              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-              <button type="submit" class="btn">Add to cart</button>
-            </form>
+      {% if paginate.pages > 1 %}
+        <nav class="pagination-links" role="navigation" aria-label="Pagination">
+          {% if paginate.previous %}
+            <a href="{{ paginate.previous.url }}" class="prev">Previous</a>
           {% endif %}
-        </div>
-      {% endfor %}
-    </div>
-
+          {% for part in paginate.parts %}
+            {% if part.is_link %}
+              <a href="{{ part.url }}">{{ part.title }}</a>
+            {% else %}
+              <span class="current">{{ part.title }}</span>
+            {% endif %}
+          {% endfor %}
+          {% if paginate.next %}
+            <a href="{{ paginate.next.url }}" class="next">Next</a>
+          {% endif %}
+        </nav>
+      {% endif %}
+    {% endpaginate %}
   </div>
 
   <script>
-    document.currentScript.closest('.product-grid-section')
-      .querySelectorAll('.product-image-slider').forEach(function(wrapper){
-        const slides = wrapper.querySelectorAll('.slide');
-        if (slides.length < 2) return;
-        wrapper.addEventListener('click', function(e){
-          e.preventDefault();
-          let i = parseInt(wrapper.dataset.index || '0', 10);
-          slides[i].classList.remove('is-active');
-          i = (i + 1) % slides.length;
-          slides[i].classList.add('is-active');
-          wrapper.dataset.index = i;
-        });
+    document.querySelectorAll('.product-image-slider').forEach(function(wrapper){
+      const slides = wrapper.querySelectorAll('.slide');
+      if (slides.length < 2) return;
+      wrapper.addEventListener('click', function(e){
+        e.preventDefault();
+        let i = parseInt(wrapper.dataset.index || '0', 10);
+        slides[i].classList.remove('is-active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('is-active');
+        wrapper.dataset.index = i;
       });
+    });
   </script>
 </section>
-
-{% schema %}
-{
-  "name": "Product Grid",
-  "settings": [
-    {
-      "type": "range",
-      "id": "products_per_page",
-      "label": "Products per page",
-      "min": 4,
-      "max": 48,
-      "step": 4,
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "slider_image_limit",
-      "label": "Images per product (slider)",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "default": 3
-    },
-    {
-      "type": "checkbox",
-      "id": "show_quick_add",
-      "label": "Show quick add button",
-      "default": false
-    }
-  ],
-  "presets": [
-    {
-      "name": "Product Grid",
-      "category": "Collection"
-    }
-  ]
-}
-{% endschema %}
