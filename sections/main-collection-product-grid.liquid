@@ -68,7 +68,6 @@
     {% paginate collection.products by section.settings.products_per_page %}
       <div class="product-grid">
         {% for product in paginate.items %}
-          {% for i in (1..2) %}
           <div class="product-card">
             <a href="{{ product.url }}" class="product-image-slider" data-index="0">
               {% assign images = product.images | slice: 0, section.settings.slider_image_limit %}
@@ -107,7 +106,6 @@
               </form>
             {% endif %}
           </div>
-          {% endfor %}
         {% endfor %}
       </div>
 
