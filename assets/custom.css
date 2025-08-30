@@ -792,7 +792,18 @@ ul {
   background-size: 100% auto;
   margin: 24px 0 32px; 
 }
-.all-products-hero .title { margin-bottom: 8px; }
+
+.all-products-hero .title { 
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 117px;
+  line-height: 136px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  text-transform: capitalize;
+  color: #F1F0EC;
+}
 .hero-image img { width: 100%; height: auto; display: block; }
 
 .sort-bar { display:flex; gap:10px; align-items:center; margin: 16px 0 20px; }
