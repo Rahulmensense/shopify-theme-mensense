@@ -604,9 +604,8 @@ ul {
 
 .brand-story-area {
   position: relative;
-  padding-top: 0px;
+  padding-top: 60px;
   background: #F1F0EC;
-  padding-bottom: 60px;
 }
 
 .brand-story-area:before {
@@ -636,7 +635,6 @@ ul {
 }
 
 .brand-story-area .promise-content {
-  padding-top: 85px;
   position: relative;
   z-index: 7;
 }
