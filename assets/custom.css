@@ -602,6 +602,13 @@ ul {
     padding-bottom: 42px;
 }
 
+.brand-story-area {
+  position: relative;
+  padding-top: 120px;
+  background: #F1F0EC;
+  padding-bottom: 60px;
+}
+
 
 /*----- FAQ CSS -----*/
 
