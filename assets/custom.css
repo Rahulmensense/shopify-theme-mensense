@@ -579,11 +579,15 @@ ul {
   background-repeat: no-repeat;
 }
 
+.banner-about-img {
+  margin-left: -100px;
+}
+
 .page-header-content h1.title {
   font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 800;
-  font-size: 65px;
+  font-size: 85px;
   background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -595,11 +599,11 @@ ul {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 43px;
   line-height: normal;
   text-transform: lowercase;
   color: #11182b;
-  padding-bottom: 42px;
+  padding-bottom: 92px;
 }
 
 .brand-story-area {
