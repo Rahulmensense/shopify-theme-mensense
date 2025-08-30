@@ -723,6 +723,10 @@ ul {
   margin-top: 151px;
 }
 
+.vision-text {
+  margin-right: -70px;
+}
+
 .mission-text h2 {
     font-size: 52px;
     text-align: center;
