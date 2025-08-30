@@ -683,7 +683,10 @@ ul {
   line-height: 32px;
   font-family: Nunito Sans;
 }
-
+.row-are {
+  display: flex;
+  margin-bottom: 80px;
+}
 
 .mission-section {
   display: flex;
@@ -697,6 +700,8 @@ ul {
 .mission-image {
   flex: 1;
   min-width: 300px;
+  margin-top: 30px;
+  padding-bottom: 55px;
 }
 
 .mission-image img {
@@ -711,7 +716,9 @@ ul {
   background: #f2f6fb;
   padding: 40px;
   border-radius: 10px;
-  min-width: 300px;
+  min-width: 200px;
+  margin-left: -70px;
+  margin-top: 151px;
 }
 
 .mission-text h2 {
