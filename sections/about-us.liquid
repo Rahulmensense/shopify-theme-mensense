@@ -23,6 +23,34 @@
   </section>
 {% endif %}
 
+{% if section.settings.show_brand_story %}
+  <section class="brand-story-area">
+    <div class="row justify-content-center promise-area text-center">
+      <div class="col-12 col-lg-5 col-xl-5 col-md-12 mb-4">
+        <div class="promise-content">
+          <div class="section-heading mb-40">
+            <h2>Brand Story</h2>
+            <h4 class="sub-title">We’re Men. And We Care.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-brand-area-left-auto">
+      <div class="brand-story-text">
+        <div class="about-content">
+          <div class="section-heading mb-40">
+            <h3>Just Like You.</h3>
+            <p class="mt-20">Hey, we’re just like you — men who never gave skincare a second thought until one day, it started to show. Tired eyes. Dry skin. Razor burns that felt like battles lost. Back in 2012, our founder stood in the grooming aisle, overwhelmed by labels that promised too much and delivered too little. Shelves full of floral-scented creams and 12-step routines… for women. But for men? A lonely face wash and maybe an all-in-one that smelt like dish soap. That’s when a thought hit — why should skincare feel like a chore for men? Why can’t it be smart, no-fuss, and actually made for our skin? The first step was C-mens — a humble experiment that opened the door. The response? Encouraging. But we knew men deserved more than a line of products. They deserved a brand that truly understood their lifestyle, their skin, and their silence. And so, Mensense was born. We created a skincare system that’s direct, effective, and designed to work harder, not longer. No 20-minute routines. Just real results, backed by science and sensibility. Because let’s face it — we don’t want clutter. We want confidence.</p>
+          </div>
+        </div>
+        <div class="brand-story-right-img">
+          <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/about-brand-right1.png?v=1756539574" alt="brand story">
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
 <div class="about-wrapper container">
   {% if section.settings.heading != blank %}
     <h1>{{ section.settings.heading }}</h1>
