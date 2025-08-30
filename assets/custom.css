@@ -622,17 +622,29 @@ ul {
   background-size: 100% auto;
 }
 
-.brand-story-area::after {
-  content: "";
-  width: 440px;
-  height: 318px;
-  top: 0;
-  right: 0;
-  position: absolute;
-  background-image: url(https://cdn.shopify.com/s/files/1/0949/0975/9774/files/about-brand-right-shap1.png?v=1756538185);
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+.brand-story-area:after {
+    content: "";
+    width: 1660px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-image: url(/cdn/shop/files/about-brand-right-shap1.png?v=1756538185);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.brand-story-area .promise-content {
+    padding-top: 260px;
+}
+
+.brand-story-area .promise-content h4 {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 130.009px;
+  color: #000000;
 }
 
 
