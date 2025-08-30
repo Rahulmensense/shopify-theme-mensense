@@ -640,11 +640,12 @@ ul {
 }
 
 .brand-story-area .promise-content h4 {
-  font-family: 'Nunito Sans';
+  font-family: Nunito Sans;
   font-style: normal;
   font-weight: 400;
-  font-size: 130.009px;
-  color: #000000;
+  font-size: 100px;
+  color: #000;
+  margin-top: 35px;
 }
 
 
