@@ -784,44 +784,34 @@ ul {
 }
 
 
-/*----- All Products Page CSS -----*/
-.sort-bar {
-  margin-bottom: 20px;
-}
-.sort-bar select {
-  padding: 8px;
-  font-size: 14px;
-}
+/* ---- All Products Page CSS ---- */
+.all-products-hero { margin: 24px 0 32px; }
+.all-products-hero .title { margin-bottom: 8px; }
+.hero-image img { width: 100%; height: auto; display: block; }
+
+.sort-bar { display:flex; gap:10px; align-items:center; margin: 16px 0 20px; }
+.sort-bar select { padding: 8px 10px; font-size: 14px; }
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
-.product-card {
-  border: 1px solid #eee;
-  padding: 10px;
-  text-align: center;
+.product-card { text-align: center; }
+.product-title { font-size: 15px; margin: 8px 0; }
+.price { display:flex; gap:8px; justify-content:center; align-items:center; }
+.price .compare { color:#999; text-decoration: line-through; }
+
+.product-image-slider { display:block; position:relative; overflow:hidden; }
+.product-image-slider img { width:100%; height:auto; opacity:0; transition:opacity .2s ease; position:absolute; top:0; left:0; }
+.product-image-slider img.is-active { opacity:1; position:relative; }
+
+.pagination-links { margin-top: 22px; text-align: center; display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+.pagination-links a, .pagination-links .current {
+  padding: 6px 12px; border:1px solid #ddd; color:#333; text-decoration:none; border-radius:4px;
 }
-.product-image-slider img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-.pagination-links {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
-}
-.pagination-links a,
-.pagination-links span {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-}
-.pagination-links .current {
-  background-color: #000;
-  color: #fff;
-}
+.pagination-links .current { background:#000; color:#fff; border-color:#000; }
+
 
 
 /*----- FAQ CSS -----*/
