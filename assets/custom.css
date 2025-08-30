@@ -697,6 +697,20 @@ ul {
   flex-wrap: wrap;
   margin-top: -30px;
   background: #F1F0EC;
+  position: relative;
+}
+
+.mission-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 440px;
+  height: 318px;
+  background-image: url(/cdn/shop/files/shap2.png?v=1756129147);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .mission-image {
