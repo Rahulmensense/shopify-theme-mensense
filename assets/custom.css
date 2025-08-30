@@ -785,7 +785,13 @@ ul {
 
 
 /* ---- All Products Page CSS ---- */
-.all-products-hero { margin: 24px 0 32px; }
+.all-products-hero { 
+  background-image: url(https://cdn.shopify.com/s/files/1/0949/0975/9774/files/Group_469595.jpg?v=1756577304);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin: 24px 0 32px; 
+}
 .all-products-hero .title { margin-bottom: 8px; }
 .hero-image img { width: 100%; height: auto; display: block; }
 
