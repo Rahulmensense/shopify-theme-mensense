@@ -4,7 +4,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6 col-12 col-md-5">
           <div class="banner-about-img">
-            <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/about-banner-img.png?v=1756464259" alt="About Image">
+            <img src="{{ section.settings.banner_image | image_url }}" alt="About Image">
           </div>
         </div>
         <div class="col-lg-6 col-12 col-md-7">
@@ -61,42 +61,25 @@
   </section>
 {% endif %}
 
-{% if section.settings.vision_mission %}
+{% if section.settings.show_vision_mission %}
   <section class="mission-section">
     <div class="container">
       <div class="row-are">
-        <!-- Left Image -->
         <div class="mission-image">
           <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/mission-img.jpg?v=1756550839" alt="Skincare Dropper">
         </div>
-
-        <!-- Right Text -->
         <div class="mission-text">
           <h2>Our Mission</h2>
-          <p>
-            Back in 2012, men’s skincare in India was an afterthought. Our founder saw the gap and built C-mens — 
-            a brand that started the conversation. Mensense takes it further, with superior ingredients, 
-            international standards, and a sharp focus on what men actually need.
-          </p>
-          <p>
-            We’re here to make skincare simple, effective, and unapologetically masculine.
-          </p>
+          <p>Back in 2012, men’s skincare in India was an afterthought. Our founder saw the gap and built C-mens — a brand that started the conversation. Mensense takes it further, with superior ingredients, international standards, and a sharp focus on what men actually need.</p>
+          <p>We’re here to make skincare simple, effective, and unapologetically masculine.</p>
         </div>
       </div>
       <div class="row-are">
-        <!-- Left Text -->
         <div class="mission-text">
           <h2>Our Vision</h2>
-          <p>
-            Back in 2012, men’s skincare in India was an afterthought. Our founder saw the gap and built C-mens — 
-            a brand that started the conversation. Mensense takes it further, with superior ingredients, 
-            international standards, and a sharp focus on what men actually need.
-          </p>
-          <p>
-            We’re here to make skincare simple, effective, and unapologetically masculine.
-          </p>
+          <p>Back in 2012, men’s skincare in India was an afterthought. Our founder saw the gap and built C-mens — a brand that started the conversation. Mensense takes it further, with superior ingredients, international standards, and a sharp focus on what men actually need.</p>
+          <p>We’re here to make skincare simple, effective, and unapologetically masculine.</p>
         </div>
-        <!-- Right Image -->
         <div class="mission-image">
           <img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/vision-img.jpg?v=1756550839" alt="Skincare Dropper">
         </div>
@@ -228,5 +211,3 @@
   ]
 }
 {% endschema %}
-
-
