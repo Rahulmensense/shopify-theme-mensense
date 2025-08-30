@@ -811,14 +811,18 @@ ul {
 }
 
 .hero-copy p {
-  font-family: 'Nunito Sans';
+  font-family: Nunito Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
   line-height: 31px;
   text-align: center;
   text-transform: capitalize;
-  color: #F1F0EC;
+  color: #f1f0ec;
+  width: 41%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 45px;
 }
 
 .hero-image img { width: 100%; height: auto; display: block; }
