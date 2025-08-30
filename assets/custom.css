@@ -757,22 +757,16 @@ ul {
 }
 
 .social-icons {
-    text-align: center;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .social-icons span {
-    display: block;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    font-family: Nunito Sans;
-    margin-top: 10px;
-    margin-bottom: 0;
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: Nunito Sans;
 }
 
 .social-icons a {
