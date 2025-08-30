@@ -9,12 +9,6 @@
  */
 {
   "sections": {
-    "about-us": {
-      "type": "about-us",
-      "settings": {
-        "heading": "About Us"
-      }
-    },
     "about_us_RxxHtD": {
       "type": "about-us",
       "blocks": {
@@ -60,7 +54,6 @@
     }
   },
   "order": [
-    "about-us",
     "about_us_RxxHtD"
   ]
 }
