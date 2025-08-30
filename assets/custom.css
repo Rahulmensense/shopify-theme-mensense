@@ -725,7 +725,7 @@ ul {
 .footer-links h4 {
   color: #fff;
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 600;
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -757,8 +757,11 @@ ul {
 }
 
 .social-icons {
-  text-align: center;
-  margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .social-icons span {
@@ -766,6 +769,8 @@ ul {
     color: #fff;
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 5px;
+    margin-top: 10px;
     margin-bottom: 0;
     margin-right: 24px;
     font-family: Nunito Sans;
