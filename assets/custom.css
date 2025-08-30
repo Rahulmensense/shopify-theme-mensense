@@ -778,11 +778,14 @@ ul {
 
 /*----- FAQ CSS -----*/
 
+.faq-are {
+  background: #f1f0ec;
+}
+
 .ms-faq {
   max-width: 800px;
   margin: 0 auto;
   padding: 40px 20px;
-  background: #f1f0ec;
 }
 
 .faq .section-heading h2 {
