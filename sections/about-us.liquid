@@ -1,3 +1,28 @@
+{% if section.settings.show_banner %}
+  <section class="page-header about-area-bg">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-12 col-md-5">
+          <div class="banner-about-img">
+            <img src="{{ section.settings.banner_image | image_url }}" alt="About Image">
+          </div>
+        </div>
+        <div class="col-lg-6 col-12 col-md-7">
+          <div class="page-header-content">
+            <h1 class="title">{{ section.settings.banner_heading }}</h1>
+            <h4 class="sub-title">{{ section.settings.banner_subheading }}</h4>
+            <div class="hero-btn-wrap">
+              <a href="{{ section.settings.banner_button_link }}" class="ed-primary-btn">
+                {{ section.settings.banner_button_text }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
 <div class="about-wrapper container">
   {% if section.settings.heading != blank %}
     <h1>{{ section.settings.heading }}</h1>
@@ -41,6 +66,36 @@
 {
   "name": "About Us Full Page",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "Show Banner Section",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_heading",
+      "label": "Banner Heading",
+      "default": "About Us"
+    },
+    {
+      "type": "text",
+      "id": "banner_subheading",
+      "label": "Banner Subheading",
+      "default": "Men needs skincare too"
+    },
+    {
+      "type": "text",
+      "id": "banner_button_text",
+      "label": "Button Text",
+      "default": "Shop"
+    },
+
     {
       "type": "text",
       "id": "heading",
@@ -93,6 +148,7 @@
   "presets": [
     {
       "name": "About Us Full Page",
+   
       "blocks": [
         { "type": "mission", "settings": { "title": "Our Mission", "description": "To empower men with skincare." } },
         { "type": "vision", "settings": { "title": "Our Vision", "description": "Normalize self-care for men." } },
