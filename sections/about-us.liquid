@@ -105,45 +105,6 @@
   </section>
 {% endif %}
 
-<div class="about-wrapper container">
-  {% if section.settings.heading != blank %}
-    <h1>{{ section.settings.heading }}</h1>
-  {% endif %}
-
-  {% for block in section.blocks %}
-    {% case block.type %}
-      {% when 'mission' %}
-        <div class="mission">
-          <h2>{{ block.settings.title }}</h2>
-          <p>{{ block.settings.description }}</p>
-        </div>
-
-      {% when 'vision' %}
-        <div class="vision">
-          <h2>{{ block.settings.title }}</h2>
-          <p>{{ block.settings.description }}</p>
-        </div>
-
-      {% when 'team' %}
-        <div class="team-member">
-          <h3>{{ block.settings.name }}</h3>
-          <p>{{ block.settings.role }}</p>
-        </div>
-
-      {% when 'faq' %}
-        <div class="faq-item">
-          <button>{{ block.settings.question }}</button>
-          <div>{{ block.settings.answer }}</div>
-        </div>
-
-      {% when 'image' %}
-        <div class="about-image">
-          <img src="{{ block.settings.image | image_url }}" alt="About Image">
-        </div>
-    {% endcase %}
-  {% endfor %}
-</div>
-
 {% schema %}
 {
   "name": "About Us Full Page",
