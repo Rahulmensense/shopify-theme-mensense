@@ -685,6 +685,61 @@ ul {
 }
 
 
+.mission-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+}
+
+.mission-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mission-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.mission-text {
+  flex: 1;
+  background: #f2f6fb;
+  padding: 40px;
+  border-radius: 10px;
+  min-width: 300px;
+}
+
+.mission-text h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mission-text p {
+  color: #000;
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mission-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .mission-text {
+    padding: 30px;
+  }
+}
+
+
 /*----- FAQ CSS -----*/
 
 .ms-faq {
