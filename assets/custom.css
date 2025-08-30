@@ -693,8 +693,9 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 60px 10%;
+  padding: 0;
   flex-wrap: wrap;
+  background: #F1F0EC;
 }
 
 .mission-image {
