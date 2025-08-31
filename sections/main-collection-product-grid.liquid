@@ -108,14 +108,40 @@
       color: #fff;
       border-radius: 4px;
     }
-
-    .product-image-slider .slick-arrow {
+    
+/* Slick arrows default hidden */
+.product-image-slider .slick-arrow {
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 4;
 }
 
+/* Show arrows on hover */
 .product-card:hover .slick-arrow {
   opacity: 1;
+}
+
+/* Position arrows */
+.product-image-slider .slick-prev,
+.product-image-slider .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.product-image-slider .slick-prev {
+  left: 10px;
+}
+
+.product-image-slider .slick-next {
+  right: 10px;
 }
 
   </style>
