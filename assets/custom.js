@@ -12,6 +12,16 @@ window.addEventListener("load", function () {
   }
 });
 
+document.addEventListener('shopify:section:load', function(e) {
+  $(e.target).find('.product-image-slider').not('.slick-initialized').slick({
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: true
+  });
+});
 
 
 
