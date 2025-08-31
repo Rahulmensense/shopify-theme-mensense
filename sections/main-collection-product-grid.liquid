@@ -19,15 +19,51 @@
       position: relative;
       overflow: hidden;
       transition: transform 0.3s ease;
+      padding-bottom: 20px;
     }
     .product-card:hover {
       transform: translateY(-5px);
     }
-    .buy-now-btn {
+    .discount-label {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: red;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: bold;
+      z-index: 3;
+    }
+    .image-count-badge {
       position: absolute;
       bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 2px 6px;
+      font-size: 12px;
+      border-radius: 4px;
+    }
+    .product-image-slider img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .rating {
+      margin-top: 6px;
+      font-size: 14px;
+      color: #f5a623;
+    }
+    .reviews {
+      margin-left: 6px;
+      color: #555;
+    }
+    .quick-buy-btn {
+      position: absolute;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       background: #000;
       color: #fff;
       padding: 8px 16px;
@@ -36,13 +72,8 @@
       transition: opacity 0.3s ease;
       z-index: 2;
     }
-    .product-card:hover .buy-now-btn {
+    .product-card:hover .quick-buy-btn {
       opacity: 1;
-    }
-    .product-image-slider img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
     }
     .price {
       margin-top: 8px;
@@ -58,6 +89,25 @@
       align-items: center;
       gap: 8px;
     }
+    .pagination {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .pagination a {
+      margin: 0 6px;
+      padding: 6px 12px;
+      background: #eee;
+      color: #333;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .pagination .current {
+      margin: 0 6px;
+      padding: 6px 12px;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+    }
   </style>
 
   <div class="container">
@@ -70,21 +120,23 @@
         {% assign base_url = collection.url %}
         <option data-url="{{ base_url }}?sort_by=featured" {% if current_sort == 'featured' %}selected{% endif %}>Featured</option>
         <option data-url="{{ base_url }}?sort_by=best-selling" {% if current_sort == 'best-selling' %}selected{% endif %}>Best selling</option>
-        <option data-url="{{ base_url }}?sort_by=title-ascending" {% if current_sort == 'title-ascending' %}selected{% endif %}>Alphabetically, A-Z</option>
-        <option data-url="{{ base_url }}?sort_by=title-descending" {% if current_sort == 'title-descending' %}selected{% endif %}>Alphabetically, Z-A</option>
-        <option data-url="{{ base_url }}?sort_by=price-ascending" {% if current_sort == 'price-ascending' %}selected{% endif %}>Price, low to high</option>
-        <option data-url="{{ base_url }}?sort_by=price-descending" {% if current_sort == 'price-descending' %}selected{% endif %}>Price, high to low</option>
-        <option data-url="{{ base_url }}?sort_by=created-ascending" {% if current_sort == 'created-ascending' %}selected{% endif %}>Date, old to new</option>
-        <option data-url="{{ base_url }}?sort_by=created-descending" {% if current_sort == 'created-descending' %}selected{% endif %}>Date, new to old</option>
+        <option data-url="{{ base_url }}?sort_by=title-ascending" {% if current_sort == 'title-ascending' %}selected{% endif %}>A-Z</option>
+        <option data-url="{{ base_url }}?sort_by=title-descending" {% if current_sort == 'title-descending' %}selected{% endif %}>Z-A</option>
+        <option data-url="{{ base_url }}?sort_by=price-ascending" {% if current_sort == 'price-ascending' %}selected{% endif %}>Low to High</option>
+        <option data-url="{{ base_url }}?sort_by=price-descending" {% if current_sort == 'price-descending' %}selected{% endif %}>High to Low</option>
+        <option data-url="{{ base_url }}?sort_by=created-ascending" {% if current_sort == 'created-ascending' %}selected{% endif %}>Old to New</option>
+        <option data-url="{{ base_url }}?sort_by=created-descending" {% if current_sort == 'created-descending' %}selected{% endif %}>New to Old</option>
       </select>
     </div>
 
-    <div class="product-grid">
-      {% for product in collection.products %}
-        <div class="product-card">
-          <div class="product-image-slider">
-            {% assign images = product.images | slice: 0, section.settings.slider_image_limit %}
-            {% if images.size > 0 %}
+    {% paginate collection.products by section.settings.products_per_page %}
+      <div class="product-grid">
+        {% for product in collection.products %}
+          <div class="product-card">
+            <div class="discount-label">30% OFF</div>
+
+            <div class="product-image-slider">
+              {% assign images = product.images | slice: 0, section.settings.slider_image_limit %}
               {% for image in images %}
                 <div>
                   <a href="{{ product.url }}">
@@ -92,41 +144,61 @@
                   </a>
                 </div>
               {% endfor %}
-            {% else %}
-              <div>
-                <a href="{{ product.url }}">
-                  <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
-                </a>
-              </div>
+              {% if product.images.size > section.settings.slider_image_limit %}
+                <div class="image-count-badge">+{{ product.images.size | minus: section.settings.slider_image_limit }} more</div>
+              {% endif %}
+            </div>
+
+            <h3 class="product-title">
+              <a href="{{ product.url }}">{{ product.title }}</a>
+            </h3>
+
+            <div class="rating">
+              ⭐⭐⭐⭐⭐ <span class="reviews">(12 Reviews)</span>
+            </div>
+
+            <div class="price">
+              {% if product.compare_at_price_max > product.price %}
+                <span class="current">{{ product.price | money }}</span>
+                <span class="compare">{{ product.compare_at_price_max | money }}</span>
+              {% else %}
+                <span class="current">{{ product.price | money }}</span>
+              {% endif %}
+            </div>
+
+            {% if section.settings.show_quick_add and product.available %}
+              <form method="post" action="/cart/add" class="quick-add">
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                <button type="submit" class="btn">Add to cart</button>
+              </form>
             {% endif %}
+
+            <button class="quick-buy-btn" onclick="location.href='{{ product.url }}'">Quick Buy</button>
           </div>
+        {% endfor %}
+      </div>
 
-          <h3 class="product-title">
-            <a href="{{ product.url }}">{{ product.title }}</a>
-          </h3>
-
-          <div class="price">
-            {% if product.compare_at_price_max > product.price %}
-              <span class="current">{{ product.price | money }}</span>
-              <span class="compare">{{ product.compare_at_price_max | money }}</span>
-            {% else %}
-              <span class="current">{{ product.price | money }}</span>
+      <div class="pagination">
+        {% if paginate.pages > 1 %}
+          <nav>
+            {% if paginate.previous %}
+              <a href="{{ paginate.previous.url }}">Previous</a>
             {% endif %}
-          </div>
-
-          {% if section.settings.show_quick_add and product.available %}
-            <form method="post" action="/cart/add" class="quick-add">
-              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-              <button type="submit" class="btn">Add to cart</button>
-            </form>
-          {% endif %}
-
-          <button class="buy-now-btn" onclick="location.href='{{ product.url }}'">Buy Now</button>
-        </div>
-      {% endfor %}
-    </div>
+            {% for part in paginate.parts %}
+              {% if part.is_link %}
+                <a href="{{ part.url }}">{{ part.title }}</a>
+              {% else %}
+                <span class="current">{{ part.title }}</span>
+              {% endif %}
+            {% endfor %}
+            {% if paginate.next %}
+              <a href="{{ paginate.next.url }}">Next</a>
+            {% endif %}
+          </nav>
+        {% endif %}
+      </div>
+    {% endpaginate %}
   </div>
-
 </section>
 
 {% schema %}
@@ -140,7 +212,7 @@
       "min": 4,
       "max": 48,
       "step": 4,
-      "default": 12
+      "default": 8
     },
     {
       "type": "range",
@@ -155,7 +227,7 @@
       "type": "checkbox",
       "id": "show_quick_add",
       "label": "Show quick add button",
-      "default": false
+      "default": true
     }
   ],
   "presets": [
