@@ -1,75 +1,168 @@
-{% paginate collection.products by section.settings.products_per_page %}
-  <div class="product-grid">
-    {% for product in paginate.items %}
-      <div class="product-card">
-        <div class="product-image-slider">
-          <div><img src="..." /></div>
-          <div><img src="..." /></div>
-        </div>
+<section class="product-grid-section">
+  <style>
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    @media (max-width: 1024px) {
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .buy-now-btn {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+    .product-card:hover .buy-now-btn {
+      opacity: 1;
+    }
+    .product-image-slider img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .price {
+      margin-top: 8px;
+    }
+    .price .compare {
+      margin-left: 8px;
+      color: #888;
+      text-decoration: line-through;
+    }
+    .sort-bar {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
 
+  <div class="container">
+    {% assign current_sort = collection.sort_by | default: collection.default_sort_by %}
 
-        <h3 class="product-title">
-          <a href="{{ product.url }}">{{ product.title }}</a>
-        </h3>
+    <div class="sort-bar">
+      <label for="sort-by">Sort</label>
+      <select id="sort-by" name="sort-by"
+        onchange="location.href=this.options[this.selectedIndex].dataset.url">
+        {% assign base_url = collection.url %}
+        <option data-url="{{ base_url }}?sort_by=featured" {% if current_sort == 'featured' %}selected{% endif %}>Featured</option>
+        <option data-url="{{ base_url }}?sort_by=best-selling" {% if current_sort == 'best-selling' %}selected{% endif %}>Best selling</option>
+        <option data-url="{{ base_url }}?sort_by=title-ascending" {% if current_sort == 'title-ascending' %}selected{% endif %}>Alphabetically, A-Z</option>
+        <option data-url="{{ base_url }}?sort_by=title-descending" {% if current_sort == 'title-descending' %}selected{% endif %}>Alphabetically, Z-A</option>
+        <option data-url="{{ base_url }}?sort_by=price-ascending" {% if current_sort == 'price-ascending' %}selected{% endif %}>Price, low to high</option>
+        <option data-url="{{ base_url }}?sort_by=price-descending" {% if current_sort == 'price-descending' %}selected{% endif %}>Price, high to low</option>
+        <option data-url="{{ base_url }}?sort_by=created-ascending" {% if current_sort == 'created-ascending' %}selected{% endif %}>Date, old to new</option>
+        <option data-url="{{ base_url }}?sort_by=created-descending" {% if current_sort == 'created-descending' %}selected{% endif %}>Date, new to old</option>
+      </select>
+    </div>
 
-        <div class="price">
-          {% if product.compare_at_price_max > product.price %}
-            <span class="current">{{ product.price | money }}</span>
-            <span class="compare">{{ product.compare_at_price_max | money }}</span>
-          {% else %}
-            <span class="current">{{ product.price | money }}</span>
+    <div class="product-grid">
+      {% for product in collection.products %}
+        <div class="product-card">
+          <div class="product-image-slider">
+            {% assign images = product.images | slice: 0, section.settings.slider_image_limit %}
+            {% if images.size > 0 %}
+              {% for image in images %}
+                <div>
+                  <a href="{{ product.url }}">
+                    <img src="{{ image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
+                  </a>
+                </div>
+              {% endfor %}
+            {% else %}
+              <div>
+                <a href="{{ product.url }}">
+                  <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
+                </a>
+              </div>
+            {% endif %}
+          </div>
+
+          <h3 class="product-title">
+            <a href="{{ product.url }}">{{ product.title }}</a>
+          </h3>
+
+          <div class="price">
+            {% if product.compare_at_price_max > product.price %}
+              <span class="current">{{ product.price | money }}</span>
+              <span class="compare">{{ product.compare_at_price_max | money }}</span>
+            {% else %}
+              <span class="current">{{ product.price | money }}</span>
+            {% endif %}
+          </div>
+
+          {% if section.settings.show_quick_add and product.available %}
+            <form method="post" action="/cart/add" class="quick-add">
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+              <button type="submit" class="btn">Add to cart</button>
+            </form>
           {% endif %}
+
+          <button class="buy-now-btn" onclick="location.href='{{ product.url }}'">Buy Now</button>
         </div>
-
-        {% if section.settings.show_quick_add and product.available %}
-          <form method="post" action="/cart/add" class="quick-add">
-            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-            <button type="submit" class="btn">Add to cart</button>
-          </form>
-        {% endif %}
-
-        <button class="buy-now-btn" onclick="location.href='{{ product.url }}'">Buy Now</button>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 
-  {% if paginate.pages > 1 %}
-    <nav class="pagination-links" role="navigation" aria-label="Pagination" style="margin-top:16px; display:flex; gap:8px; align-items:center;">
-      {% if paginate.previous %}<a href="{{ paginate.previous.url }}" class="prev">Previous</a>{% endif %}
-      {% for part in paginate.parts %}
-        {% if part.is_link %}<a href="{{ part.url }}">{{ part.title }}</a>{% else %}<span class="current">{{ part.title }}</span>{% endif %}
-      {% endfor %}
-      {% if paginate.next %}<a href="{{ paginate.next.url }}" class="next">Next</a>{% endif %}
-    </nav>
-  {% endif %}
-{% endpaginate %}
+</section>
 
-
-<script>
-  function initSlickSlider(scope) {
-    const sliders = (scope || document).querySelectorAll('.product-image-slider');
-    sliders.forEach(function(slider) {
-      if (!slider.classList.contains('slick-initialized')) {
-        $(slider).slick({
-          dots: true,
-          arrows: true,
-          infinite: true,
-          speed: 300,
-          slidesToShow: 1,
-          adaptiveHeight: true
-        });
-      }
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(() => initSlickSlider(), 500);
-  });
-
-  document.addEventListener("shopify:section:load", function(e) {
-    setTimeout(() => initSlickSlider(e.target), 500);
-  });
-</script>
-
-
-
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Products per page",
+      "min": 4,
+      "max": 48,
+      "step": 4,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "slider_image_limit",
+      "label": "Images per product (slider)",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quick_add",
+      "label": "Show quick add button",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
