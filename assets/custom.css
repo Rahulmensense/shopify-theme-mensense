@@ -518,6 +518,13 @@ ul {
   text-decoration: none;
 }
 
+.product-card .price {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
 .product-card .product-image-link {
   position: relative;
   width: 100%;
