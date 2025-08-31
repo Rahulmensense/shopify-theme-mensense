@@ -3,10 +3,10 @@
     {% assign current_sort = collection.sort_by | default: collection.default_sort_by %}
 
     <div class="sort-bar">
+      {% comment %} <label for="sort-by">Sort</label> {% endcomment %}
       <select id="sort-by" name="sort-by"
         onchange="location.href=this.options[this.selectedIndex].dataset.url">
         {% assign base_url = collection.url %}
-        <label for="sort-by">Sort</label>
         <option data-url="{{ base_url }}?sort_by=featured" {% if current_sort == 'featured' %}selected{% endif %}>Featured</option>
         <option data-url="{{ base_url }}?sort_by=best-selling" {% if current_sort == 'best-selling' %}selected{% endif %}>Best selling</option>
         <option data-url="{{ base_url }}?sort_by=title-ascending" {% if current_sort == 'title-ascending' %}selected{% endif %}>A-Z</option>
