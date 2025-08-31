@@ -240,14 +240,13 @@
     });
   }
 
-  {% comment %} document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => initSlickSlider(), 500);
-  }); {% endcomment %}
-
-  document.addEventListener("shopify:section:select", function(e) {
-    setTimeout(() => initSlickSlider(e.target), 500);
   });
 
+  document.addEventListener("shopify:section:load", function(e) {
+    setTimeout(() => initSlickSlider(e.target), 500);
+  });
 </script>
 
 
