@@ -101,12 +101,12 @@
             {% endif %}
 
 
-            {% if section.settings.show_quick_add and product.available %}
+            {% comment %} {% if section.settings.show_quick_add and product.available %}
               <form method="post" action="/cart/add" class="quick-add">
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 <button type="submit" class="btn">Add to cart</button>
               </form>
-            {% endif %}
+            {% endif %} {% endcomment %}
 
             <button class="quick-buy-btn" onclick="location.href='{{ product.url }}'">Quick Buy</button>
           </div>
