@@ -44,31 +44,37 @@
 {% endpaginate %}
 
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-      $('.product-image-slider').not('.slick-initialized').slick({
-        dots: true,
-        arrows: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        adaptiveHeight: true
-      });
-    }, 500); // delay to ensure DOM is ready
-  });
+<script>
+  function initSlickSlider(scope) {
+    const sliders = (scope || document).querySelectorAll('.product-image-slider');
+    sliders.forEach(function(slider) {
+      if (!slider.classList.contains('slick-initialized')) {
+        $(slider).slick({
+          dots: true,
+          arrows: true,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          adaptiveHeight: true
+        });
+      }
+    });
+  }
 
+  function waitForSlidersAndInit() {
+    const check = setInterval(() => {
+      const sliders = document.querySelectorAll('.product-image-slider');
+      if (sliders.length > 0) {
+        initSlickSlider();
+        clearInterval(check);
+      }
+    }, 300);
+  }
+
+  document.addEventListener("DOMContentLoaded", waitForSlidersAndInit);
   document.addEventListener("shopify:section:load", function(e) {
-    setTimeout(function() {
-      $(e.target).find('.product-image-slider').not('.slick-initialized').slick({
-        dots: true,
-        arrows: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        adaptiveHeight: true
-      });
-    }, 500);
+    initSlickSlider(e.target);
   });
 </script>
+
 
