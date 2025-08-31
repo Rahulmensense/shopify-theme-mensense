@@ -507,6 +507,17 @@ ul {
   height: 100%;
 }
 
+.product-card .product-title {
+    font-size: 16px;
+    font-weight: 800;
+    text-align: left;
+}
+
+.product-card .product-title a {
+  color: #000;
+  text-decoration: none;
+}
+
 .product-card .product-image-link {
   position: relative;
   width: 100%;
