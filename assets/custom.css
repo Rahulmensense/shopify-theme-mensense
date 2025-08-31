@@ -866,6 +866,7 @@ ul {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
+
 @media (max-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -948,6 +949,13 @@ ul {
   align-items: center;
   gap: 8px;
 }
+
+.sort-bar select {
+  padding: 6px;
+  background: #f1f0ec;
+  border: 1px solid #57718d;
+}
+
 .pagination {
   margin-top: 40px;
   text-align: center;
