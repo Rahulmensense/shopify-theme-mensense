@@ -143,7 +143,7 @@
       <div class="product-grid">
         {% for product in collection.products %}
           <div class="product-card">
-            {% if forloop.index <= 2 %}
+            {% if product.tags contains 'discount-30' %}
               <div class="discount-label">30% OFF</div>
             {% endif %}
             <div class="product-image-slider">
