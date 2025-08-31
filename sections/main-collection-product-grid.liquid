@@ -73,11 +73,6 @@
               {% endif %}
             {% endfor %}
 
-            {% assign reviews = product.metafields.reviews.rating_count | default: 0 %}
-            {% assign full_stars = rating | floor %}
-            {% assign has_half_star = rating | modulo: 1 | times: 10 | round %}
-            {% assign empty_stars = 5 | minus: full_stars | minus: has_half_star %}
-
             {% if rating > 0 %}
               <div class="rating">
                 {% for i in (1..full_stars) %}
@@ -89,10 +84,15 @@
                 {% for i in (1..empty_stars) %}
                   ☆
                 {% endfor %}
-                <span class="reviews">({{ reviews }} Reviews)</span>
+                {% if reviews > 0 %}
+                  <span class="reviews">({{ reviews }} Reviews)</span>
+                {% else %}
+                  <span class="reviews">No reviews yet</span>
+                {% endif %}
               </div>
+            {% else %}
+              <div class="rating">No rating available</div>
             {% endif %}
-
 
             {% if section.settings.show_quick_add and product.available %}
               <form method="post" action="/cart/add" class="quick-add">
@@ -128,6 +128,19 @@
     {% endpaginate %}
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title }}",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ rating }}",
+    "reviewCount": "{{ reviews }}"
+  }
+}
+</script>
 
 {% schema %}
 {
