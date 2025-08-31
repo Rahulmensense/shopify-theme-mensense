@@ -12,6 +12,33 @@ window.addEventListener("load", function () {
   }
 });
 
+function initSlickSlider(scope) {
+  const sliders = (scope || document).querySelectorAll('.product-image-slider');
+  sliders.forEach(function(slider) {
+    if (!slider.classList.contains('slick-initialized')) {
+      try {
+        $(slider).slick({
+          dots: true,
+          arrows: true,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          adaptiveHeight: true
+        });
+      } catch (e) {
+        console.warn('Slider init failed:', e);
+      }
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(() => initSlickSlider(), 500);
+});
+
+document.addEventListener("shopify:section:load", function(e) {
+  setTimeout(() => initSlickSlider(e.target), 500);
+});
 
 
 
