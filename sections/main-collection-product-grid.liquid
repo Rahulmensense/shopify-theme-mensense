@@ -66,6 +66,7 @@
               <div class="image-count-badge">+{{ extra_images }} more</div>
             {% endif %}
 
+            <p>Debug: Reviews = {{ product.metafields.reviews.rating_count }}</p>
             {% assign rating = 0 %}
             {% for tag in product.tags %}
               {% if tag contains 'rating-' %}
