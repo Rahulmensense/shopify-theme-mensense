@@ -127,28 +127,42 @@
     </div>
   </div>
 
-<script>
-  function initSlickSlider(scope) {
-    const sliders = (scope || document).querySelectorAll('.product-image-slider');
-    sliders.forEach(function(slider) {
-      if (!slider.classList.contains('slick-initialized')) {
-        $(slider).slick({
-          dots: true,
-          arrows: true,
-          infinite: true,
-          speed: 300,
-          slidesToShow: 1,
-          adaptiveHeight: true
-        });
-      }
-    });
-  }
+</section>
 
-  document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(() => initSlickSlider(), 500);
-  });
-
-  document.addEventListener("shopify:section:load", function(e) {
-    setTimeout(() => initSlickSlider(e.target), 500);
-  });
-</script>
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Products per page",
+      "min": 4,
+      "max": 48,
+      "step": 4,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "slider_image_limit",
+      "label": "Images per product (slider)",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quick_add",
+      "label": "Show quick add button",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
