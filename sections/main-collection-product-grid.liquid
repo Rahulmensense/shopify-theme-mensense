@@ -45,3 +45,33 @@
     </nav>
   {% endif %}
 {% endpaginate %}
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      $('.product-image-slider').not('.slick-initialized').slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true
+      });
+    }, 500); // delay to ensure DOM is ready
+  });
+
+  document.addEventListener("shopify:section:load", function(e) {
+    setTimeout(function() {
+      $(e.target).find('.product-image-slider').not('.slick-initialized').slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true
+      });
+    }, 500);
+  });
+</script>
+
