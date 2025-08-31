@@ -950,8 +950,8 @@ ul {
 }
 
 /* Position arrows */
-.product-image-slider .slick-prev,
-.product-image-slider .slick-next {
+.product-image-slider .prev-arrow,
+.product-image-slider .next-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -964,17 +964,23 @@ ul {
   border-radius: 50%;
 }
 
-.product-image-slider .slick-prev:before {
-  left: 10px;
-}
-
-.product-image-slider .slick-next:after {
-  right: 10px;
-}
-
 .product-image-slider-wrapper {
   position: relative;
 }
+
+/* .product-image-slider .slick-arrow {
+    opacity: 0;
+    transition: opacity .3s ease;
+    z-index: 4;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    padding: 0;
+    background: #7188a1;
+    border-radius: 50px;
+    border: 0px;
+    color: #fff;
+} */
 
 /*----- FAQ CSS -----*/
 
