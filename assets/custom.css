@@ -972,19 +972,13 @@ ul {
   position: relative;
 }
 
-/* .product-image-slider .slick-arrow {
-    opacity: 0;
-    transition: opacity .3s ease;
-    z-index: 4;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    padding: 0;
-    background: #7188a1;
-    border-radius: 50px;
-    border: 0px;
-    color: #fff;
-} */
+.product-image-slider .prev-arrow {
+  left: 20%;
+}
+
+.product-image-slider .next-arrow {
+  right: 20%;
+}
 
 /*----- FAQ CSS -----*/
 
