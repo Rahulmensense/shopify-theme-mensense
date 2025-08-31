@@ -973,11 +973,11 @@ ul {
 }
 
 .product-image-slider .prev-arrow {
-  left: 20%;
+  left: -4%;
 }
 
 .product-image-slider .next-arrow {
-  right: 20%;
+  right: -4%;
 }
 
 /*----- FAQ CSS -----*/
