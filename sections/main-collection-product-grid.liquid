@@ -125,57 +125,6 @@
         </div>
       {% endfor %}
     </div>
-
-    <!-- ✅ Repeat same 4 products below -->
-    {% assign repeated_products = collection.products | slice: 0, 6 %}
-    <div class="product-grid" style="margin-top: 40px;">
-      {% for product in repeated_products %}
-        <div class="product-card">
-          <div class="product-image-slider">
-            {% assign images = product.images | slice: 0, section.settings.slider_image_limit %}
-            {% if images.size > 0 %}
-              {% for image in images %}
-                <div>
-                  <a href="{{ product.url }}">
-                    <img src="{{ image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
-                  </a>
-                </div>
-              {% endfor %}
-            {% else %}
-              <div>
-                <a href="{{ product.url }}">
-                  <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
-                </a>
-              </div>
-            {% endif %}
-          </div>
-
-          <h3 class="product-title">
-            <a href="{{ product.url }}">{{ product.title }}</a>
-          </h3>
-
-          <div class="price">
-            {% if product.compare_at_price_max > product.price %}
-              <span class="current">{{ product.price | money }}</span>
-              <span class="compare">{{ product.compare_at_price_max | money }}</span>
-            {% else %}
-              <span class="current">{{ product.price | money }}</span>
-            {% endif %}
-          </div>
-
-          {% if section.settings.show_quick_add and product.available %}
-            <form method="post" action="/cart/add" class="quick-add">
-              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-              <button type="submit" class="btn">Add to cart</button>
-            </form>
-          {% endif %}
-
-          <button class="buy-now-btn" onclick="location.href='{{ product.url }}'">Buy Now</button>
-        </div>
-      {% endfor %}
-    </div>
-
-    
   </div>
 
 <script>
