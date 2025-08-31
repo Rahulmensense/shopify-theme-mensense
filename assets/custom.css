@@ -965,7 +965,9 @@ ul {
 }
 
 .product-image-slider .slick-prev {
+  content: \f053;
   left: 10px;
+  font-family: FontAwesome;
 }
 
 .product-image-slider .slick-next {
