@@ -1,5 +1,7 @@
+{% assign repeated_products = collection.products | slice: 0, 4 %}
+
 <div class="product-grid">
-  {% for product in collection.products %}
+  {% for product in repeated_products %}
     <div class="product-card">
       <div class="product-image-slider">
         {% assign images = product.images | slice: 0, section.settings.slider_image_limit %}
