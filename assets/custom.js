@@ -18,7 +18,7 @@ function initSlickSlider(scope) {
     if (!slider.classList.contains('slick-initialized')) {
       try {
         $(slider).slick({
-          dots: true,
+          dots: false,
           arrows: true,
           infinite: true,
           speed: 300,
