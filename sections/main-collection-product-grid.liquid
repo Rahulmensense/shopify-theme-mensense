@@ -66,25 +66,33 @@
               <div class="image-count-badge">+{{ extra_images }} more</div>
             {% endif %}
 
-            {% assign rating_tag = product.tags | where: "contains", "rating-" | first %}
-            {% assign rating = rating_tag | remove: "rating-" | plus: 0 %}
+            {% assign rating = 0 %}
+            {% for tag in product.tags %}
+              {% if tag contains 'rating-' %}
+                {% assign rating = tag | remove: 'rating-' | plus: 0 %}
+              {% endif %}
+            {% endfor %}
+
             {% assign reviews = product.metafields.reviews.rating_count | default: 0 %}
             {% assign full_stars = rating | floor %}
             {% assign has_half_star = rating | modulo: 1 | times: 10 | round %}
             {% assign empty_stars = 5 | minus: full_stars | minus: has_half_star %}
 
-            <div class="rating">
-              {% for i in (1..full_stars) %}
-                ⭐
-              {% endfor %}
-              {% if has_half_star > 0 %}
-                🌓
-              {% endif %}
-              {% for i in (1..empty_stars) %}
-                ☆
-              {% endfor %}
-              <span class="reviews">({{ reviews }} Reviews)</span>
-            </div>
+            {% if rating > 0 %}
+              <div class="rating">
+                {% for i in (1..full_stars) %}
+                  ⭐
+                {% endfor %}
+                {% if has_half_star > 0 %}
+                  🌓
+                {% endif %}
+                {% for i in (1..empty_stars) %}
+                  ☆
+                {% endfor %}
+                <span class="reviews">({{ reviews }} Reviews)</span>
+              </div>
+            {% endif %}
+
 
             {% if section.settings.show_quick_add and product.available %}
               <form method="post" action="/cart/add" class="quick-add">
