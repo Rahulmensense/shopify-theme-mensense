@@ -971,7 +971,9 @@ ul {
 }
 
 .product-image-slider .slick-next {
+  content: \f054;
   right: 10px;
+  font-family: FontAwesome;
 }
 
 .product-image-slider-wrapper {
