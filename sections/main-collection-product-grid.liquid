@@ -61,20 +61,14 @@
     });
   }
 
-  function waitForSlidersAndInit() {
-    const check = setInterval(() => {
-      const sliders = document.querySelectorAll('.product-image-slider');
-      if (sliders.length > 0) {
-        initSlickSlider();
-        clearInterval(check);
-      }
-    }, 300);
-  }
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => initSlickSlider(), 500);
+  });
 
-  document.addEventListener("DOMContentLoaded", waitForSlidersAndInit);
   document.addEventListener("shopify:section:load", function(e) {
-    initSlickSlider(e.target);
+    setTimeout(() => initSlickSlider(e.target), 500);
   });
 </script>
+
 
 
