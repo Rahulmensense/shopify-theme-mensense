@@ -12,7 +12,15 @@ window.addEventListener("load", function () {
   }
 });
 
-console.log("Sliders found:", document.querySelectorAll('.product-image-slider').length);
+$('.product-image-slider').slick({
+  dots: true,
+  arrows: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  adaptiveHeight: true
+});
+
 
 
 
