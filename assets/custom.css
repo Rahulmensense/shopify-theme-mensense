@@ -951,6 +951,7 @@ ul {
 .pagination {
   margin-top: 40px;
   text-align: center;
+  justify-content: center;
 }
 .pagination a {
   margin: 0 6px;
