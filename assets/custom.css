@@ -964,13 +964,13 @@ ul {
   border-radius: 50%;
 }
 
-.product-image-slider .slick-prev {
+.product-image-slider .slick-prev:before {
   content: \f053;
   left: 10px;
   font-family: FontAwesome;
 }
 
-.product-image-slider .slick-next {
+.product-image-slider .slick-next:after {
   content: \f054;
   right: 10px;
   font-family: FontAwesome;
