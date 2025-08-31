@@ -966,6 +966,7 @@ ul {
   border-radius: 50px;
   border: 0px;
   color: #fff;
+  box-shadow: 0 0 10px #0000001a;
 }
 
 .product-image-slider-wrapper {
