@@ -854,6 +854,12 @@ ul {
   display: block; 
 }
 
+.product-grid-section {
+  background: #F1F0EC;
+  padding-top: 130px;
+  padding-bottom: 60px;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
