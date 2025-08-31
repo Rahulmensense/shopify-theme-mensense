@@ -66,7 +66,7 @@
               <div class="image-count-badge">+{{ extra_images }} more</div>
             {% endif %}
 
-            <p>Debug: Reviews = {{ product.metafields.reviews.rating_count }}</p>
+            <p>Debug: Reviews = {{ product.metafields.custom.rating_count }}</p>
             {% assign rating = 0 %}
             {% for tag in product.tags %}
               {% if tag contains 'rating-' %}
@@ -74,7 +74,7 @@
               {% endif %}
             {% endfor %}
 
-            {% assign reviews = product.metafields.reviews.rating_count | default: 0 %}
+            {% assign reviews = product.metafields.custom.rating_count | default: 0 | plus: 0 %}
             {% assign full_stars = rating | floor %}
             {% assign has_half_star = rating | modulo: 1 | times: 10 | round %}
             {% assign empty_stars = 5 | minus: full_stars | minus: has_half_star %}
@@ -145,6 +145,8 @@
     "@type": "AggregateRating",
     "ratingValue": "{{ rating }}",
     "reviewCount": "{{ reviews }}"
+    "reviewCount": "{{ product.metafields.custom.rating_count }}"
+
   }
 }
 </script>
