@@ -82,10 +82,10 @@
             {% if rating > 0 %}
               <div class="rating">
                 {% for i in (1..full_stars) %}
-                  ⭐
+                  <i class="fa-solid fa-star"></i>
                 {% endfor %}
                 {% if has_half_star > 0 %}
-                  🌓
+                  <i class="fa-solid fa-star-half-stroke"></i>
                 {% endif %}
                 {% for i in (1..empty_stars) %}
                   ☆
