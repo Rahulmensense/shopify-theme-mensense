@@ -46,20 +46,11 @@
                   {% endfor %}
                 {% endif %}
               </div>
-
-              {% assign extra_images = product.images.size | minus: section.settings.slider_image_limit %}
-              {% if extra_images > 0 %}
-                <div class="image-count-badge">+{{ extra_images }} more</div>
-              {% endif %}
             </div>
-            
+
             <h3 class="product-title">
               <a href="{{ product.url }}">{{ product.title }}</a>
             </h3>
-
-            <div class="rating">
-              ⭐⭐⭐⭐⭐ <span class="reviews">(12 Reviews)</span>
-            </div>
 
             <div class="price">
               {% if product.compare_at_price_max > product.price %}
@@ -69,6 +60,16 @@
                 <span class="current">{{ product.price | money }}</span>
               {% endif %}
             </div>
+
+            {% assign extra_images = product.images.size | minus: section.settings.slider_image_limit %}
+            {% if extra_images > 0 %}
+              <div class="image-count-badge">+{{ extra_images }} more</div>
+            {% endif %}
+
+            <div class="rating">
+              ⭐⭐⭐⭐⭐ <span class="reviews">(12 Reviews)</span>
+            </div>
+
 
             {% if section.settings.show_quick_add and product.available %}
               <form method="post" action="/cart/add" class="quick-add">
