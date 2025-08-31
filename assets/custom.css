@@ -975,6 +975,22 @@ ul {
   right: 10px;
 }
 
+.product-image-slider-wrapper {
+  position: relative;
+}
+
+.image-count-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  z-index: 5;
+}
+
 /*----- FAQ CSS -----*/
 
 .faq-are {
