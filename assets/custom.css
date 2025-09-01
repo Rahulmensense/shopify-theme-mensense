@@ -1421,4 +1421,23 @@ ul {
   margin-top: 2px;
 }
 
+.all-products-hero {
+    padding-top: 180px;
+    padding-bottom: 212px;
+}
+
+.all-products-hero .title {
+  font-size: 77px;
+    line-height: 78px;
+}
+
+.hero-copy p {
+      padding-top: 14px;
+          width: 46%;
+}
+
+.product-grid-section {
+  margin-top: -9px;
+}
+
 }
