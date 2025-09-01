@@ -105,14 +105,16 @@
           </div> {% endcomment %}
 
           <div class="pincode-checker">
-            <button type="button" onclick="showPincodeInput()">Check EDD by entering pin-code below</button>
+            <p class="edd-label"><i class="icon-truck"></i> Check EDD by entering pin-code below</p>
+            <a href="javascript:void(0);" onclick="showPincodeInput()" class="pincode-trigger">
+              <i class="icon-location"></i> Enter area Pincode
+            </a>
             <div id="pincode-wrapper" style="display: none;">
               <input type="text" id="pincode" name="pincode" placeholder="e.g. 302001">
               <button type="button" onclick="checkEDD()">Check EDD</button>
               <p id="edd-result"></p>
             </div>
           </div>
-
 
           <!-- Share Button -->
           <div class="share-buttons">

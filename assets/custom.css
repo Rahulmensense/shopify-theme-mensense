@@ -1177,14 +1177,23 @@ ul {
   margin-top: 20px;
 }
 
-.pincode-checker button {
-  padding: 10px 16px;
-  background-color: #007aff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.edd-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.pincode-trigger {
+  display: inline-block;
+  color: #007aff;
+  font-weight: 500;
+  text-decoration: none;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.pincode-trigger i {
+  margin-right: 6px;
 }
 
 #pincode-wrapper input {
