@@ -1027,6 +1027,12 @@ ul {
 
 /*------ Product Custom Detail CSS ------*/
 
+.product-details-area {
+  padding-top: 120px;]
+  padding-bottom: 40px;
+  background: #F1F0EC;
+}
+
 .product-detail-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
