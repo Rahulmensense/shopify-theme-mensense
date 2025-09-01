@@ -1246,6 +1246,31 @@ ul {
   font-weight: 500;
 }
 
+.share-menu {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.share-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.share-menu ul li {
+  margin: 6px 0;
+}
+
+.share-menu ul li a {
+  text-decoration: none;
+  color: #007aff;
+  font-weight: 500;
+}
+
 
 .product-tabs details {
   margin-top: 10px;

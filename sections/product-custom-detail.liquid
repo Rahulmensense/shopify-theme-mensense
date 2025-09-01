@@ -112,8 +112,19 @@
 
           <!-- Share Button -->
           <div class="share-buttons">
-            <button onclick="navigator.share({ title: '{{ product.title }}', url: window.location.href })">Share</button>
+            <button onclick="toggleShareMenu()">Share</button>
+            <div id="share-menu" class="share-menu" style="display: none;">
+              <ul>
+                <li><a href="mailto:?subject={{ product.title }}&body={{ shop.url }}/products/{{ product.handle }}" target="_blank">Email</a></li>
+                <li><a href="https://www.pinterest.com/pin/create/button/?url={{ shop.url }}/products/{{ product.handle }}&description={{ product.title }}" target="_blank">Pinterest</a></li>
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}/products/{{ product.handle }}" target="_blank">Facebook</a></li>
+                <li><a href="https://twitter.com/intent/tweet?text={{ product.title }}&url={{ shop.url }}/products/{{ product.handle }}" target="_blank">X (Twitter)</a></li>
+                <li><a href="javascript:void(0);" onclick="copyShareLink()">Copy Link</a></li>
+              </ul>
+              <p id="copy-status" style="display:none; color:green;">Link copied!</p>
+            </div>
           </div>
+
 
           <!-- Description & Metafields -->
           <div class="product-description-block">
@@ -176,5 +187,21 @@
       result.style.color = "#ff4d4d";
     }
   }
+
+  function toggleShareMenu() {
+    var menu = document.getElementById("share-menu");
+    menu.style.display = menu.style.display === "none" ? "block" : "none";
+  }
+
+  function copyShareLink() {
+    var link = "{{ shop.url }}/products/{{ product.handle }}";
+    navigator.clipboard.writeText(link).then(function() {
+      document.getElementById("copy-status").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("copy-status").style.display = "none";
+      }, 2000);
+    });
+  }
+
 </script>
 
