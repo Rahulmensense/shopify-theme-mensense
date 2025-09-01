@@ -1027,6 +1027,74 @@ ul {
 
 /*------ Product Custom Detail CSS ------*/
 
+.product-price .compare-price {
+  text-decoration: line-through;
+  color: #999;
+}
+.discount {
+  color: #0a7;
+  font-weight: bold;
+}
+.low-stock {
+  color: red;
+  font-weight: bold;
+}
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+.quantity-selector button {
+  padding: 6px 10px;
+  font-size: 16px;
+}
+.btn-add-to-cart, .btn-buy-now {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-add-to-cart {
+  background-color: #007aff;
+  color: white;
+}
+.btn-buy-now {
+  background-color: #28a745;
+  color: white;
+}
+.pincode-checker {
+  margin-top: 20px;
+}
+.pincode-checker input {
+  padding: 8px;
+  width: 120px;
+  margin-right: 10px;
+}
+.pincode-checker button {
+  padding: 8px 12px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+#edd-result {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #333;
+}
+.share-buttons button {
+  margin-top: 10px;
+  background-color: #555;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
 .product-detail-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

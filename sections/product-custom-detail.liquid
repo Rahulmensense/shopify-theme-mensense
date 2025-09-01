@@ -1,86 +1,104 @@
-<div class="product-layout">
-  <div class="product-grid product-detail-grid">
-    <!-- LEFT: Slick Slider -->
-    <div class="product-gallery-wrapper">
-      <div class="product-gallery-slider js-main-slider">
-        {% for image in product.images %}
-          <div class="slide">
-            <img src="{{ image | image_url: width: 800 }}" alt="{{ product.title }}">
-          </div>
-        {% endfor %}
-      </div>
-      <div class="product-gallery-thumbs js-thumb-slider">
-        {% for image in product.images %}
-          <div class="thumb">
-            <img src="{{ image | image_url: width: 160 }}" alt="{{ product.title }}">
-          </div>
-        {% endfor %}
-      </div>
-    </div>
+<!-- RIGHT: Product Info -->
+<div class="product-info">
+  <h1 class="product-title">{{ product.title }}</h1>
+  <p class="product-brand">Brand: <strong>{{ product.vendor }}</strong></p>
 
-    <!-- RIGHT: Product Info -->
-    <div class="product-info">
-      <h1 class="product-title">{{ product.title }}</h1>
-      <p class="product-brand">Brand: <strong>{{ product.vendor }}</strong></p>
-      <p class="product-price">Price: {{ product.price | money }}</p>
+  <!-- Price & Discount -->
+  {% assign price = product.price %}
+  {% assign compare = product.compare_at_price %}
+  {% if compare > price %}
+    {% assign discount = compare | minus: price | times: 100 | divided_by: compare | round %}
+    <p class="product-price">Price: {{ price | money }} <span class="compare-price">{{ compare | money }}</span> <span class="discount">{{ discount }}% OFF</span></p>
+  {% else %}
+    <p class="product-price">Price: {{ price | money }}</p>
+  {% endif %}
 
-      {% assign rating = 0 %}
-      {% for tag in product.tags %}
-        {% if tag contains 'rating-' %}
-          {% assign rating = tag | remove: 'rating-' | plus: 0 %}
-        {% endif %}
-      {% endfor %}
-      {% assign reviews = product.metafields.custom.rating_count | default: 0 | plus: 0 %}
-      {% assign full_stars = rating | floor %}
-      {% assign has_half_star = rating | modulo: 1 | times: 10 | round %}
-      {% assign empty_stars = 5 | minus: full_stars | minus: has_half_star %}
+  <!-- Rating -->
+  {% assign rating = product.metafields.custom.rating_value | default: 0 %}
+  {% assign reviews = product.metafields.custom.rating_count | default: 0 %}
+  <div class="product-rating">
+    <span>{{ rating }} ★</span> <span>({{ reviews }} Reviews)</span>
+  </div>
 
-      <div class="product-rating">
-        {% for i in (1..full_stars) %}<span>★</span>{% endfor %}
-        {% if has_half_star > 0 %}<span>🌓</span>{% endif %}
-        {% for i in (1..empty_stars) %}<span>☆</span>{% endfor %}
-        <span>({{ reviews }} Reviews)</span>
-      </div>
+  <!-- Low Stock -->
+  {% assign stock = product.variants.first.inventory_quantity %}
+  {% if stock < 10 %}
+    <p class="low-stock">Low stock: {{ stock }} left</p>
+  {% endif %}
 
-      <!-- Size Selector -->
-      {% if product.options.size > 0 %}
-        {% for option in product.options_with_values %}
-          {% if option.name == 'Size' %}
-            <label for="Size">Size:</label>
-            <select id="Size" name="Size">
-              {% for value in option.values %}
-                <option value="{{ value }}">{{ value }}</option>
-              {% endfor %}
-            </select>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+  <!-- Size -->
+  <p class="product-size">Size: {{ product.variants.first.title }}</p>
 
-      <!-- Quantity -->
-      <label for="Quantity">Quantity:</label>
-      <input type="number" id="Quantity" name="quantity" min="1" value="1">
+  <!-- Quantity Selector -->
+  <div class="quantity-selector">
+    <label>Quantity:</label>
+    <button type="button" onclick="decreaseQty()">−</button>
+    <input type="number" id="Quantity" name="quantity" min="1" value="1">
+    <button type="button" onclick="increaseQty()">+</button>
+  </div>
 
-      <!-- Add to Cart -->
-      <form method="post" action="/cart/add">
-        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-        <button type="submit" class="btn-add-to-cart">Add to Cart</button>
-      </form>
+  <!-- Add to Cart + Buy Now -->
+  <form method="post" action="/cart/add">
+    <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+    <button type="submit" class="btn-add-to-cart">Add to Cart</button>
+    <button type="submit" name="checkout" class="btn-buy-now">Buy Now</button>
+  </form>
 
-      <!-- Tabs -->
-      <div class="product-tabs">
-        <details open>
-          <summary>Description</summary>
-          <p>{{ product.description }}</p>
-        </details>
-        <details>
-          <summary>Additional Information</summary>
-          <p>{{ product.metafields.custom.additional_info }}</p>
-        </details>
-        <details>
-          <summary>Reviews ({{ reviews }})</summary>
-          <p>{{ product.metafields.custom.review_text }}</p>
-        </details>
-      </div>
-    </div>
+  <!-- Pincode + EDD -->
+  <div class="pincode-checker">
+    <label for="pincode">Enter area pincode</label>
+    <input type="text" id="pincode" name="pincode" placeholder="e.g. 302001">
+    <button type="button" onclick="checkEDD()">Check EDD</button>
+    <p id="edd-result"></p>
+  </div>
+
+  <!-- Share Button -->
+  <div class="share-buttons">
+    <button onclick="navigator.share({ title: '{{ product.title }}', url: window.location.href })">Share</button>
+  </div>
+
+  <!-- Description & Metafields -->
+  <div class="product-description-block">
+    <p>{{ product.description }}</p>
+
+    {% if product.metafields.custom.benefits %}
+      <p><strong>Benefits:</strong> {{ product.metafields.custom.benefits }}</p>
+    {% endif %}
+
+    {% if product.metafields.custom.additional_info %}
+      <p><strong>Additional Info:</strong> {{ product.metafields.custom.additional_info }}</p>
+    {% endif %}
+
+    {% if product.metafields.custom.ingredients %}
+      <p><strong>Ingredients:</strong> {{ product.metafields.custom.ingredients }}</p>
+    {% endif %}
+
+    {% if product.metafields.custom.usage %}
+      <p><strong>Directions for Use:</strong> {{ product.metafields.custom.usage }}</p>
+    {% endif %}
+
+    {% if product.metafields.custom.review_text %}
+      <p><strong>Customer Review:</strong> {{ product.metafields.custom.review_text | truncatewords: 20 }}</p>
+    {% endif %}
   </div>
 </div>
+
+<script>
+function increaseQty() {
+  var qty = document.getElementById('Quantity');
+  qty.value = parseInt(qty.value) + 1;
+}
+function decreaseQty() {
+  var qty = document.getElementById('Quantity');
+  if (parseInt(qty.value) > 1) qty.value = parseInt(qty.value) - 1;
+}
+function checkEDD() {
+  var pin = document.getElementById('pincode').value;
+  var result = document.getElementById('edd-result');
+  if (pin.length === 6) {
+    result.innerText = "Estimated delivery: 3–5 days";
+  } else {
+    result.innerText = "Please enter a valid 6-digit pincode.";
+  }
+}
+</script>
