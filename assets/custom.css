@@ -1053,12 +1053,23 @@ ul {
 .product-gallery-thumbs .slick-current img {
   border: 2px solid #007aff;
 }
-.product-title {
-  font-size: 2rem;
-  font-weight: bold;
+
+.product-detail-grid .product-title {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 52px;
+  color: #000000;
 }
-.product-brand,
-.product-price {
+
+.product-brand {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #000;
+  display: block;
+}
+
+.product-brand, .product-price {
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
