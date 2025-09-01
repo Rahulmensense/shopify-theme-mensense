@@ -1173,6 +1173,40 @@ ul {
   border-radius: 5px;
 }
 
+.pincode-checker {
+  margin-top: 20px;
+}
+
+.pincode-checker button {
+  padding: 10px 16px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#pincode-wrapper input {
+  padding: 8px;
+  width: 140px;
+  margin-right: 10px;
+}
+
+#pincode-wrapper button {
+  padding: 8px 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+#edd-result {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+
 .product-tabs details {
   margin-top: 10px;
   border: 1px solid #eee;
