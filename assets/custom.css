@@ -1246,6 +1246,19 @@ ul {
   font-weight: 500;
 }
 
+.product-detail-grid .share-buttons button {
+  border: 0px;
+  padding: 0;
+  margin-bottom: 14px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.product-detail-grid .share-buttons button:hover {
+  color: #58718F;
+}
+
 .product-detail-grid .share-menu {
   background: #f9f9f9;
   border: 1px solid #ddd;
