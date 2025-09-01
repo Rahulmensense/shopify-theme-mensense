@@ -67,6 +67,18 @@
 
           <!-- Size -->
           <p class="product-size">Size: {{ product.variants.first.title }}</p>
+          {% comment %} 🔹 Dropdown (Multiple Sizes)
+          liquid
+          {% for option in product.options_with_values %}
+            {% if option.name == 'Size' %}
+              <label for="Size">Size:</label>
+              <select id="Size" name="Size">
+                {% for value in option.values %}
+                  <option value="{{ value }}">{{ value }}</option>
+                {% endfor %}
+              </select>
+            {% endif %}
+          {% endfor %} {% endcomment %}
 
           <!-- Quantity Selector -->
           <div class="quantity-selector">
