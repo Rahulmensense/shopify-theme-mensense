@@ -26,20 +26,45 @@
           <p class="product-brand">Brand: <strong>{{ product.vendor }}</strong></p>
 
           <!-- Price & Discount -->
-          {% assign price = product.price %}
-          {% assign compare = product.compare_at_price %}
+          {% assign price = product.variants.first.price %}
+          {% assign compare = product.variants.first.compare_at_price %}
           {% if compare > price %}
             {% assign discount = compare | minus: price | times: 100 | divided_by: compare | round %}
-            <p class="product-price">{{ price | money }} <span class="compare-price">{{ compare | money }}</span> <span class="discount">{{ discount }}% OFF</span></p>
+            <p class="product-price">
+              <span class="sale-price">{{ price | money }}</span>
+              <span class="compare-price">{{ compare | money }}</span>
+              <span class="discount-badge">{{ discount }}% OFF</span>
+            </p>
           {% else %}
-            <p class="product-price"> {{ price | money }}</p>
+            <p class="product-price"><span class="sale-price">{{ price | money }}</span></p>
           {% endif %}
 
           <!-- Rating -->
           {% assign rating = product.metafields.custom.rating_value | default: 0 %}
           {% assign reviews = product.metafields.custom.rating_count | default: 0 %}
+          {% assign full_stars = rating | floor %}
+          {% assign half_star = 0 %}
+          {% if rating > full_stars %}
+            {% assign half_star = 1 %}
+          {% endif %}
+          {% assign empty_stars = 5 | minus: full_stars | minus: half_star %}
           <div class="product-rating">
-            <span>{{ rating }} ★</span> <span>({{ reviews }} Reviews)</span>
+            <span class="stars">
+              {% for i in (1..full_stars) %}★{% endfor %}
+              {% if half_star == 1 %}☆{% endif %}
+              {% for i in (1..empty_stars) %}☆{% endfor %}
+            </span>
+            <span class="rating-count">
+  {% if rating > 0 %}
+    {{ reviews }}
+    {% if reviews == 1 %}
+      Review
+    {% else %}
+      Reviews
+    {% endif %}
+  {% endif %}
+</span>
+
           </div>
 
           <!-- Low Stock -->
@@ -110,22 +135,31 @@
 </section>
 
 <script>
-function increaseQty() {
-  var qty = document.getElementById('Quantity');
-  qty.value = parseInt(qty.value) + 1;
-}
-function decreaseQty() {
-  var qty = document.getElementById('Quantity');
-  if (parseInt(qty.value) > 1) qty.value = parseInt(qty.value) - 1;
-}
-function checkEDD() {
-  var pin = document.getElementById('pincode').value;
-  var result = document.getElementById('edd-result');
-  if (pin.length === 6) {
-    result.innerText = "Estimated delivery: 3–5 days";
-  } else {
-    result.innerText = "Please enter a valid 6-digit pincode.";
+  function increaseQty() {
+    var qty = document.getElementById("Quantity");
+    if (parseInt(qty.value) < 10) {
+      qty.value = parseInt(qty.value) + 1;
+    }
   }
-}
+
+  function decreaseQty() {
+    var qty = document.getElementById("Quantity");
+    if (parseInt(qty.value) > 1) {
+      qty.value = parseInt(qty.value) - 1;
+    }
+  }
+
+  function checkEDD() {
+    var pin = document.getElementById("pincode").value.trim();
+    var result = document.getElementById("edd-result");
+
+    if (/^\d{6}$/.test(pin)) {
+      result.innerText = "Estimated delivery: 3–5 days";
+      result.style.color = "#28a745";
+    } else {
+      result.innerText = "Please enter a valid 6-digit pincode.";
+      result.style.color = "#ff4d4d";
+    }
+  }
 </script>
 
