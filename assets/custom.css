@@ -1281,6 +1281,22 @@ ul {
   margin: 6px 0;
 }
 
+.email-icon {
+  color: #EA4335;
+}
+
+.pinterest-icon {
+   color: #E60023;
+}
+
+.facebook-icon {
+  color: #3e78c3;
+}
+
+.twitter-icon{
+  color: #1DA1F2;
+}
+
 
 .product-tabs details {
   margin-top: 10px;
