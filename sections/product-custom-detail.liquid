@@ -166,60 +166,62 @@
       </div>
     </div>
     
-    <div class="review-section">
-      <h2>Customer Reviews</h2>
+<div class="review-section">
+  <h2>Customer Reviews</h2>
 
-      <!-- Rating Summary -->
-      <div class="rating-summary">
-        {% assign rating = product.metafields.custom.rating_value | default: 0 %}
-        {% assign count = product.metafields.custom.rating_count | default: 0 %}
-        <div class="rating-score">{{ rating }}/5 ★</div>
-        <div class="rating-count">{{ count }} Reviews</div>
+  <!-- Rating Summary -->
+  <div class="rating-summary">
+    {% assign rating = product.metafields.custom.rating_value | default: 0 %}
+    {% assign count = product.metafields.custom.rating_count | default: 0 %}
+    <div class="rating-score">{{ rating }}/5 ★</div>
+    <div class="rating-count">{{ count }} Reviews</div>
 
-        <!-- Progress Bars -->
-        {% for i in (5..1) %}
-          {% assign pct = product.metafields.custom["#{i}_star_pct"] | default: 0 %}
-          <div class="rating-bar">
-            <span>{{ i }} ★</span>
-            <div class="bar">
-              <div class="fill" style="width: {{ pct }}%;"></div>
-            </div>
-            <span>{{ pct }}%</span>
-          </div>
-        {% endfor %}
+    <!-- Progress Bars -->
+    {% for i in (5..1) %}
+      {% assign pct = product.metafields.custom["#{i}_star_pct"] | default: 0 %}
+      <div class="rating-bar">
+        <span>{{ i }} ★</span>
+        <div class="bar"><div class="fill" style="width: {{ pct }}%;"></div></div>
+        <span>{{ pct }}%</span>
       </div>
+    {% endfor %}
+  </div>
 
-      <!-- Review Controls -->
-      <div class="review-controls">
-        <input type="text" placeholder="Search reviews..." class="review-search">
-        <select class="review-sort">
-          <option>Sort by: Most Recent</option>
-          <option>Sort by: Highest Rating</option>
-        </select>
-        <select class="review-filter">
-          <option>All Ratings</option>
-          <option>5 Star Only</option>
-          <option>4 Star & Up</option>
-        </select>
-        <button class="write-review">Write a Review</button>
-      </div>
+  <!-- Review Controls -->
+  <div class="review-controls">
+    <input type="text" placeholder="Search reviews..." id="reviewSearch">
+    <select id="reviewSort">
+      <option value="recent">Most Recent</option>
+      <option value="high">Highest Rating</option>
+    </select>
+    <select id="reviewFilter">
+      <option value="all">All Ratings</option>
+      <option value="5">5 Star Only</option>
+      <option value="4up">4 Star & Up</option>
+    </select>
+    <button class="write-review">Write a Review</button>
+  </div>
 
-      <!-- Review List -->
-      <div class="review-list">
-        {% if product.metafields.custom.review_text %}
-          <div class="review-item">
-            <div class="review-stars">★★★★★</div>
-            <div class="reviewer">Verified Buyer</div>
-            <p>{{ product.metafields.custom.review_text }}</p>
-          </div>
-        {% else %}
-          <p>No reviews yet. Be the first to write one!</p>
-        {% endif %}
-      </div>
+  <!-- Review List -->
+  <div class="review-list" id="reviewList">
+    {% assign reviews = "" %}
+    {% for i in (1..5) %}
+      {% assign text = product.metafields.custom["review_#{i}_text"] %}
+      {% assign name = product.metafields.custom["review_#{i}_name"] | default: "Anonymous" %}
+      {% if text %}
+        <div class="review-item" data-rating="5">
+          <div class="review-stars">★★★★★</div>
+          <div class="reviewer">{{ name }} · Verified Buyer</div>
+          <p>{{ text }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
 
-      <!-- Show More -->
-      <button class="show-more-reviews">Show More</button>
-    </div>    
+  <!-- Show More -->
+  <button class="show-more-reviews" onclick="loadMoreReviews()">Show More</button>
+</div>
+  
   </div>
 </section>
 
@@ -321,6 +323,20 @@
 
     closeBtn.addEventListener('click', closeTooltip);
   })();
+
+  function loadMoreReviews() {
+  const reviews = document.querySelectorAll('.review-item');
+  let shown = 0;
+  reviews.forEach((r, i) => {
+    if (i < 5) r.style.display = 'block';
+    else r.style.display = 'none';
+  });
+  document.querySelector('.show-more-reviews').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadMoreReviews();
+});
 
 </script>
 
