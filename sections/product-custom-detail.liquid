@@ -50,9 +50,9 @@
           {% assign empty_stars = 5 | minus: full_stars | minus: half_star %}
           <div class="product-rating">
             <span class="stars">
-              {% for i in (1..full_stars) %}★{% endfor %}
-              {% if half_star == 1 %}☆{% endif %}
-              {% for i in (1..empty_stars) %}☆{% endfor %}
+              {% for i in (1..full_stars) %}<i class="fa-solid fa-star"></i>{% endfor %}
+              {% if half_star == 1 %}<i class="fa-solid fa-star-half-stroke"></i>{% endif %}
+              {% for i in (1..empty_stars) %}<i class="fa-regular fa-star"></i>{% endfor %}
             </span>
             <span class="rating-count">
               {% if rating > 0 %}{{ reviews }}{% if reviews == 1 %}Review{% else %}Reviews{% endif %}{% endif %}
