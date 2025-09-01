@@ -204,14 +204,14 @@
 
   <!-- Review List -->
   <div class="review-list" id="reviewList">
-    {% for i in (1..5) %}
+    {% for i in (1..2) %}
       {% assign text = product.metafields.custom["review_#{i}_text"] %}
-      {% assign name = product.metafields.custom["review_#{i}_name"] | default: "Anonymous" %}
-      {% assign stars = product.metafields.custom["review_#{i}_rating"] | default: 5 %}
-      {% assign verified = product.metafields.custom["review_#{i}_verified"] | default: true %}
+      {% assign name = product.metafields.custom["review_#{i}_name"] %}
+      {% assign stars = product.metafields.custom["review_#{i}_rating"] %}
+      {% assign verified = product.metafields.custom["review_#{i}_verified"] %}
       {% if text %}
         <div class="review-item" data-rating="{{ stars }}">
-          <div class="review-stars">{{ '★' | times: stars }}</div>
+          <div class="review-stars">{% for s in (1..stars) %}★{% endfor %}</div>
           <div class="reviewer">{{ name }}{% if verified %}, Verified Buyer{% endif %}</div>
           <p>{{ text }}</p>
         </div>
