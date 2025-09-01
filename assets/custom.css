@@ -1338,6 +1338,9 @@ ul {
 .product-detail-grid .badge img {
   width: 40px;
   height: 40px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
 }
 
 .product-detail-grid .badge-tooltip {
