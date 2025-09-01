@@ -1174,7 +1174,7 @@ ul {
 }
 
 .product-detail-grid .pincode-checker {
-  margin-top: 0px;
+  padding-bottom: 20px;
 }
 
 .product-detail-grid .pincode-checker .edd-label {
