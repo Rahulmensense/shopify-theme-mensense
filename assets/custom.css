@@ -1023,6 +1023,94 @@ ul {
   right: -4%;
 }
 
+
+
+/*------ Product Custom Detail CSS ------*/
+
+/* .product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+} */
+.product-gallery-slider img,
+.product-gallery-thumbs img {
+  width: 100%;
+  border-radius: 8px;
+}
+.product-gallery-thumbs {
+  margin-top: 10px;
+}
+.product-gallery-thumbs .thumb {
+  padding: 4px;
+}
+.product-gallery-thumbs .slick-current img {
+  border: 2px solid #007aff;
+}
+.product-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.product-brand,
+.product-price {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.product-rating {
+  font-size: 1.5rem;
+  color: gold;
+  margin-bottom: 10px;
+}
+.product-tabs details {
+  margin-top: 10px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 10px;
+}
+.btn-add-to-cart {
+  padding: 10px 20px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.product-gallery-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Slick arrows */
+.slick-prev, .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: #007aff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: -40px;
+}
+.slick-next {
+  right: -40px;
+}
+
+.slick-prev:before, .slick-next:before {
+  display: none;
+}
+
+
+
+
 /*----- FAQ CSS -----*/
 
 .faq-are {
@@ -1139,7 +1227,7 @@ ul {
 
 .ms-footer .tagline {
   font-size: 16px;
-  margin-bottom: 58px;
+  padding-bottom: 16px;
   text-align: left;
   font-weight: 500;
   color: #F1F0EC;
@@ -1176,7 +1264,7 @@ ul {
 
 .footer-links {
   padding: 20px 0;
-  margin-bottom: 90px;
+  padding-bottom: 86px;
 }
 
 .social-icons {
@@ -1252,4 +1340,55 @@ ul {
   }
 }
 
+@media only screen and (min-width: 992px) and (max-width: 1366px){
+  .about-brand-area-left-auto {
+    width: 1314px;
+}
 
+.brand-story-area .promise-content h4 {
+      font-size: 93px;
+}
+
+.brand-story-text .brand-story-right-img {
+      margin-top: -186px;
+}
+
+.brand-story-text .about-content {
+    width: 62%;
+}
+
+.brand-story-text .brand-story-right-img {
+  width: 38%;
+}
+
+.brand-story-text .about-content .section-heading p {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.mission-section {
+  padding-top: 150px;
+  margin-top: -115px;
+}
+
+.mission-section:before {
+  top: -46px;
+  width: 290px;
+  height: 248px;
+}
+
+.brand-story-area:before {
+  width: 350px;
+  height: 263px;
+}
+
+.brand-story-area:after {
+  width: 945px;
+  height: 592px;
+}
+
+.row-are .mission-text .section-heading p {
+      font-size: 16px;
+}
+
+}

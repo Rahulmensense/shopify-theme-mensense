@@ -44,3 +44,27 @@ document.addEventListener("shopify:section:load", function(e) {
 
 
 
+$(document).ready(function(){
+  $('.js-main-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true, // ✅ Arrows enabled
+    dots: false,
+    infinite: true,
+    asNavFor: '.js-thumb-slider',
+    adaptiveHeight: true
+  });
+
+  $('.js-thumb-slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: '.js-main-slider',
+    focusOnSelect: true,
+    arrows: true, // ✅ Arrows enabled for thumbnails too
+    dots: false,
+    infinite: false
+  });
+});
+
+
+
