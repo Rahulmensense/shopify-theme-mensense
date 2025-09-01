@@ -1335,6 +1335,10 @@ ul {
   font-size: 14px;
 }
 
+.product-detail-grid .badge:hover {
+  color: #58718F;
+}
+
 .product-detail-grid .badge img {
   width: 40px;
   height: 40px;
