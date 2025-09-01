@@ -1147,9 +1147,10 @@ ul {
 }
 
 .product-card-btn {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
 }
 
 .product-card-btn .btn-add-to-cart {
