@@ -110,6 +110,18 @@
             </div>
           </div>
 
+          <div class="feature-badges" id="feature-badges">
+            <button class="badge" data-content="Rated 5 stars by verified buyers for quality and performance.">🏆 5 Star Rated</button>
+            <button class="badge" data-content="Delivery assured within promised timeline or full refund.">🛡️ Delivery Guaranteed</button>
+            <button class="badge" data-content="Free standard delivery on eligible orders.">🚚 Free Delivery</button>
+            <button class="badge" data-content="Top-selling product in its category this month.">📈 Best Selling Product</button>
+
+            <div class="badge-tooltip" id="badge-tooltip" role="dialog" aria-hidden="true">
+              <button class="tooltip-close" aria-label="Close">×</button>
+              <p id="badge-tooltip-content"></p>
+            </div>
+          </div>
+
           <!-- Share Button -->
           <div class="share-buttons">
             <button onclick="toggleShareMenu()"><i class="fa-solid fa-arrow-up-from-bracket"></i> Share</button>
@@ -202,6 +214,58 @@
       }, 2000);
     });
   }
+
+
+  (function() {
+    const row = document.getElementById('feature-badges');
+    if (!row) return;
+
+    const tooltip = document.getElementById('badge-tooltip');
+    const content = document.getElementById('badge-tooltip-content');
+    const closeBtn = tooltip.querySelector('.tooltip-close');
+
+    function openTooltip(btn) {
+      content.textContent = btn.getAttribute('data-content') || '';
+      tooltip.setAttribute('aria-hidden', 'false');
+      const rect = btn.getBoundingClientRect();
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      const scrollX = window.scrollX || document.documentElement.scrollLeft;
+      tooltip.style.top = (rect.bottom + scrollY + 8) + 'px';
+      tooltip.style.left = (rect.left + scrollX) + 'px';
+      document.addEventListener('click', onDocClick);
+      document.addEventListener('keydown', onEsc);
+    }
+
+    function closeTooltip() {
+      tooltip.setAttribute('aria-hidden', 'true');
+      document.removeEventListener('click', onDocClick);
+      document.removeEventListener('keydown', onEsc);
+    }
+
+    function onDocClick(e) {
+      if (!tooltip.contains(e.target) && !e.target.classList.contains('badge')) {
+        closeTooltip();
+      }
+    }
+
+    function onEsc(e) {
+      if (e.key === 'Escape') closeTooltip();
+    }
+
+    row.addEventListener('click', function(e) {
+      const btn = e.target.closest('.badge');
+      if (!btn) return;
+      const hidden = tooltip.getAttribute('aria-hidden') !== 'false';
+      if (!hidden) {
+        closeTooltip();
+        setTimeout(() => openTooltip(btn), 0);
+      } else {
+        openTooltip(btn);
+      }
+    });
+
+    closeBtn.addEventListener('click', closeTooltip);
+  })();
 
 </script>
 
