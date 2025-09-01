@@ -1326,13 +1326,18 @@ ul {
 }
 
 .product-detail-grid .badge {
-  background: #f4f6f8;
-  border: 1px solid #e1e4e8;
+  background: transparent;
+  border: none;
   color: #111;
   padding: 8px 12px;
   border-radius: 999px;
   cursor: pointer;
   font-size: 14px;
+}
+
+.product-detail-grid .badge img {
+  width: 40px;
+  height: 40px;
 }
 
 .product-detail-grid .badge-tooltip {
