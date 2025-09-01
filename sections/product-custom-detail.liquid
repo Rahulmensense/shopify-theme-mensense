@@ -210,13 +210,18 @@
     <div class="rating-score">{{ rating }}/5 ★</div>
     <div class="rating-count">{{ count }} Reviews</div>
 
-    {% for i in (5..1) %}
-      {% assign pct = product.metafields.custom["#{i}_star_pct"] | default: 0 %}
-      <div class="rating-bar">
-        <span>{{ i }} ★</span>
-        <div class="bar"><div class="fill" style="width: {{ pct }}%;"></div></div>
-        <span>{{ pct }}%</span>
-      </div>
+    {% for i in (1..2) %}
+      {% assign text = product.metafields.custom["review_#{i}_text"] %}
+      {% assign name = product.metafields.custom["review_#{i}_name"] %}
+      {% assign stars = product.metafields.custom["review_#{i}_rating"] %}
+      {% assign verified = product.metafields.custom["review_#{i}_verified"] %}
+      {% if text %}
+        <div class="review-item" data-rating="{{ stars }}">
+          <div class="review-stars">{% for s in (1..stars) %}★{% endfor %}</div>
+          <div class="reviewer">{{ name }}{% if verified %}, Verified Buyer{% endif %}</div>
+          <p>{{ text }}</p>
+        </div>
+      {% endif %}
     {% endfor %}
 
     <div class="review-list">
