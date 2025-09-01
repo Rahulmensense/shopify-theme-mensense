@@ -1238,7 +1238,7 @@ ul {
 }
 
 .pincode-checker #pincode-wrapper input:hover {
-  background-color: unset;
+  background-color: transparent;
 }
 
 #edd-result {
