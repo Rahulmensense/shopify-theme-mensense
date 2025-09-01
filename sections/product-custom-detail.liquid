@@ -115,10 +115,10 @@
             <button onclick="toggleShareMenu()">Share</button>
             <div id="share-menu" class="share-menu" style="display: none;">
               <ul>
-                <li><a href="mailto:?subject={{ product.title }}&body={{ shop.url }}/products/{{ product.handle }}" target="_blank">Email</a></li>
-                <li><a href="https://www.pinterest.com/pin/create/button/?url={{ shop.url }}/products/{{ product.handle }}&description={{ product.title }}" target="_blank">Pinterest</a></li>
-                <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}/products/{{ product.handle }}" target="_blank">Facebook</a></li>
-                <li><a href="https://twitter.com/intent/tweet?text={{ product.title }}&url={{ shop.url }}/products/{{ product.handle }}" target="_blank">X (Twitter)</a></li>
+                <li><a href="mailto:?subject={{ product.title }}&body={{ shop.url }}/products/{{ product.handle }}" target="_blank"><i class="fa-regular fa-envelope"></i> Email</a></li>
+                <li><a href="https://www.pinterest.com/pin/create/button/?url={{ shop.url }}/products/{{ product.handle }}&description={{ product.title }}" target="_blank"><i class="fa-brands fa-pinterest"></i> Pinterest</a></li>
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}/products/{{ product.handle }}" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                <li><a href="https://twitter.com/intent/tweet?text={{ product.title }}&url={{ shop.url }}/products/{{ product.handle }}" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
                 <li><a href="javascript:void(0);" onclick="copyShareLink()">Copy Link</a></li>
               </ul>
               <p id="copy-status" style="display:none; color:green;">Link copied!</p>
