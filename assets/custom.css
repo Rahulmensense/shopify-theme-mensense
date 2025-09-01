@@ -1272,6 +1272,10 @@ ul {
   font-size: 18px;
 }
 
+.product-detail-grid .share-menu ul li a:hover {
+  color: #58718F;
+}
+
 .product-detail-grid .share-menu ul li a i {
   font-size: 22px;
   margin-right: 12px;
