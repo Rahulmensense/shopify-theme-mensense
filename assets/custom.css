@@ -1391,4 +1391,34 @@ ul {
       font-size: 16px;
 }
 
+.social-icons {
+    gap: 15px;
+    margin-top: 21px;
+}
+
+.ms-footer {
+  padding: 10px 0;
+}
+
+.footer-links {
+    padding: 20px 0 53px;
+}
+
+.footer-log a {
+  margin-bottom: 0;
+}
+
+.footer-links h4 {
+  padding-bottom: 13px
+  margin-bottom: 0px;
+}
+
+.ms-footer .tagline {
+  margin-bottom: 0;
+}
+
+.footer-links ul li {
+  margin-top: 2px;
+}
+
 }
