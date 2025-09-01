@@ -60,7 +60,9 @@ $(document).ready(function(){
     slidesToScroll: 1,
     asNavFor: '.js-main-slider',
     focusOnSelect: true,
-    arrows: true, // ✅ Arrows enabled for thumbnails too
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-prev">←</button>',
+    nextArrow: '<button type="button" class="slick-next">→</button>',
     dots: false,
     infinite: false
   });
