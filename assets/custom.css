@@ -1253,6 +1253,9 @@ ul {
   color: #000;
   font-size: 16px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .product-detail-grid .share-buttons button:hover {
