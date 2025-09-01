@@ -1222,8 +1222,10 @@ ul {
     width: 100%;
     margin-right: 0;
     position: relative;
-    border: 0;
+    border: 1px solid;
+    border-color: linear-gradient(to right,#58718f,#11182b);
     border-radius: 50px;
+    box-shadow: 0 0 10px #0000001a;
 }
 
 .pincode-checker #pincode-wrapper button {
