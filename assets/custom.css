@@ -1081,6 +1081,25 @@ ul {
   margin-left: 8px;
 }
 
+.product-detail-grid .low-stock {
+  position: relative;
+  color: #565656;
+  font-size: 16px;
+}
+
+.product-detail-grid .low-stock::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #EE9441;
+  border: 2px solid #EE9441;
+  position: absolute;
+  left: 0;
+  
+}
+
+
+
 .product-tabs details {
   margin-top: 10px;
   border: 1px solid #eee;
