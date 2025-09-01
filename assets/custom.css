@@ -1210,6 +1210,7 @@ ul {
 
 .pincode-checker #pincode-wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
   position: relative;
   width: 50%;
@@ -1235,6 +1236,7 @@ ul {
     border-radius: 50px;
     position: absolute;
     right: 4px;
+    top: 4px;
 }
 
 .pincode-checker #pincode-wrapper input:hover {
