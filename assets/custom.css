@@ -1114,6 +1114,12 @@ ul {
   margin-bottom: 15px;
 }
 
+.product-detail-grid .quantity-selector {
+  background: transparent;
+  border: 0px;
+  justify-content: flex-start;
+}
+
 .product-tabs details {
   margin-top: 10px;
   border: 1px solid #eee;
