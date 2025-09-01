@@ -1082,20 +1082,28 @@ ul {
 }
 
 .product-detail-grid .low-stock {
-  position: relative;
-  color: #565656;
-  font-size: 16px;
+    position: relative;
+    color: #565656;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+    margin: 16px 0;
 }
 
-.product-detail-grid .low-stock::before {
-  content: "\f111";
-  width: 20px;
-  height: 20px;
-  background: #EE9441;
-  border: 2px solid #EE9441;
-  position: absolute;
-  left: 0;
-  font-family: FontAwesome; 
+.product-detail-grid .low-stock:before {
+    content: "\f111";
+    width: 24px;
+    height: 24px;
+    background: #ee944166;
+    position: absolute;
+    left: 0;
+    font-family: FontAwesome;
+    border-radius: 20px;
+    font-size: 16px;
+    top: 0px;
+    text-align: center;
+    color: #ee9441;
 }
 
 
