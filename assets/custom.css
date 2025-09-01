@@ -1062,17 +1062,13 @@ ul {
   color: #000000;
 }
 
-.product-brand {
+.product-detail-grid .product-brand, .product-detail-grid .product-price {
   font-size: 1.2rem;
   margin-bottom: 15px;
   color: #000;
   display: block;
 }
 
-.product-brand, .product-price {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
 .product-rating {
   font-size: 1.5rem;
   color: gold;
