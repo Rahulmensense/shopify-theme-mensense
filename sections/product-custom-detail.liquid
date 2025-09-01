@@ -30,7 +30,7 @@
           {% assign compare = product.compare_at_price %}
           {% if compare > price %}
             {% assign discount = compare | minus: price | times: 100 | divided_by: compare | round %}
-            <p class="product-price">Price: {{ price | money }} <span class="compare-price">{{ compare | money }}</span> <span class="discount">{{ discount }}% OFF</span></p>
+            <p class="product-price">{{ price | money }} <span class="compare-price">{{ compare | money }}</span> <span class="discount">{{ discount }}% OFF</span></p>
           {% else %}
             <p class="product-price">Price: {{ price | money }}</p>
           {% endif %}
