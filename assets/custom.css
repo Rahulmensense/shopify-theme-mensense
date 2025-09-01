@@ -1416,6 +1416,20 @@ ul {
   max-width:100%;
 }
 
+.product-gallery-wrapper .product-gallery-slider {
+  height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-gallery-wrapper .product-gallery-thumbs {
+  height: 382px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Slick arrows */
 .slick-prev, .slick-next {
   position: absolute;
