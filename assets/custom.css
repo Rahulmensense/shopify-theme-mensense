@@ -1115,9 +1115,29 @@ ul {
 }
 
 .product-detail-grid .quantity-selector {
-  background: transparent;
+    background: transparent;
+    border: 0px;
+    justify-content: unset;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: auto;
+    margin-bottom: 18px;
+}
+
+.quantity-selector .quantity-up-down {
+    border: 1px solid #565656;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-selector .quantity-up-down button {
   border: 0px;
-  justify-content: flex-start;
+  font-size: 18px;
+  color: #565656;
 }
 
 .product-tabs details {
