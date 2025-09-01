@@ -1321,7 +1321,7 @@ ul {
 
 .product-detail-grid .feature-badges {
   display: flex;
-  gap: 12px;
+  gap: 0px;
   flex-wrap: wrap;
   margin: 16px 0;
   margin-bottom: 25px;
