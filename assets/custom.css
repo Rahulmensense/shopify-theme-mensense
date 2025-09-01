@@ -1127,11 +1127,11 @@ ul {
 
 .quantity-selector .quantity-up-down {
     border: 1px solid #000;
-    padding: 10px;
+    padding: 8px 17px;
     border-radius: 4px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 25px;
 }
 
 .quantity-selector .quantity-up-down button {
