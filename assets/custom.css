@@ -1440,30 +1440,26 @@ ul {
   border-radius: 10px;
 }
 
-/* Slick arrows */
-.slick-prev, .slick-next {
+.js-thumb-slider .slick-prev,
+.js-thumb-slider .slick-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: #007aff;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  font-size: 18px;
-  border-radius: 4px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
   cursor: pointer;
+  font-size: 16px;
+  color: #333;
 }
 
-.slick-prev {
-  left: -40px;
-}
-.slick-next {
-  right: -40px;
+.js-thumb-slider .slick-prev {
+  left: -30px;
 }
 
-.slick-prev:before, .slick-next:before {
-  display: none;
+.js-thumb-slider .slick-next {
+  right: -30px;
 }
 
 
