@@ -1184,12 +1184,13 @@ ul {
   padding-bottom: 10px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 5px;
 }
 
 .product-detail-grid .pincode-checker .edd-label img {
   max-width: 22px;
   width: 22px;
+  margin-right: 10px;
 }
 
 .icon-location {
