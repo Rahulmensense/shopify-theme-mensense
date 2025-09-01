@@ -1318,14 +1318,14 @@ ul {
 }
 
 
-.feature-badges {
+.product-detail-grid .feature-badges {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   margin: 16px 0;
 }
 
-.badge {
+.product-detail-grid .badge {
   background: #f4f6f8;
   border: 1px solid #e1e4e8;
   color: #111;
@@ -1335,7 +1335,7 @@ ul {
   font-size: 14px;
 }
 
-.badge-tooltip {
+.product-detail-grid .badge-tooltip {
   position: absolute;
   max-width: 320px;
   background: #fff;
@@ -1347,24 +1347,24 @@ ul {
   transition: opacity .15s ease;
 }
 
-.badge-tooltip[aria-hidden="true"] {
+.product-detail-grid .badge-tooltip[aria-hidden="true"] {
   opacity: 0;
   pointer-events: none;
 }
 
-.badge-tooltip[aria-hidden="false"] {
+.product-detail-grid .badge-tooltip[aria-hidden="false"] {
   opacity: 1;
   pointer-events: auto;
 }
 
-.badge-tooltip p {
+.product-detail-grid .badge-tooltip p {
   margin: 0;
   color: #333;
   line-height: 1.45;
   font-size: 14px;
 }
 
-.tooltip-close {
+.product-detail-grid .tooltip-close {
   position: absolute;
   top: 6px;
   right: 6px;
