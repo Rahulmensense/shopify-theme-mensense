@@ -1323,6 +1323,7 @@ ul {
   gap: 12px;
   flex-wrap: wrap;
   margin: 16px 0;
+  margin-bottom: 25px;
 }
 
 .product-detail-grid .badge {
