@@ -1027,11 +1027,12 @@ ul {
 
 /*------ Product Custom Detail CSS ------*/
 
-/* .product-grid {
+.product-detail-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-} */
+}
+
 .product-gallery-slider img,
 .product-gallery-thumbs img {
   width: 100%;
