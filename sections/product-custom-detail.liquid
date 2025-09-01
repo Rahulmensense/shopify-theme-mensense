@@ -55,16 +55,8 @@
               {% for i in (1..empty_stars) %}☆{% endfor %}
             </span>
             <span class="rating-count">
-  {% if rating > 0 %}
-    {{ reviews }}
-    {% if reviews == 1 %}
-      Review
-    {% else %}
-      Reviews
-    {% endif %}
-  {% endif %}
-</span>
-
+              {% if rating > 0 %}{{ reviews }}{% if reviews == 1 %}Review{% else %}Reviews{% endif %}{% endif %}
+            </span>
           </div>
 
           <!-- Low Stock -->
