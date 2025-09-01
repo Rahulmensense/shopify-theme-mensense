@@ -91,7 +91,7 @@
           </div>
 
           <!-- Add to Cart + Buy Now -->
-          <form method="post" action="/cart/add">
+          <form class="product-card-btn" method="post" action="/cart/add">
             <input type="hidden" name="id" value="{{ product.variants.first.id }}">
             <button type="submit" class="btn-add-to-cart">Add to Cart</button>
             <button type="submit" name="checkout" class="btn-buy-now">Buy Now</button>
