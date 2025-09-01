@@ -1234,7 +1234,11 @@ ul {
     border: none;
     border-radius: 50px;
     position: absolute;
-    right: 10px;
+    right: 4px;
+}
+
+.pincode-checker #pincode-wrapper input:hover {
+  background-color: unset;
 }
 
 #edd-result {
