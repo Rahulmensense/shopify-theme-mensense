@@ -1412,6 +1412,10 @@ ul {
   overflow: hidden;
 }
 
+.product-gallery-wrapper .product-gallery-slider .slide img {
+  max-width:100%;
+}
+
 /* Slick arrows */
 .slick-prev, .slick-next {
   position: absolute;
