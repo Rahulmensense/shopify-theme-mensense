@@ -1328,7 +1328,7 @@ ul {
 .product-detail-grid .badge {
   background: transparent;
   border: none;
-  color: #111;
+  color: #000;
   padding: 8px 12px;
   border-radius: 999px;
   cursor: pointer;
