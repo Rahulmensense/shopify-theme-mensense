@@ -1442,6 +1442,86 @@ ul {
   border-radius: 10px;
 }
 
+.review-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.rating-summary {
+  margin-bottom: 20px;
+}
+
+.rating-score {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.rating-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+.rating-bar .bar {
+  flex: 1;
+  height: 8px;
+  background: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.rating-bar .fill {
+  height: 100%;
+  background: #ffc107;
+}
+
+.review-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.review-controls input,
+.review-controls select,
+.write-review {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.write-review {
+  background: #007aff;
+  color: white;
+  cursor: pointer;
+}
+
+.review-list .review-item {
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.review-stars {
+  color: #ffc107;
+  font-size: 1.2rem;
+}
+
+.show-more-reviews {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #eee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
 /* .js-thumb-slider .slick-prev,
 .js-thumb-slider .slick-next {
   position: absolute;
