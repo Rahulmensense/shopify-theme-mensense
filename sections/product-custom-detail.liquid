@@ -172,44 +172,30 @@
   <h2>Customer Reviews</h2>
 
   <!-- Rating Summary -->
-  <div class="rating-summary">
-    {% assign rating = product.metafields.custom.rating_value | default: 0 %}
-    {% assign count = product.metafields.custom.rating_count | default: 0 %}
-    <div class="rating-score">{{ rating }}/5 ★</div>
-    <div class="rating-count">{{ count }} Reviews</div>
+  {% assign rating = product.metafields.custom.rating_value | default: 0 %}
+  {% assign count = product.metafields.custom.rating_count | default: 0 %}
+  <div class="rating-score">{{ rating }}/5 ★</div>
+  <div class="rating-count">{{ count }} Reviews</div>
 
-    {% for i in (5..1) %}
-      {% assign pct = product.metafields.custom["#{i}_star_pct"] | default: 0 %}
-      <div class="rating-bar">
-        <span>{{ i }} ★</span>
-        <div class="bar"><div class="fill" style="width: {{ pct }}%;"></div></div>
-        <span>{{ pct }}%</span>
-      </div>
-    {% endfor %}
-  </div>
-
-  <!-- Controls -->
-  <div class="review-controls">
-    <select id="reviewSort">
-      <option value="recent">Most Relevant</option>
-      <option value="high">Highest Rating</option>
-    </select>
-    <select id="reviewFilter">
-      <option value="all">All Ratings</option>
-      <option value="5">5 Star Only</option>
-      <option value="4up">4 Star & Up</option>
-    </select>
-    <button class="write-review">Write a Review</button>
-  </div>
+  {% for i in (5..1) %}
+    {% assign pct = product.metafields.custom["#{i}_star_pct"] | default: 0 %}
+    <div class="rating-bar">
+      <span>{{ i }} ★</span>
+      <div class="bar"><div class="fill" style="width: {{ pct }}%;"></div></div>
+      <span>{{ pct }}%</span>
+    </div>
+  {% endfor %}
 
   <!-- Review List -->
   <div class="review-list" id="reviewList">
+    {% assign reviewCount = 0 %}
     {% for i in (1..5) %}
       {% assign text = product.metafields.custom["review_#{i}_text"] %}
       {% assign name = product.metafields.custom["review_#{i}_name"] | default: "Anonymous" %}
       {% assign stars = product.metafields.custom["review_#{i}_rating"] | default: 5 %}
-      {% assign verified = product.metafields.custom["review_#{i}_verified"] | default: true %}
+      {% assign verified = product.metafields.custom["review_#{i}_verified"] | default: false %}
       {% if text %}
+        {% assign reviewCount = reviewCount | plus: 1 %}
         <div class="review-item" data-rating="{{ stars }}">
           <div class="review-stars">{% for s in (1..stars) %}★{% endfor %}</div>
           <div class="reviewer">{{ name }}{% if verified %}, Verified Buyer{% endif %}</div>
@@ -219,8 +205,11 @@
     {% endfor %}
   </div>
 
-  <button class="show-more-reviews" onclick="loadMoreReviews()">Show More</button>
+  {% if reviewCount > 3 %}
+    <button class="show-more-reviews" onclick="loadMoreReviews()">Show More</button>
+  {% endif %}
 </section>
+
 
 <script>
   function increaseQty() {
@@ -321,29 +310,33 @@
     closeBtn.addEventListener('click', closeTooltip);
   })();
 
-  function loadMoreReviews() {
-    const reviews = document.querySelectorAll('.review-item');
-    reviews.forEach((r, i) => {
-      r.style.display = i < 5 ? 'block' : 'none';
-    });
-    document.querySelector('.show-more-reviews').style.display = 'none';
-  }
+</script>
 
-  document.addEventListener('DOMContentLoaded', () => {
-    loadMoreReviews();
+  <script>
+function loadMoreReviews() {
+  const reviews = document.querySelectorAll('.review-item');
+  reviews.forEach((r, i) => {
+    r.style.display = 'block';
+  });
+  document.querySelector('.show-more-reviews').style.display = 'none';
+}
 
-    document.getElementById('reviewFilter').addEventListener('change', function() {
-      const val = this.value;
-      document.querySelectorAll('.review-item').forEach(item => {
-        const rating = parseInt(item.getAttribute('data-rating'));
-        if (val === 'all') item.style.display = 'block';
-        else if (val === '5' && rating === 5) item.style.display = 'block';
-        else if (val === '4up' && rating >= 4) item.style.display = 'block';
-        else item.style.display = 'none';
-      });
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  const reviews = document.querySelectorAll('.review-item');
+  reviews.forEach((r, i) => {
+    r.style.display = i < 3 ? 'block' : 'none';
   });
 
-
+  document.getElementById('reviewFilter')?.addEventListener('change', function() {
+    const val = this.value;
+    document.querySelectorAll('.review-item').forEach(item => {
+      const rating = parseInt(item.getAttribute('data-rating'));
+      if (val === 'all') item.style.display = 'block';
+      else if (val === '5' && rating === 5) item.style.display = 'block';
+      else if (val === '4up' && rating >= 4) item.style.display = 'block';
+      else item.style.display = 'none';
+    });
+  });
+});
 </script>
 
