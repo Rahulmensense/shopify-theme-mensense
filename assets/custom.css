@@ -1317,7 +1317,6 @@ ul {
   color: #1DA1F2;
 }
 
-
 .product-detail-grid .feature-badges {
   display: flex;
   gap: 12px;
@@ -1408,7 +1407,7 @@ ul {
 }
 
 .product-gallery-wrapper {
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
   overflow: hidden;
 }
