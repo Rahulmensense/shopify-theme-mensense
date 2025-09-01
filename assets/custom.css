@@ -1254,7 +1254,7 @@ ul {
   border-radius: 8px;
   width: fit-content;
   position: absolute;
-  box-shadow: 0 0 10px #0000001
+  box-shadow: 0 0 10px #0000001;
 }
 
 .product-detail-grid .share-menu ul {
@@ -1273,7 +1273,7 @@ ul {
 }
 
 .product-detail-grid .share-menu ul li a i {
-  font-size: 20px;
+  font-size: 22px;
   margin-right: 12px;
 }
 
