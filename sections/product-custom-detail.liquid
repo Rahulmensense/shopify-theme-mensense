@@ -173,10 +173,10 @@
 
   <!-- Rating Summary -->
   <div class="rating-score">
-    {{ product.metafields.custom.rating_value | default: 0 }}/5 ★
+    {{ product.metafields.custom["rating_value"] | default: 0 }}/5 ★
   </div>
   <div class="rating-count">
-    {{ product.metafields.custom.rating_count | default: 0 }} Reviews
+    {{ product.metafields.custom["rating_count"] | default: 0 }} Reviews
   </div>
 
   <!-- Rating Breakdown -->
@@ -218,14 +218,14 @@
   {% unless product.metafields.custom["review_1_text"] == blank %}
     {% assign reviewCount = reviewCount | plus: 1 %}
     <div class="review-item">
-      <div class="review-stars">{% for s in (1..product.metafields.custom.review_1_rating) %}★{% endfor %}</div>
+      <div class="review-stars">{% for s in (1..product.metafields.custom["review_1_rating"]) %}★{% endfor %}</div>
       <div class="reviewer">
-        {{ product.metafields.custom.review_1_name }}
-        {% if product.metafields.custom.review_1_verified %}
+        {{ product.metafields.custom["review_1_name"] }}
+        {% if product.metafields.custom["review_1_verified"] %}
           <span class="verified-badge">✔️ Verified Buyer</span>
         {% endif %}
       </div>
-      <p class="review-text">{{ product.metafields.custom["review_1_text"] }} </p>
+      <p class="review-text">{{ product.metafields.custom["review_1_text"] }}</p>
       <div class="review-actions">
         <span class="helpful">👍 1 found this helpful</span>
         <a href="#" class="report-link">Report review</a>
@@ -233,17 +233,17 @@
     </div>
   {% endunless %}
 
-  {% unless product.metafields.custom.review_2_text == blank %}
+  {% unless product.metafields.custom["review_2_text"] == blank %}
     {% assign reviewCount = reviewCount | plus: 1 %}
     <div class="review-item">
-      <div class="review-stars">{% for s in (1..product.metafields.custom.review_2_rating) %}★{% endfor %}</div>
+      <div class="review-stars">{% for s in (1..product.metafields.custom["review_2_rating"]) %}★{% endfor %}</div>
       <div class="reviewer">
-        {{ product.metafields.custom.review_2_name }}
-        {% if product.metafields.custom.review_2_verified %}
+        {{ product.metafields.custom["review_2_name"] }}
+        {% if product.metafields.custom["review_2_verified"] %}
           <span class="verified-badge">✔️ Verified Buyer</span>
         {% endif %}
       </div>
-      <p class="review-text">{{ product.metafields.custom.review_2_text }}</p>
+      <p class="review-text">{{ product.metafields.custom["review_2_text"] }}</p>
       <div class="review-actions">
         <span class="helpful">👍 1 found this helpful</span>
         <a href="#" class="report-link">Report review</a>
@@ -251,17 +251,17 @@
     </div>
   {% endunless %}
 
-  {% unless product.metafields.custom.review_3_text == blank %}
+  {% unless product.metafields.custom["review_3_text"] == blank %}
     {% assign reviewCount = reviewCount | plus: 1 %}
     <div class="review-item">
-      <div class="review-stars">{% for s in (1..product.metafields.custom.review_3_rating) %}★{% endfor %}</div>
+      <div class="review-stars">{% for s in (1..product.metafields.custom["review_3_rating"]) %}★{% endfor %}</div>
       <div class="reviewer">
-        {{ product.metafields.custom.review_3_name }}
-        {% if product.metafields.custom.review_3_verified %}
+        {{ product.metafields.custom["review_3_name"] }}
+        {% if product.metafields.custom["review_3_verified"] %}
           <span class="verified-badge">✔️ Verified Buyer</span>
         {% endif %}
       </div>
-      <p class="review-text">{{ product.metafields.custom.review_3_text }}</p>
+      <p class="review-text">{{ product.metafields.custom["review_3_text"] }}</p>
       <div class="review-actions">
         <span class="helpful">👍 1 found this helpful</span>
         <a href="#" class="report-link">Report review</a>
