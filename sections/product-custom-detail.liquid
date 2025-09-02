@@ -223,53 +223,26 @@
   </div>
 
   <!-- Review List -->
+  {% assign keys = "review_a_text,review_b_text,review_text_safe,review_demo_text" | split: "," %}
   {% assign reviewCount = 0 %}
-  {% assign maxVisible = 3 %}
+  {% assign maxVisible = 2 %}
 
   <div id="review-list">
-    {% for i in (1..10) %}
-      {% capture key_text %}review_{{ i }}_text{% endcapture %}
-      {% capture key_name %}review_{{ i }}_name{% endcapture %}
-      {% capture key_rating %}review_{{ i }}_rating{% endcapture %}
-      {% capture key_verified %}review_{{ i }}_verified{% endcapture %}
-
-      {% assign text_mf = product.metafields.custom[key_text] %}
-      {% assign name_mf = product.metafields.custom[key_name] %}
-      {% assign rating_mf = product.metafields.custom[key_rating] %}
-      {% assign verified_mf = product.metafields.custom[key_verified] %}
-
-      {% assign text = text_mf.value | default: text_mf %}
-      {% assign name = name_mf.value | default: name_mf | default: "Anonymous" %}
-      {% assign rating = rating_mf.value | default: rating_mf | plus: 0 %}
-      {% assign verified = verified_mf.value | default: verified_mf %}
-
-      {% if text != blank %}
+    {% for key in keys %}
+      {% assign text = product.metafields.custom[key] %}
+      {% unless text == blank %}
         {% assign reviewCount = reviewCount | plus: 1 %}
-        <div class="review-item" data-index="{{ reviewCount }}"{% if reviewCount > maxVisible %} style="display:none"{% endif %}>
-          <div class="review-stars">
-            {% for s in (1..rating) %}★{% endfor %}
-          </div>
-          <div class="reviewer">
-            {{ name }}
-            {% if verified %}<span class="verified-badge">✔️ Verified Buyer</span>{% endif %}
-          </div>
+        <div class="review-item"{% if reviewCount > maxVisible %} style="display:none"{% endif %}>
+          <div class="review-stars">★★★★★</div>
+          <div class="reviewer">Anonymous <span class="verified-badge">✔️ Verified Buyer</span></div>
           <p class="review-text">{{ text }}</p>
           <div class="review-actions">
             <span class="helpful">👍 1 found this helpful</span>
             <a href="#" class="report-link">Report review</a>
           </div>
         </div>
-      {% endif %}
+      {% endunless %}
     {% endfor %}
-
-    {% if reviewCount == 0 and product.metafields.custom["review_1_text_emergency"] != blank %}
-      <div class="review-item" data-index="1">
-        <div class="review-stars">★★★★★</div>
-        <div class="reviewer">Anonymous <span class="verified-badge">✔️ Verified Buyer</span></div>
-        <p class="review-text">{{ product.metafields.custom["review_1_text_emergency"] }}</p>
-      </div>
-      {% assign reviewCount = 1 %}
-    {% endif %}
   </div>
 
   {% if reviewCount > maxVisible %}
@@ -291,6 +264,7 @@ function filterReviews(value) {
   console.log('Filter selected:', value);
 }
 </script>
+
 
 
 
