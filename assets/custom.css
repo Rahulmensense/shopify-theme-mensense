@@ -1789,7 +1789,7 @@ ul {
 }
 
 .footer-links {
-  padding: 20px 0;
+  padding: 12px 0;
   padding-bottom: 86px;
 }
 
@@ -2040,5 +2040,25 @@ ul {
   padding: 20px 0 20px
 }
 
+.ms-footer .tagline {
+  padding-bottom: 0;
+}
+
+.footer-links ul li {
+margin-top: 5px;
+}
+
+.footer-links h4 {
+  margin-bottom: 16px;
+}
+
+.footer-log a img {
+	max-width: 79%;
+}
+
+.social-icons {
+  gap: 15px;
+  margin-top: 28px;
+}
 
 }
