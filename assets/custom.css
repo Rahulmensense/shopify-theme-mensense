@@ -1882,6 +1882,15 @@ ul {
   margin-bottom: 32px;
 }
 
+.text-gradient-banner-bottom {
+  margin-top: -13px;
+}
+
+.text-gradient-banner-bottom h2 {
+  font-size: 276px;
+  line-height: normal;
+}
+
 .hero-author ul {
     width: 13%;
 }
