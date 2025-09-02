@@ -1502,6 +1502,19 @@ ul {
 }
 .rating-bar .bar { flex: 1; height: 10px; background: #58718f38; border-radius: 10px; overflow: hidden; }
 .rating-bar .fill { height: 100%; background: #58718F; }
+
+.write-review-flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 55px 0px 25px;
+  align-items: center;
+}
+
+.write-review-flex h5 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
 .review-item { background: white; padding: 12px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
 .review-stars { color: #ffc107; font-size: 1.2rem; }
 .reviewer { font-weight: bold; margin-bottom: 6px; }
