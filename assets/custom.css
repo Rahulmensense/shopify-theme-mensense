@@ -1491,7 +1491,16 @@ ul {
     gap: 10px;
     margin: 30px 0;
 }
-.rating-bar .bar { flex: 1; height: 8px; background: #58718f38; border-radius: 4px; overflow: hidden; }
+
+.rating-bar span {
+  font-size:16px;
+  color: #000;
+}
+
+.rating-bar span i {
+  color: #58718F;
+}
+.rating-bar .bar { flex: 1; height: 10px; background: #58718f38; border-radius: 10px; overflow: hidden; }
 .rating-bar .fill { height: 100%; background: #58718F; }
 .review-item { background: white; padding: 12px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
 .review-stars { color: #ffc107; font-size: 1.2rem; }
