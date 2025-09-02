@@ -240,6 +240,11 @@
   {% assign rating_mf = product.metafields.custom[key_rating] %}
   {% assign verified_mf = product.metafields.custom[key_verified] %}
 
+      {% assign text = text_mf.value | default: text_mf %}
+      {% assign name = name_mf.value | default: name_mf | default: "Anonymous" %}
+      {% assign rating_raw = rating_mf.value | default: rating_mf | default: 0 %}
+      {% assign rating = rating_raw | plus: 0 %}
+      {% assign verified = verified_mf.value | default: verified_mf %}
 
       {% if text != blank %}
         {% assign reviewCount = reviewCount | plus: 1 %}
