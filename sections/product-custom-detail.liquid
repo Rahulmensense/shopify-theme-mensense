@@ -215,7 +215,7 @@
   <!-- Review Cards -->
   {% assign reviewCount = 0 %}
 
-  {% unless product.metafields.custom.review_1_text == blank %}
+  {% unless product.metafields.custom["review_1_text"] == blank %}
     {% assign reviewCount = reviewCount | plus: 1 %}
     <div class="review-item">
       <div class="review-stars">{% for s in (1..product.metafields.custom.review_1_rating) %}★{% endfor %}</div>
@@ -225,7 +225,7 @@
           <span class="verified-badge">✔️ Verified Buyer</span>
         {% endif %}
       </div>
-      <p class="review-text">{{ product.metafields.custom.review_1_text }}</p>
+      <p class="review-text">{{ product.metafields.custom["review_1_text"] }}</p>
       <div class="review-actions">
         <span class="helpful">👍 1 found this helpful</span>
         <a href="#" class="report-link">Report review</a>
