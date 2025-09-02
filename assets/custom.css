@@ -1585,7 +1585,14 @@ ul {
   margin: 40px 0;
 }
 
-.show-more-reviews { margin-top: 10px; padding: 8px 16px; background: #eee; border: none; border-radius: 6px; cursor: pointer; }
+.show-more-reviews { 
+  margin-top: 10px; 
+  padding: 8px 16px; 
+  background: #565656; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
 
 
 
