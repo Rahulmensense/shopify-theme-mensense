@@ -1868,14 +1868,8 @@ ul {
 
 @media only screen and (min-width: 1200px) and (max-width: 1366px){
 
-  .mb-40 {
-    margin-bottom: 16px;
-  }
-  .mt-85 {
-    margin-top: 0px;
-}
 .hero-content .section-heading .section-title {
-  font-size: 55px;
+  font-size: 65px;
 }
 
 .hero-content .hero-btn-wrap {
