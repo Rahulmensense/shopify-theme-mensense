@@ -227,23 +227,23 @@
   {% assign reviewCount = 0 %}
   {% assign maxVisible = 2 %}
 
-  <div id="review-list">
-    {% for key in keys %}
-      {% assign text = product.metafields.custom[key] %}
-      {% unless text == blank %}
-        {% assign reviewCount = reviewCount | plus: 1 %}
-        <div class="review-item"{% if reviewCount > maxVisible %} style="display:none"{% endif %}>
-          <div class="review-stars">★★★★★</div>
-          <div class="reviewer">Anonymous <span class="verified-badge">✔️ Verified Buyer</span></div>
-          <p class="review-text">{{ text }}</p>
-          <div class="review-actions">
-            <span class="helpful">👍 1 found this helpful</span>
-            <a href="#" class="report-link">Report review</a>
-          </div>
+<div id="review-list">
+  {% for key in keys %}
+    {% assign text = product.metafields.custom[key] %}
+    {% unless text == blank %}
+      {% assign reviewCount = reviewCount | plus: 1 %}
+      <div class="review-item" data-index="{{ reviewCount }}" data-rating="5"{% if reviewCount > maxVisible %} style="display:none"{% endif %}>
+        <div class="review-stars">★★★★★</div>
+        <div class="reviewer">Anonymous <span class="verified-badge">✔️ Verified Buyer</span></div>
+        <p class="review-text">{{ text }}</p>
+        <div class="review-actions">
+          <span class="helpful">👍 1 found this helpful</span>
+          <a href="#" class="report-link">Report review</a>
         </div>
-      {% endunless %}
-    {% endfor %}
-  </div>
+      </div>
+    {% endunless %}
+  {% endfor %}
+</div>
 
   {% if reviewCount > maxVisible %}
     <button class="show-more-reviews" onclick="showMoreReviews()">Show more</button>
@@ -253,18 +253,44 @@
 </section>
 
 <script>
-function showMoreReviews() {
-  document.querySelectorAll('#review-list .review-item[style*="display:none"]').forEach(function(el){
-    el.style.display = 'block';
-  });
-  var btn = document.querySelector('.show-more-reviews');
-  if (btn) btn.style.display = 'none';
-}
-function filterReviews(value) {
-  console.log('Filter selected:', value);
-}
-</script>
+  function showMoreReviews() {
+    document.querySelectorAll('#review-list .review-item[style*="display:none"]').forEach(function(el){
+      el.style.display = 'block';
+    });
+    var btn = document.querySelector('.show-more-reviews');
+    if (btn) btn.style.display = 'none';
+  }
 
+  function filterReviews(value) {
+    console.log('Filter selected:', value);
+  }
+
+  function filterReviews(value) {
+    const reviews = Array.from(document.querySelectorAll('#review-list .review-item'));
+    const container = document.getElementById('review-list');
+
+    // Reset all reviews
+    reviews.forEach(r => r.style.display = 'block');
+
+    if (value === 'rating') {
+      reviews.sort((a, b) => {
+        const ratingA = parseInt(a.dataset.rating || 0);
+        const ratingB = parseInt(b.dataset.rating || 0);
+        return ratingB - ratingA;
+      });
+    } else if (value === 'media') {
+      reviews.forEach(r => {
+        if (!r.querySelector('.review-media')) {
+          r.style.display = 'none';
+        }
+      });
+      return;
+    }
+
+    // Reorder DOM
+    reviews.forEach(r => container.appendChild(r));
+  }
+</script>
 
 
 
