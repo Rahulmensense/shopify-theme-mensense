@@ -1456,6 +1456,12 @@ ul {
   color: #000000;
 }
 
+.rating-summary-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
 .rating-score { font-size: 1.5rem; font-weight: bold; }
 .rating-bar { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
 .rating-bar .bar { flex: 1; height: 8px; background: #ddd; border-radius: 4px; overflow: hidden; }
