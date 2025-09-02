@@ -183,8 +183,8 @@
     {% for i in (5..1) %}
       {% comment %} {% assign key = i | append: '_star_pct' %}
       {% assign key = i | append: '_star' %} {% endcomment %}
-      {% assign key = i | append: '_star' %}
-      {% assign pct = product.metafields.custom[key] | default: 0 %}
+      {% assign pct = product.metafields.custom[key] %}
+      
       <div class="rating-bar" data-stars="{{ i }}" data-pct="{{ pct }}">
         <span style="min-width:34px;">{{ i }} ★</span>
         <div class="bar"><div class="fill" style="width: {{ pct }}%;"></div></div>
