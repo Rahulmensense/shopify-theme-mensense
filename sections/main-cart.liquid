@@ -1,6 +1,6 @@
 
 
-<cart-items-component
+{% comment %} <cart-items-component
   class="cart-items-component"
   data-section-id="{{ section.id }}"
 >
@@ -26,12 +26,12 @@
         </div>
       {%- endunless -%}
 
-      {% comment %} <div class="cart-page__more-blocks">
+      <div class="cart-page__more-blocks">
         {%- content_for 'blocks' -%}
-      </div> {% endcomment %}
+      </div>
     </div>
   </div>
-</cart-items-component>
+</cart-items-component> {% endcomment %}
 
 {% stylesheet %}
   .cart-page {
