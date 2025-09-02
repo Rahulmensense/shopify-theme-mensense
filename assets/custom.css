@@ -1540,12 +1540,40 @@ ul {
   padding: 10px;
 }
 
+.write-review-flex .review-item {
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
 
+.review-item .review-stars { 
+  color: #58718F;     
+  font-size: 32px;
+  padding-bottom: 15px;
+}
 
-.review-item { background: white; padding: 12px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
-.review-stars { color: #ffc107; font-size: 1.2rem; }
-.reviewer { font-weight: bold; margin-bottom: 6px; }
+.review-item .reviewer {     
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-actions .report-link {
+  color: #58718F;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
 .show-more-reviews { margin-top: 10px; padding: 8px 16px; background: #eee; border: none; border-radius: 6px; cursor: pointer; }
+
 
 
 
