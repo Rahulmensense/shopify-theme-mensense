@@ -1,340 +1,107 @@
-<section class="product-details-area">
-  <div class="container">
-    <div class="product-layout">
-      <div class="product-grid product-detail-grid">
-        <!-- LEFT: Slick Slider -->
-        <div class="product-gallery-wrapper">
-          <div class="product-gallery-slider js-main-slider">
-            {% for image in product.images %}
-              <div class="slide">
-                <img src="{{ image | image_url: width: 800 }}" alt="{{ product.title }}">
-              </div>
-            {% endfor %}
-          </div>
-          <div class="product-gallery-thumbs js-thumb-slider">
-            {% for image in product.images %}
-              <div class="thumb">
-                <img src="{{ image | image_url: width: 160 }}" alt="{{ product.title }}">
-              </div>
-            {% endfor %}
-          </div>
+{% comment %}
+Custom Product Detail Page Template
+File: product-custom-detail.liquid
+{% endcomment %}
+
+<div class="custom-product-page container">
+  <div class="product-main grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Left: Product Images -->
+    <div class="product-gallery">
+      {% if product.images.size > 0 %}
+        <div class="main-image mb-4">
+          <img id="MainProductImage" src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}">
         </div>
-
-        <!-- RIGHT: Product Info -->
-        <div class="product-info">
-          <h1 class="product-title">{{ product.title }}</h1>
-          <p class="product-brand">Brand: <strong>{{ product.vendor }}</strong></p>
-
-          <!-- Price & Discount -->
-          {% assign price = product.variants.first.price %}
-          {% assign compare = product.variants.first.compare_at_price %}
-          {% if compare > price %}
-            {% assign discount = compare | minus: price | times: 100 | divided_by: compare | round %}
-            <p class="product-price">
-              <span class="sale-price">{{ price | money }}</span>
-              <span class="compare-price">{{ compare | money }}</span>
-              <span class="discount-badge">{{ discount }}% OFF</span>
-            </p>
-          {% else %}
-            <p class="product-price"><span class="sale-price">{{ price | money }}</span></p>
-          {% endif %}
-
-          <!-- Rating -->
-          {% assign rating = product.metafields.custom.rating_value | default: 0 %}
-          {% assign reviews = product.metafields.custom.rating_count | default: 0 %}
-          {% assign full_stars = rating | floor %}
-          {% assign half_star = 0 %}
-          {% if rating > full_stars %}
-            {% assign half_star = 1 %}
-          {% endif %}
-          {% assign empty_stars = 5 | minus: full_stars | minus: half_star %}
-          <div class="product-rating">
-            <span class="stars">
-              {% for i in (1..full_stars) %}<i class="fa-solid fa-star"></i>{% endfor %}
-              {% if half_star == 1 %}<i class="fa-solid fa-star-half-stroke"></i>{% endif %}
-              {% for i in (1..empty_stars) %}<i class="fa-regular fa-star"></i>{% endfor %}
-            </span>
-            <span class="rating-count">
-              {% if rating > 0 %}{{ reviews }}{% if reviews == 1 %}Review{% else %}Reviews{% endif %}{% endif %}
-            </span>
-          </div>
-
-          <!-- Low Stock -->
-          {% assign stock = product.variants.first.inventory_quantity %}
-          {% if stock < 10 %}
-            <p class="low-stock">Low stock: {{ stock }} left</p>
-          {% endif %}
-
-          <!-- Size -->
-          <p class="product-size">Size: {{ product.variants.first.title }}</p>
-          {% comment %} 🔹 Dropdown (Multiple Sizes)
-          liquid
-          {% for option in product.options_with_values %}
-            {% if option.name == 'Size' %}
-              <label for="Size">Size:</label>
-              <select id="Size" name="Size">
-                {% for value in option.values %}
-                  <option value="{{ value }}">{{ value }}</option>
-                {% endfor %}
-              </select>
-            {% endif %}
-          {% endfor %} {% endcomment %}
-
-          <!-- Quantity Selector -->
-          <div class="quantity-selector">
-            <label>Quantity:</label>
-            <div class="quantity-up-down">
-              <button type="button" onclick="decreaseQty()">−</button>
-              <input type="number" id="Quantity" name="quantity" min="1" value="1">
-              <button type="button" onclick="increaseQty()">+</button>
-            </div>
-          </div>
-
-          <!-- Add to Cart + Buy Now -->
-          <form class="product-card-btn" method="post" action="/cart/add">
-            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-            <button type="submit" class="btn-add-to-cart">Add to Cart</button>
-            <button type="submit" name="checkout" class="btn-buy-now">Buy Now</button>
-          </form>
-
-          <!-- Pincode + EDD -->
-          <div class="pincode-checker">
-            <p class="edd-label"><img class="icon-truck" src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/truk.png?v=1756739832" alt="pincode" /> Check <b>EDD</b> by entering pin-code below</p>
-            <a href="javascript:void(0);" onclick="showPincodeInput()" class="pincode-trigger">
-              <i class="fa-solid fa-location-dot icon-location"></i> Enter area Pincode
-            </a>
-            <div id="pincode-wrapper" style="display: none;">
-              <input type="text" id="pincode" name="pincode" placeholder="e.g. 302001">
-              <button type="button" onclick="checkEDD()">Check EDD</button>
-              <p id="edd-result"></p>
-            </div>
-          </div>
-
-          <div class="feature-badges" id="feature-badges">
-            <button class="badge" data-content="Rated 5 stars by verified buyers for quality and performance."><img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/star-rated.svg?v=1756748570" alt="Star Rated"> 5 Star Rated</button>
-            <button class="badge" data-content="Delivery assured within promised timeline or full refund."><img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/delivery-guaranteed.svg?v=1756748569" alt="Delivery Guaranteed"> Delivery Guaranteed</button>
-            <button class="badge" data-content="Free standard delivery on eligible orders."><img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/free-delivery.svg?v=1756748569" alt="Free Delivery"> Free Delivery</button>
-            <button class="badge" data-content="Top-selling product in its category this month."><img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/best-selling.svg?v=1756748569" alt="Best Selling Product"> Best Selling Product</button>
-
-            <div class="badge-tooltip" id="badge-tooltip" role="dialog" aria-hidden="true">
-              <button class="tooltip-close" aria-label="Close">×</button>
-              <p id="badge-tooltip-content"></p>
-            </div>
-          </div>
-
-          <!-- Share Button -->
-          <div class="share-buttons">
-            <button onclick="toggleShareMenu()"><i class="fa-solid fa-arrow-up-from-bracket"></i> Share</button>
-            <div id="share-menu" class="share-menu" style="display: none;">
-              <ul>
-                <li><a href="mailto:?subject={{ product.title }}&body={{ shop.url }}/products/{{ product.handle }}" target="_blank"><i class="fa-regular fa-envelope email-icon"></i> Email</a></li>
-                <li><a href="https://www.pinterest.com/pin/create/button/?url={{ shop.url }}/products/{{ product.handle }}&description={{ product.title }}" target="_blank"><i class="fa-brands fa-pinterest pinterest-icon"></i> Pinterest</a></li>
-                <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}/products/{{ product.handle }}" target="_blank"><i class="fa-brands fa-facebook facebook-icon"></i> Facebook</a></li>
-                <li><a href="https://twitter.com/intent/tweet?text={{ product.title }}&url={{ shop.url }}/products/{{ product.handle }}" target="_blank"><i class="fa-brands fa-x-twitter twitter-icon"></i> Twitter</a></li>
-                <li><a href="javascript:void(0);" onclick="copyShareLink()"><i class="fa-solid fa-link"></i> Copy Link</a></li>
-              </ul>
-              <p id="copy-status" style="display:none; color:green;">Link copied!</p>
-            </div>
-          </div>
-
-
-          <!-- Description & Metafields -->
-          <div class="product-description-block">
-            <p>{{ product.description }}</p>
-
-            {% if product.metafields.custom.benefits %}
-              <p><strong>Benefits:</strong> {{ product.metafields.custom.benefits }}</p>
-            {% endif %}
-
-            {% if product.metafields.custom.additional_info %}
-              <p><strong>Additional Info:</strong> {{ product.metafields.custom.additional_info }}</p>
-            {% endif %}
-
-            {% if product.metafields.custom.ingredients %}
-              <p><strong>Ingredients:</strong> {{ product.metafields.custom.ingredients }}</p>
-            {% endif %}
-
-            {% if product.metafields.custom.usage %}
-              <p><strong>Directions for Use:</strong> {{ product.metafields.custom.usage }}</p>
-            {% endif %}
-
-            {% if product.metafields.custom.review_text %}
-              <p><strong>Customer Review:</strong> {{ product.metafields.custom.review_text | truncatewords: 20 }}</p>
-            {% endif %}
-          </div>
+        <div class="thumbnail-images flex gap-2">
+          {% for image in product.images %}
+            <img 
+              src="{{ image | img_url: '100x100' }}" 
+              alt="{{ product.title }}" 
+              class="thumbnail cursor-pointer border rounded"
+              onclick="document.getElementById('MainProductImage').src=this.src"
+            >
+          {% endfor %}
         </div>
+      {% endif %}
+    </div>
+
+    <!-- Right: Product Info -->
+    <div class="product-info">
+      <h1 class="text-2xl font-bold">{{ product.title }}</h1>
+      <p class="text-lg font-semibold mt-2 text-red-600">
+        {{ product.price | money }}
+      </p>
+
+      <!-- Reviews -->
+      <div class="reviews mt-2">
+        ⭐⭐⭐⭐⭐ ({{ product.metafields.custom.reviews_count | default: 12 }}) Reviews
+      </div>
+
+      <!-- Stock Info -->
+      <p class="text-sm text-gray-500 mt-1">
+        {% if product.available %} ✅ In Stock {% else %} ❌ Out of Stock {% endif %}
+      </p>
+
+      <!-- Variant Selector -->
+      {% if product.variants.size > 1 %}
+        <form method="post" action="/cart/add" id="add-to-cart-form">
+          <select name="id" id="ProductSelect" class="border p-2 rounded w-full mt-4">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}">
+                {{ variant.title }} - {{ variant.price | money }}
+              </option>
+            {% endfor %}
+          </select>
+          <button type="submit" class="bg-black text-white px-6 py-2 mt-4 rounded">Add to Cart</button>
+        </form>
+      {% else %}
+        <form method="post" action="/cart/add">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+          <button type="submit" class="bg-black text-white px-6 py-2 mt-4 rounded">Add to Cart</button>
+        </form>
+      {% endif %}
+
+      <!-- Buy Now Button -->
+      <button class="bg-gray-900 text-white px-6 py-2 mt-2 rounded w-full">Buy Now</button>
+
+      <!-- USP Icons -->
+      <div class="usp flex gap-6 mt-6">
+        <div>⭐ 5 Star Rated</div>
+        <div>🚚 Free Delivery</div>
+        <div>🔥 Best Seller</div>
       </div>
     </div>
   </div>
-</section>
 
-<section class="customer-reviews review-section">
-  <h2>Customer Reviews</h2>
+  <!-- Tabs Section -->
+  <div class="tabs mt-12 border-t pt-6">
+    <h2 class="text-xl font-semibold mb-4">Product Details</h2>
+    <div>
+      <details class="mb-4">
+        <summary class="cursor-pointer font-medium">Ingredients</summary>
+        <p class="mt-2 text-gray-700">{{ product.metafields.custom.ingredients | default: "Ingredients info here..." }}</p>
+      </details>
 
-  <!-- Rating Summary -->
-  {% assign rating = product.metafields.custom.rating_value | default: 0 %}
-  {% assign count = product.metafields.custom.rating_count | default: 0 %}
-  <div class="rating-score">{{ rating }}/5 ★</div>
-  <div class="rating-count">{{ count }} Reviews</div>
-
-  <!-- Progress Bars -->
-  <div id="rating-bars-test">
-    <h3 style="margin:8px 0;">Rating Breakdown</h3>
-    {% for i in (5..1) %}
-      {% assign key = i | append: '_star_pct' %}
-      {% assign pct = product.metafields.custom[key] | default: 0 %}
-      <div class="rating-bar" data-stars="{{ i }}" data-pct="{{ pct }}">
-        <span style="min-width:34px;">{{ i }} ★</span>
-        <div class="bar"><div class="fill" style="width: {{ pct }}%;"></div></div>
-        <span style="min-width:38px; text-align:right;">{{ pct }}%</span>
-      </div>
-    {% endfor %}
+      <details>
+        <summary class="cursor-pointer font-medium">Directions for Use</summary>
+        <p class="mt-2 text-gray-700">{{ product.metafields.custom.usage | default: "Usage instructions here..." }}</p>
+      </details>
+    </div>
   </div>
 
-  <!-- Review List -->
-  <div class="review-list" id="reviewList">
-    {% assign reviewCount = 0 %}
-    {% for i in (1..5) %}
-      {% assign text = product.metafields.custom["review_#{i}_text"] %}
-      {% assign name = product.metafields.custom["review_#{i}_name"] | default: "Anonymous" %}
-      {% assign stars = product.metafields.custom["review_#{i}_rating"] | default: 5 %}
-      {% assign verified = product.metafields.custom["review_#{i}_verified"] | default: false %}
-      {% if text %}
-        {% assign reviewCount = reviewCount | plus: 1 %}
-        <div class="review-item" data-rating="{{ stars }}">
-          <div class="review-stars">{% for s in (1..stars) %}★{% endfor %}</div>
-          <div class="reviewer">{{ name }}{% if verified %}, Verified Buyer{% endif %}</div>
-          <p>{{ text }}</p>
-        </div>
-      {% endif %}
-    {% endfor %}
+  <!-- Reviews Section -->
+  <div class="reviews-section mt-12">
+    <h2 class="text-xl font-semibold">Customer Reviews</h2>
+    <div class="rating-summary flex items-center gap-4 mt-2">
+      <span class="text-3xl font-bold">5.0</span>
+      <span>({{ product.metafields.custom.reviews_count | default: 12 }} Reviews)</span>
+    </div>
+
+    <!-- Example Review -->
+    <div class="review mt-6 border-b pb-4">
+      <p class="font-semibold">⭐ ⭐ ⭐ ⭐ ⭐</p>
+      <p class="text-gray-700 mt-2">"Amazing product! My skin never looked better. Totally recommend."</p>
+      <p class="text-sm text-gray-500 mt-1">- Verified Buyer</p>
+    </div>
   </div>
-
-  {% if reviewCount > 3 %}
-    <button class="show-more-reviews" onclick="loadMoreReviews()">Show More</button>
-  {% endif %}
-</section>
-
-
-
-<script>
-  function increaseQty() {
-    var qty = document.getElementById("Quantity");
-    if (parseInt(qty.value) < 10) {
-      qty.value = parseInt(qty.value) + 1;
-    }
-  }
-
-  function decreaseQty() {
-    var qty = document.getElementById("Quantity");
-    if (parseInt(qty.value) > 1) {
-      qty.value = parseInt(qty.value) - 1;
-    }
-  }
-
-  function showPincodeInput() {
-    document.getElementById("pincode-wrapper").style.display = "flex";
-  }
-
-  function checkEDD() {
-    var pin = document.getElementById("pincode").value.trim();
-    var result = document.getElementById("edd-result");
-
-    if (/^\d{6}$/.test(pin)) {
-      result.innerText = "Estimated delivery: 3–5 days";
-      result.style.color = "#28a745";
-    } else {
-      result.innerText = "Please enter a valid 6-digit pincode.";
-      result.style.color = "#ff4d4d";
-    }
-  }
-
-  function toggleShareMenu() {
-    var menu = document.getElementById("share-menu");
-    menu.style.display = menu.style.display === "none" ? "block" : "none";
-  }
-
-  function copyShareLink() {
-    var link = "{{ shop.url }}/products/{{ product.handle }}";
-    navigator.clipboard.writeText(link).then(function() {
-      document.getElementById("copy-status").style.display = "block";
-      setTimeout(() => {
-        document.getElementById("copy-status").style.display = "none";
-      }, 2000);
-    });
-  }
-
-
-  (function() {
-    const row = document.getElementById('feature-badges');
-    if (!row) return;
-
-    const tooltip = document.getElementById('badge-tooltip');
-    const content = document.getElementById('badge-tooltip-content');
-    const closeBtn = tooltip.querySelector('.tooltip-close');
-
-    function openTooltip(btn) {
-      content.textContent = btn.getAttribute('data-content') || '';
-      tooltip.setAttribute('aria-hidden', 'false');
-      const rect = btn.getBoundingClientRect();
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const scrollX = window.scrollX || document.documentElement.scrollLeft;
-      tooltip.style.top = (rect.bottom + scrollY + 8) + 'px';
-      tooltip.style.left = (rect.left + scrollX) + 'px';
-      document.addEventListener('click', onDocClick);
-      document.addEventListener('keydown', onEsc);
-    }
-
-    function closeTooltip() {
-      tooltip.setAttribute('aria-hidden', 'true');
-      document.removeEventListener('click', onDocClick);
-      document.removeEventListener('keydown', onEsc);
-    }
-
-    function onDocClick(e) {
-      if (!tooltip.contains(e.target) && !e.target.classList.contains('badge')) {
-        closeTooltip();
-      }
-    }
-
-    function onEsc(e) {
-      if (e.key === 'Escape') closeTooltip();
-    }
-
-    row.addEventListener('click', function(e) {
-      const btn = e.target.closest('.badge');
-      if (!btn) return;
-      const hidden = tooltip.getAttribute('aria-hidden') !== 'false';
-      if (!hidden) {
-        closeTooltip();
-        setTimeout(() => openTooltip(btn), 0);
-      } else {
-        openTooltip(btn);
-      }
-    });
-
-    closeBtn.addEventListener('click', closeTooltip);
-  })();
-
-
-
-
-function loadMoreReviews() {
-  document.querySelectorAll('.review-item').forEach(item => {
-    item.style.display = 'block';
-  });
-  document.querySelector('.show-more-reviews').style.display = 'none';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const reviews = document.querySelectorAll('.review-item');
-  reviews.forEach((r, i) => {
-    r.style.display = i < 3 ? 'block' : 'none';
-  });
-});
-
-
-
-</script>
-
-
+</div>
