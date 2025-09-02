@@ -8,6 +8,381 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "hero_banner_8GhXde": {
+      "type": "hero-banner",
+      "name": "Hero Banner",
+      "settings": {
+        "main_heading": "",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "about_section_fiWBLy": {
+      "type": "about-section",
+      "name": "About Section",
+      "settings": {
+        "heading": "The Mensense Difference",
+        "description": "Why choose a product that doesn’t understand your skin? At Mensense, every formulation is designed to perform — no matter your schedule, skin type, or climate."
+      }
+    },
+    "story_section_MKYiRe": {
+      "type": "story-section",
+      "name": "Story Section",
+      "settings": {
+        "main_heading": "We Don't Just Make Products. We Create Solutions,",
+        "heading": "Our Story",
+        "description": "Back in 2012, men’s skincare in India was an afterthought. Our founder saw the gap and built C-mens — a brand that started the conversation. Mensense takes it further, with superior ingredients, international standards, and a sharp focus on what men actually need. <br><p>We’re here to make skincare simple, effective, and unapologetically masculine.</p>",
+        "promise_heading": "Our Promise",
+        "promise_text": "Every product. Every drop. Held to the highest global benchmarks. Because your skin deserves better. And so do you."
+      }
+    },
+    "hero_jVaWmY": {
+      "type": "hero",
+      "blocks": {
+        "text_YLPk4p": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<p>Browse our latest products</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground-heading)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_H9gpTf": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop all",
+            "link": "shopify://collections/all",
+            "open_in_new_tab": false,
+            "style_class": "button-secondary",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_YLPk4p",
+        "button_H9gpTf"
+      ],
+      "disabled": true,
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "media_type_2": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "flex-end",
+        "align_baseline": true,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-end",
+        "gap": 24,
+        "section_width": "page-width",
+        "section_height": "medium",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-6",
+        "toggle_overlay": true,
+        "overlay_color": "#12121266",
+        "overlay_style": "solid",
+        "gradient_direction": "to bottom",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 100,
+        "padding-block-end": 72
+      }
+    },
+    "derm_approval_slider": {
+      "type": "dermatologist-approval-slider",
+      "settings": {
+        "doctor_image": "shopify://shop_images/doctor-image.png",
+        "heading": "Dermatologist Approved",
+        "product_image": "shopify://shop_images/product-image-home-testi.png"
+      }
+    },
+    "shop_by_categories_8YbcDB": {
+      "type": "shop-by-categories",
+      "name": "Shop By Categories",
+      "settings": {}
+    },
+    "product_list_AqXfrj": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_YyiER6": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_dRrwYA": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_YyiER6",
+            "product_list_button_dRrwYA"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_PT8JrJ": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "adapt",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_CffLN6": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_9hJfLH": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_PT8JrJ",
+            "product_title_CffLN6",
+            "price_9hJfLH"
+          ]
+        }
+      },
+      "disabled": true,
+      "name": "t:names.products_carousel",
+      "settings": {
+        "collection": "",
+        "layout_type": "carousel",
+        "carousel_on_mobile": false,
+        "max_products": 6,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 8,
+        "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 28,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
+    "custom_faq_kDxMGF": {
+      "type": "custom-faq",
+      "blocks": {
+        "faq_WieJNq": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Your Products Cruelty Free?",
+            "answer": "Yes, all our products are 100% cruelty-free and ethically sourced."
+          }
+        },
+        "faq_bXgyUQ": {
+          "type": "faq",
+          "settings": {
+            "question": "Do You Offer International Shipping?",
+            "answer": "Yes, we ship globally. Delivery times may vary based on location."
+          }
+        },
+        "faq_GLtKif": {
+          "type": "faq",
+          "settings": {
+            "question": "Are Your Ingredients Natural?",
+            "answer": "Our products are formulated with high-quality natural and safe ingredients."
+          }
+        },
+        "faq_YeazPQ": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I Return a Product?",
+            "answer": "Yes, we offer a 7-day return policy. Please refer to our Return & Refund Policy."
+          }
+        },
+        "faq_whjeyg": {
+          "type": "faq",
+          "settings": {
+            "question": "How Can I Contact Support?",
+            "answer": "You can reach us via the Contact Us page or email us at support@mensense.com."
+          }
+        }
+      },
+      "block_order": [
+        "faq_WieJNq",
+        "faq_bXgyUQ",
+        "faq_GLtKif",
+        "faq_YeazPQ",
+        "faq_whjeyg"
+      ],
+      "name": "Custom FAQ",
+      "settings": {
+        "heading": "FAQ"
+      }
+    }
+  },
+  "order": [
+    "hero_banner_8GhXde",
+    "about_section_fiWBLy",
+    "story_section_MKYiRe",
+    "hero_jVaWmY",
+    "derm_approval_slider",
+    "shop_by_categories_8YbcDB",
+    "product_list_AqXfrj",
+    "custom_faq_kDxMGF"
+  ]
 }
