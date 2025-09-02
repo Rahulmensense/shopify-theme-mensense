@@ -213,8 +213,9 @@
   </div>
 
   <!-- Review Cards -->
-  {% assign reviewCount = 0 %}
 
+  {% assign reviewCount = 0 %}
+  <p>Debug: Review 1 = {{ product.metafields.custom["review_1_text"] }}</p>
   {% if product.metafields.custom.review_1_text %}
     {% assign reviewCount = reviewCount | plus: 1 %}
     <div class="review-item">
@@ -396,7 +397,7 @@
 
 
     {% comment %} Button Write a review Functionality {% endcomment %}
-     
+
     document.querySelector('.write-review')?.addEventListener('click', function() {
       alert('Review form coming soon!');
     });
