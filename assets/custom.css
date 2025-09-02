@@ -513,6 +513,10 @@ ul {
     text-align: left;
 }
 
+.shop-by-categories .product-card .product-title {
+  text-align: center;
+}
+
 .product-card .product-title a {
   color: #000;
   text-decoration: none;
