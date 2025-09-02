@@ -29,7 +29,7 @@
   </div>
 </section>
 
-{% stylesheet %}
+{% comment %} {% stylesheet %}
   .cart-page {
     --cart-font-size--2xs: var(--font-size--2xs);
     --cart-font-size--xs: var(--font-size--xs);
@@ -107,7 +107,7 @@
       grid-template-columns: 1fr var(--sidebar-width);
     }
   }
-{% endstylesheet %}
+{% endstylesheet %} {% endcomment %}
 
 {% schema %}
 {
