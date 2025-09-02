@@ -173,47 +173,49 @@
     <h2>Customer Reviews</h2>
       <!-- Rating Summary -->
       <div class="rating-summary-details">
-        <div class="rating-score">
-          {{ product.metafields.custom["rating_value"] | default: 0 }}/5 ★
+        <div class="rscore-flex">
+          <div class="rating-score">
+            {{ product.metafields.custom["rating_value"] | default: 0 }}/5 ★
+          </div>
+          <div class="rating-count">
+            {{ product.metafields.custom["rating_count"] | default: 0 }} Reviews
+          </div>
         </div>
-        <div class="rating-count">
-          {{ product.metafields.custom["rating_count"] | default: 0 }} Reviews
+        <!-- Rating Breakdown -->
+        <div class="rating-breakdown">
+          {% assign star_5 = product.metafields.custom["5_star"] | default: 0 %}
+          {% assign star_4 = product.metafields.custom["4_star"] | default: 0 %}
+          {% assign star_3 = product.metafields.custom["3_star"] | default: 0 %}
+          {% assign star_2 = product.metafields.custom["2_star"] | default: 0 %}
+          {% assign star_1 = product.metafields.custom["1_star"] | default: 0 %}
+          <div class="rating-bar" data-stars="5">
+            <span>5 ★</span>
+            <div class="bar"><div class="fill" style="width: {{ star_5 }}%;"></div></div>
+            <span>{{ star_5 }}%</span>
+          </div>
+          <div class="rating-bar" data-stars="4">
+            <span>4 ★</span>
+            <div class="bar"><div class="fill" style="width: {{ star_4 }}%;"></div></div>
+            <span>{{ star_4 }}%</span>
+          </div>
+          <div class="rating-bar" data-stars="3">
+            <span>3 ★</span>
+            <div class="bar"><div class="fill" style="width: {{ star_3 }}%;"></div></div>
+            <span>{{ star_3 }}%</span>
+          </div>
+          <div class="rating-bar" data-stars="2">
+            <span>2 ★</span>
+            <div class="bar"><div class="fill" style="width: {{ star_2 }}%;"></div></div>
+            <span>{{ star_2 }}%</span>
+          </div>
+          <div class="rating-bar" data-stars="1">
+            <span>1 ★</span>
+            <div class="bar"><div class="fill" style="width: {{ star_1 }}%;"></div></div>
+            <span>{{ star_1 }}%</span>
+          </div>
         </div>
       </div>
-
-      <!-- Rating Breakdown -->
-      {% assign star_5 = product.metafields.custom["5_star"] | default: 0 %}
-      {% assign star_4 = product.metafields.custom["4_star"] | default: 0 %}
-      {% assign star_3 = product.metafields.custom["3_star"] | default: 0 %}
-      {% assign star_2 = product.metafields.custom["2_star"] | default: 0 %}
-      {% assign star_1 = product.metafields.custom["1_star"] | default: 0 %}
-
-      <div class="rating-bar" data-stars="5">
-        <span>5 ★</span>
-        <div class="bar"><div class="fill" style="width: {{ star_5 }}%;"></div></div>
-        <span>{{ star_5 }}%</span>
-      </div>
-      <div class="rating-bar" data-stars="4">
-        <span>4 ★</span>
-        <div class="bar"><div class="fill" style="width: {{ star_4 }}%;"></div></div>
-        <span>{{ star_4 }}%</span>
-      </div>
-      <div class="rating-bar" data-stars="3">
-        <span>3 ★</span>
-        <div class="bar"><div class="fill" style="width: {{ star_3 }}%;"></div></div>
-        <span>{{ star_3 }}%</span>
-      </div>
-      <div class="rating-bar" data-stars="2">
-        <span>2 ★</span>
-        <div class="bar"><div class="fill" style="width: {{ star_2 }}%;"></div></div>
-        <span>{{ star_2 }}%</span>
-      </div>
-      <div class="rating-bar" data-stars="1">
-        <span>1 ★</span>
-        <div class="bar"><div class="fill" style="width: {{ star_1 }}%;"></div></div>
-        <span>{{ star_1 }}%</span>
-      </div>
-
+      
       <!-- Filter Dropdown -->
       <div class="review-filter">
         <label for="review-sort">Sort by:</label>
