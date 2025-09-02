@@ -1585,6 +1585,12 @@ ul {
   margin: 40px 0;
 }
 
+.show-more-bottom-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .show-more-reviews { 
   margin-top: 10px; 
   padding: 8px 16px; 
