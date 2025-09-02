@@ -1460,6 +1460,15 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  align-items: center;
+    padding-top: 20px;
+}
+
+.rscore-flex {
+  display: flex;
+    align-items: center;
+    gap: 18px;
+    justify-content: center;
 }
 
 .rating-score { font-size: 1.5rem; font-weight: bold; }
