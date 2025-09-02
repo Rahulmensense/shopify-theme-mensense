@@ -186,8 +186,6 @@
   {% assign star_2 = product.metafields.custom["2_star"] | default: 0 %}
   {% assign star_1 = product.metafields.custom["1_star"] | default: 0 %}
 
-  {% assign reviewCount = 0 %}
-
   <div class="rating-bar" data-stars="5">
     <span>5 ★</span>
     <div class="bar"><div class="fill" style="width: {{ star_5 }}%;"></div></div>
@@ -215,6 +213,8 @@
   </div>
 
   <!-- Review Cards -->
+  {% assign reviewCount = 0 %}
+
   {% unless product.metafields.custom.review_1_text == blank %}
     {% assign reviewCount = reviewCount | plus: 1 %}
     <div class="review-item">
