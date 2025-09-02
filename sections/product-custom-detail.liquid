@@ -168,6 +168,8 @@
   </div>
 </section>
 
+
+
 <section class="customer-reviews review-section">
   <h2>Customer Reviews</h2>
 
@@ -212,21 +214,86 @@
     <span>{{ star_1 }}%</span>
   </div>
 
-  <!-- Emergency Review Card -->
-  {% unless product.metafields.custom["review_1_text_emergency"] == blank %}
-    <div class="review-item">
-      <div class="review-stars">★★★★★</div>
-      <div class="reviewer">Anonymous <span class="verified-badge">✔️ Verified Buyer</span></div>
-      <p class="review-text">{{ product.metafields.custom["review_1_text_emergency"] }}</p>
-      <div class="review-actions">
-        <span class="helpful">👍 1 found this helpful</span>
-        <a href="#" class="report-link">Report review</a>
+  <!-- Filters -->
+  <div class="review-filter">
+    <label for="review-sort">Sort by:</label>
+    <select id="review-sort" onchange="filterReviews(this.value)">
+      <option value="recent">Most recent</option>
+      <option value="rating">Highest rated</option>
+      <option value="media">With media</option>
+    </select>
+  </div>
+
+  <!-- Review List -->
+  {% assign reviewCount = 0 %}
+  {% assign maxVisible = 3 %}
+
+  <div id="review-list">
+    {% for i in (1..10) %}
+  {% capture key_text %}review_{{ i }}_text{% endcapture %}
+  {% capture key_name %}review_{{ i }}_name{% endcapture %}
+  {% capture key_rating %}review_{{ i }}_rating{% endcapture %}
+  {% capture key_verified %}review_{{ i }}_verified{% endcapture %}
+
+  {% assign text_mf = product.metafields.custom[key_text] %}
+  {% assign name_mf = product.metafields.custom[key_name] %}
+  {% assign rating_mf = product.metafields.custom[key_rating] %}
+  {% assign verified_mf = product.metafields.custom[key_verified] %}
+
+
+      {% if text != blank %}
+        {% assign reviewCount = reviewCount | plus: 1 %}
+        <div class="review-item" data-index="{{ reviewCount }}"{% if reviewCount > maxVisible %} style="display:none"{% endif %}>
+          <div class="review-stars">
+            {% assign stars = rating | at_least: 0 | at_most: 5 %}
+            {% for s in (1..stars) %}★{% endfor %}
+          </div>
+          <div class="reviewer">
+            {{ name }}
+            {% if verified %}<span class="verified-badge">✔️ Verified Buyer</span>{% endif %}
+          </div>
+          <p class="review-text">{{ text }}</p>
+          <div class="review-actions">
+            <span class="helpful">👍 1 found this helpful</span>
+            <a href="#" class="report-link">Report review</a>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {%- comment -%}
+      Emergency fallback: if loop found no reviews, show the emergency text once
+    {%- endcomment -%}
+    {% if reviewCount == 0 and product.metafields.custom["review_1_text_emergency"] != blank %}
+      <div class="review-item" data-index="1">
+        <div class="review-stars">★★★★★</div>
+        <div class="reviewer">Anonymous <span class="verified-badge">✔️ Verified Buyer</span></div>
+        <p class="review-text">{{ product.metafields.custom["review_1_text_emergency"] }}</p>
       </div>
-    </div>
-  {% endunless %}
+      {% assign reviewCount = 1 %}
+    {% endif %}
+  </div>
+
+  {% if reviewCount > maxVisible %}
+    <button class="show-more-reviews" onclick="showMoreReviews()">Show more</button>
+  {% endif %}
 
   <button class="write-review">Write a review</button>
 </section>
+
+<script>
+function showMoreReviews() {
+  document.querySelectorAll('#review-list .review-item[style*="display:none"]').forEach(function(el){
+    el.style.display = 'block';
+  });
+  var btn = document.querySelector('.show-more-reviews');
+  if (btn) btn.style.display = 'none';
+}
+function filterReviews(value) {
+  // Placeholder: sort/filter logic can be wired to classes or data-* later
+  console.log('Filter:', value);
+}
+</script>
 
 
 
