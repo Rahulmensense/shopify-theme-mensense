@@ -69,7 +69,7 @@
       </div>
     {% endcapture %}
 
-    {% capture details %}
+    {% comment %} {% capture details %}
       {% content_for 'block',
         type: '_product-details',
         id: 'product-details',
@@ -83,7 +83,7 @@
       {% elsif block == 'product-details' %}
         {{ details }}
       {% endif %}
-    {% endfor %}
+    {% endfor %} {% endcomment %}
   </div>
 
   {% comment %} {% content_for 'blocks' %} {% endcomment %}
