@@ -249,7 +249,13 @@
           {% unless text == blank %}
             {% assign reviewCount = reviewCount | plus: 1 %}
             <div class="review-item" data-index="{{ reviewCount }}" data-rating="5"{% if reviewCount > maxVisible %} style="display:none"{% endif %}>
-              <div class="review-stars">★★★★★</div>
+              <div class="review-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
               <div class="reviewer">Anonymous <span class="verified-badge">✔️ Verified Buyer</span></div>
               <p class="review-text">{{ text }}</p>
               <div class="review-actions">

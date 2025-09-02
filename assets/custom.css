@@ -1572,6 +1572,10 @@ ul {
   text-decoration: none;
 }
 
+.review-item {
+  margin-bottom: 20px;
+}
+
 .show-more-reviews { margin-top: 10px; padding: 8px 16px; background: #eee; border: none; border-radius: 6px; cursor: pointer; }
 
 
