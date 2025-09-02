@@ -2061,4 +2061,10 @@ margin-top: 5px;
   margin-top: 28px;
 }
 
+.social-icons a {
+  width: 37px;
+  height: 37px;
+  padding: 12px;
+}
+
 }
