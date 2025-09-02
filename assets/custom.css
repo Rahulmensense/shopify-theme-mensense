@@ -1471,6 +1471,14 @@ ul {
     justify-content: center;
 }
 
+.reviews-icons {
+  
+}
+
+.reviews-icons i {
+    color: #58718F;
+}
+
 .rating-score { font-size: 1.5rem; font-weight: bold; }
 .rating-bar { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
 .rating-bar .bar { flex: 1; height: 8px; background: #ddd; border-radius: 4px; overflow: hidden; }
