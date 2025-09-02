@@ -215,8 +215,8 @@
   <!-- Review Cards -->
 
   {% assign reviewCount = 0 %}
-  <p>Debug: Review 1 = {{ product.metafields.custom["review_1_text"] }}</p>
   {% if product.metafields.custom.review_1_text %}
+    <p>Debug: Review 1 = {{ product.metafields.custom["review_1_text"] }}</p>
     {% assign reviewCount = reviewCount | plus: 1 %}
     <div class="review-item">
       <div class="review-stars">{% for s in (1..product.metafields.custom.review_1_rating) %}★{% endfor %}</div>
