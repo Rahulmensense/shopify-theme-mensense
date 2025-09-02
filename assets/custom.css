@@ -1442,7 +1442,20 @@ ul {
   border-radius: 10px;
 }
 
-.review-section { margin-top: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px; }
+.review-section {
+  background: #f1f0ec;
+  padding-top: 50px;
+}
+
+.review-section h2 {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 36px;
+  color: #000000;
+}
+
 .rating-score { font-size: 1.5rem; font-weight: bold; }
 .rating-bar { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
 .rating-bar .bar { flex: 1; height: 8px; background: #ddd; border-radius: 4px; overflow: hidden; }
