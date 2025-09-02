@@ -1460,10 +1460,29 @@ ul {
   background: #ffc107;
 }
 
+.review-item {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.review-stars {
+  color: #ffc107;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+.reviewer {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
 .verified-badge {
   color: #4caf50;
   font-weight: bold;
   margin-left: 8px;
+}
+.review-text {
+  margin: 8px 0;
 }
 .review-actions {
   display: flex;
