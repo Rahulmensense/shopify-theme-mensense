@@ -2001,7 +2001,7 @@ ul {
 
 }
 
-@media only screen and (min-width: 1367px) and (max-width: 1400px) {
+@media only screen and (min-width: 1367px) and (max-width: 1600px) {
   .brand-story-text .about-content {
     width: 59%;
   }
