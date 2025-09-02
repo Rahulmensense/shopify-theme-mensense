@@ -212,7 +212,7 @@
     <span>{{ star_1 }}%</span>
   </div>
 
-  <!-- Filters -->
+  <!-- Filter Dropdown -->
   <div class="review-filter">
     <label for="review-sort">Sort by:</label>
     <select id="review-sort" onchange="filterReviews(this.value)">
@@ -240,16 +240,14 @@
 
       {% assign text = text_mf.value | default: text_mf %}
       {% assign name = name_mf.value | default: name_mf | default: "Anonymous" %}
-      {% assign rating_raw = rating_mf.value | default: rating_mf | default: 0 %}
-      {% assign rating = rating_raw | plus: 0 %}
+      {% assign rating = rating_mf.value | default: rating_mf | plus: 0 %}
       {% assign verified = verified_mf.value | default: verified_mf %}
 
       {% if text != blank %}
         {% assign reviewCount = reviewCount | plus: 1 %}
         <div class="review-item" data-index="{{ reviewCount }}"{% if reviewCount > maxVisible %} style="display:none"{% endif %}>
           <div class="review-stars">
-            {% assign stars = rating | at_least: 0 | at_most: 5 %}
-            {% for s in (1..stars) %}★{% endfor %}
+            {% for s in (1..rating) %}★{% endfor %}
           </div>
           <div class="reviewer">
             {{ name }}
@@ -290,12 +288,9 @@ function showMoreReviews() {
   if (btn) btn.style.display = 'none';
 }
 function filterReviews(value) {
-  console.log('Filter:', value);
+  console.log('Filter selected:', value);
 }
 </script>
-
-
-
 
 
 
