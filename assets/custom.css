@@ -1557,6 +1557,15 @@ ul {
   margin-bottom: 6px;
   font-size: 18px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-item .reviewer .verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .review-actions {
