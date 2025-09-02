@@ -2004,22 +2004,19 @@ ul {
 @media only screen and (min-width: 1367px) and (max-width: 1400px) {
   .brand-story-text .about-content {
     width: 59%;
-}
+  }
 
-.brand-story-text .brand-story-right-img {
-  width: 38%;
-}
+  .banner-about-img {
+    margin-left: 0;
+  }
 
   .about-brand-area-left-auto {
-    width: 1220px;
+    width: 100%;
+    padding-left: 86px;
 }
 
 .brand-story-area .promise-content h4 {
       font-size: 93px;
-}
-
-.brand-story-text .brand-story-right-img {
-      margin-top: -186px;
 }
 
 .brand-story-text .about-content {
@@ -2028,6 +2025,7 @@ ul {
 
 .brand-story-text .brand-story-right-img {
   width: 38%;
+  margin-top: -94px;
 }
 
 
