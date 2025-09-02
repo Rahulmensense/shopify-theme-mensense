@@ -1872,8 +1872,20 @@ ul {
   font-size: 65px;
 }
 
+.mb-40 {
+	margin-bottom: 23px;
+}
+
+.mt-85 {
+	margin-top: 37px;
+}
+
 .hero-content .hero-btn-wrap {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+}
+
+.ed-primary-btn {
+  padding: 17px 53px
 }
 
 .text-gradient-banner-bottom {
