@@ -2074,3 +2074,147 @@ ul {
   
 
 }
+
+@media only screen and (min-width: 1367px) and (max-width: 1400px) {
+  .brand-story-text .about-content {
+    width: 59%;
+  }
+
+  .banner-about-img {
+    margin-left: 0;
+  }
+
+  .about-brand-area-left-auto {
+    width: 100%;
+    padding-left: 86px;
+  }
+
+  .brand-story-area .promise-content h4 {
+        font-size: 93px;
+  }
+
+  .brand-story-text .about-content {
+      width: 59%;
+  }
+
+  .brand-story-text .brand-story-right-img {
+    width: 38%;
+    margin-top: -94px;
+  }
+
+  .brand-story-text .about-content .section-heading p {
+    font-size: 16px;
+  }
+
+  .footer-log a {
+    margin-bottom: 0;
+  }
+
+  .footer-links{
+    padding: 20px 0 20px
+  }
+
+  .ms-footer {
+    padding: 23px 0;
+  }
+
+  .ms-footer .tagline {
+    padding-bottom: 0;
+  }
+
+  .footer-links ul li {
+  margin-top: 5px;
+  }
+
+  .footer-links h4 {
+    margin-bottom: 16px;
+  }
+
+  .footer-log a img {
+    max-width: 79%;
+  }
+
+  .social-icons {
+    gap: 15px;
+    margin-top: 28px;
+  }
+
+  .social-icons a {
+    width: 37px;
+    height: 37px;
+    padding: 12px;
+  }
+
+}
+
+@media only screen and (min-width:  1399px) and (max-width: 1600px) {
+  .brand-story-text .about-content {
+    width: 59%;
+  }
+
+  .banner-about-img {
+    margin-left: 0;
+  }
+
+  .about-brand-area-left-auto {
+    width: 100%;
+    padding-left: 86px;
+  }
+
+  .brand-story-area .promise-content h4 {
+        font-size: 93px;
+  }
+
+  .brand-story-text .about-content {
+      width: 59%;
+  }
+
+  .brand-story-text .brand-story-right-img {
+    width: 38%;
+    margin-top: -94px;
+  }
+
+  .brand-story-text .about-content .section-heading p {
+    font-size: 16px;
+  }
+
+  .footer-log a {
+    margin-bottom: 0;
+  }
+
+  .footer-links{
+    padding: 20px 0 20px
+  }
+
+  .ms-footer {
+    padding: 23px 0;
+  }
+
+  .ms-footer .tagline {
+    padding-bottom: 0;
+  }
+
+  .footer-links ul li {
+  margin-top: 5px;
+  }
+
+  .footer-links h4 {
+    margin-bottom: 16px;
+  }
+
+  .footer-log a img {
+    max-width: 79%;
+  }
+
+  .social-icons {
+    gap: 15px;
+    margin-top: 28px;
+  }
+
+  .social-icons a {
+    width: 37px;
+    height: 37px;
+    padding: 12px;
+  }
+
+}
