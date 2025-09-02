@@ -180,11 +180,13 @@
   </div>
 
   <!-- Rating Breakdown -->
-  {% comment %} {% assign star_5 = product.metafields.custom.5_star | default: 0 %} {% endcomment %}
-  {% comment %} {% assign star_4 = product.metafields.custom.4_star | default: 0 %} {% endcomment %}
-  {% comment %} {% assign star_3 = product.metafields.custom.3_star | default: 0 %}
-  {% assign star_2 = product.metafields.custom.2_star | default: 0 %}
-  {% assign star_1 = product.metafields.custom.1_star | default: 0 %} {% endcomment %}
+
+  {% assign star_5 = product.metafields.custom["5_star"] | default: 0 %}
+  {% assign star_4 = product.metafields.custom["4_star"] | default: 0 %}
+  {% assign star_3 = product.metafields.custom["3_star"] | default: 0 %}
+  {% assign star_2 = product.metafields.custom["2_star"] | default: 0 %}
+  {% assign star_1 = product.metafields.custom["1_star"] | default: 0 %}
+
 
   <div class="rating-bar">
     <span>5 ★</span>
