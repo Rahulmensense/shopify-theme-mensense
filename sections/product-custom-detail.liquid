@@ -266,10 +266,11 @@
           {% endunless %}
         {% endfor %}
       </div>
-
-      {% if reviewCount > maxVisible %}
-        <button class="show-more-reviews" onclick="showMoreReviews()">Show more</button>
-      {% endif %}
+      <div class="show-more-bottom-btn">
+        {% if reviewCount > maxVisible %}
+          <button class="show-more-reviews" onclick="showMoreReviews()">Show more</button>
+        {% endif %}
+      </div>
   </div>
 </section>
 
