@@ -306,18 +306,18 @@
       --color-border: inherit;
       --color-border-rgb: inherit;
 
-      .header__row {
-        /* Faster transition for "in" animation */
+      /* .header__row {
+         Faster transition for "in" animation 
         transition: color var(--animation-values-fast), border-color var(--animation-values-fast),
           background-color var(--animation-values-fast);
-      }
+      } */
     }
 
-    .header__row {
-      /* Slower transition for "out" animation */
+    /* .header__row {
+      Slower transition for "out" animation 
       transition: color var(--animation-values-slow), border-color var(--animation-values-slow),
         background-color var(--animation-values-slow);
-    }
+    } */
   }
 
   :is(.header[transparent]:not([data-sticky-state='active']), .header[transparent='always'][data-sticky-state='active'])
@@ -389,7 +389,7 @@
     position: relative;
 
     /* will default to bg from its color scheme unless --header-bg-color is transparent */
-    background-color: var(--header-bg-color, var(--color-background));
+    background-color: #fff;
   }
 
   .header__row--top:not(.divider--page-width),
