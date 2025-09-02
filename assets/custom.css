@@ -2000,3 +2000,33 @@ ul {
 }
 
 }
+
+@media only screen and (min-width: 1766px) {
+  .brand-story-text .about-content {
+    width: 59%;
+}
+
+.brand-story-text .brand-story-right-img {
+  width: 38%;
+}
+
+  .about-brand-area-left-auto {
+    width: 1220px;
+}
+
+.brand-story-area .promise-content h4 {
+      font-size: 93px;
+}
+
+.brand-story-text .brand-story-right-img {
+      margin-top: -186px;
+}
+
+.brand-story-text .about-content {
+    width: 59%;
+}
+
+.brand-story-text .brand-story-right-img {
+  width: 38%;
+}
+}
