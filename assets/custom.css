@@ -1471,15 +1471,20 @@ ul {
     justify-content: center;
 }
 
-.reviews-icons {
-  
-}
-
 .reviews-icons i {
     color: #58718F;
 }
 
-.rating-score { font-size: 1.5rem; font-weight: bold; }
+.rscore-flex .rating-score { 
+  font-size: 35px; 
+  font-weight: bold; 
+}
+
+.rscore-flex .rating-score small {
+  font-size: 10px;
+  
+}
+
 .rating-bar { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
 .rating-bar .bar { flex: 1; height: 8px; background: #ddd; border-radius: 4px; overflow: hidden; }
 .rating-bar .fill { height: 100%; background: #ffc107; }
