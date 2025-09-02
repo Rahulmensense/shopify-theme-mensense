@@ -178,7 +178,14 @@
             {{ product.metafields.custom["rating_value"] | default: 0 }}/5 
           </div>
           <div class="rating-count">
-            {{ product.metafields.custom["rating_count"] | default: 0 }} ★ Reviews
+            <div class="reviews-icons">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            {{ product.metafields.custom["rating_count"] | default: 0 }} Reviews
           </div>
         </div>
         <!-- Rating Breakdown -->
