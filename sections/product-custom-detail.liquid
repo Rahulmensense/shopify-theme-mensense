@@ -169,87 +169,88 @@
 </section>
 
 <section class="customer-reviews review-section">
-  <h2>Customer Reviews</h2>
-
-  <!-- Rating Summary -->
-  <div class="rating-score">
-    {{ product.metafields.custom["rating_value"] | default: 0 }}/5 ★
-  </div>
-  <div class="rating-count">
-    {{ product.metafields.custom["rating_count"] | default: 0 }} Reviews
-  </div>
-
-  <!-- Rating Breakdown -->
-  {% assign star_5 = product.metafields.custom["5_star"] | default: 0 %}
-  {% assign star_4 = product.metafields.custom["4_star"] | default: 0 %}
-  {% assign star_3 = product.metafields.custom["3_star"] | default: 0 %}
-  {% assign star_2 = product.metafields.custom["2_star"] | default: 0 %}
-  {% assign star_1 = product.metafields.custom["1_star"] | default: 0 %}
-
-  <div class="rating-bar" data-stars="5">
-    <span>5 ★</span>
-    <div class="bar"><div class="fill" style="width: {{ star_5 }}%;"></div></div>
-    <span>{{ star_5 }}%</span>
-  </div>
-  <div class="rating-bar" data-stars="4">
-    <span>4 ★</span>
-    <div class="bar"><div class="fill" style="width: {{ star_4 }}%;"></div></div>
-    <span>{{ star_4 }}%</span>
-  </div>
-  <div class="rating-bar" data-stars="3">
-    <span>3 ★</span>
-    <div class="bar"><div class="fill" style="width: {{ star_3 }}%;"></div></div>
-    <span>{{ star_3 }}%</span>
-  </div>
-  <div class="rating-bar" data-stars="2">
-    <span>2 ★</span>
-    <div class="bar"><div class="fill" style="width: {{ star_2 }}%;"></div></div>
-    <span>{{ star_2 }}%</span>
-  </div>
-  <div class="rating-bar" data-stars="1">
-    <span>1 ★</span>
-    <div class="bar"><div class="fill" style="width: {{ star_1 }}%;"></div></div>
-    <span>{{ star_1 }}%</span>
-  </div>
-
-  <!-- Filter Dropdown -->
-  <div class="review-filter">
-    <label for="review-sort">Sort by:</label>
-    <select id="review-sort" onchange="filterReviews(this.value)">
-      <option value="recent">Most recent</option>
-      <option value="rating">Highest rated</option>
-      <option value="media">With media</option>
-    </select>
-  </div>
-
-  <!-- Review List -->
-  {% assign keys = "review_a_text,review_b_text,review_text_safe,review_demo_text" | split: "," %}
-  {% assign reviewCount = 0 %}
-  {% assign maxVisible = 2 %}
-
-<div id="review-list">
-  {% for key in keys %}
-    {% assign text = product.metafields.custom[key] %}
-    {% unless text == blank %}
-      {% assign reviewCount = reviewCount | plus: 1 %}
-      <div class="review-item" data-index="{{ reviewCount }}" data-rating="5"{% if reviewCount > maxVisible %} style="display:none"{% endif %}>
-        <div class="review-stars">★★★★★</div>
-        <div class="reviewer">Anonymous <span class="verified-badge">✔️ Verified Buyer</span></div>
-        <p class="review-text">{{ text }}</p>
-        <div class="review-actions">
-          <span class="helpful">👍 1 found this helpful</span>
-          <a href="#" class="report-link">Report review</a>
-        </div>
+  <div class="container">
+    <h2>Customer Reviews</h2>
+      <!-- Rating Summary -->
+      <div class="rating-score">
+        {{ product.metafields.custom["rating_value"] | default: 0 }}/5 ★
       </div>
-    {% endunless %}
-  {% endfor %}
-</div>
+      <div class="rating-count">
+        {{ product.metafields.custom["rating_count"] | default: 0 }} Reviews
+      </div>
 
-  {% if reviewCount > maxVisible %}
-    <button class="show-more-reviews" onclick="showMoreReviews()">Show more</button>
-  {% endif %}
+      <!-- Rating Breakdown -->
+      {% assign star_5 = product.metafields.custom["5_star"] | default: 0 %}
+      {% assign star_4 = product.metafields.custom["4_star"] | default: 0 %}
+      {% assign star_3 = product.metafields.custom["3_star"] | default: 0 %}
+      {% assign star_2 = product.metafields.custom["2_star"] | default: 0 %}
+      {% assign star_1 = product.metafields.custom["1_star"] | default: 0 %}
 
-  <button class="write-review">Write a review</button>
+      <div class="rating-bar" data-stars="5">
+        <span>5 ★</span>
+        <div class="bar"><div class="fill" style="width: {{ star_5 }}%;"></div></div>
+        <span>{{ star_5 }}%</span>
+      </div>
+      <div class="rating-bar" data-stars="4">
+        <span>4 ★</span>
+        <div class="bar"><div class="fill" style="width: {{ star_4 }}%;"></div></div>
+        <span>{{ star_4 }}%</span>
+      </div>
+      <div class="rating-bar" data-stars="3">
+        <span>3 ★</span>
+        <div class="bar"><div class="fill" style="width: {{ star_3 }}%;"></div></div>
+        <span>{{ star_3 }}%</span>
+      </div>
+      <div class="rating-bar" data-stars="2">
+        <span>2 ★</span>
+        <div class="bar"><div class="fill" style="width: {{ star_2 }}%;"></div></div>
+        <span>{{ star_2 }}%</span>
+      </div>
+      <div class="rating-bar" data-stars="1">
+        <span>1 ★</span>
+        <div class="bar"><div class="fill" style="width: {{ star_1 }}%;"></div></div>
+        <span>{{ star_1 }}%</span>
+      </div>
+
+      <!-- Filter Dropdown -->
+      <div class="review-filter">
+        <label for="review-sort">Sort by:</label>
+        <select id="review-sort" onchange="filterReviews(this.value)">
+          <option value="recent">Most recent</option>
+          <option value="rating">Highest rated</option>
+          <option value="media">With media</option>
+        </select>
+      </div>
+
+      <!-- Review List -->
+      {% assign keys = "review_a_text,review_b_text,review_text_safe,review_demo_text" | split: "," %}
+      {% assign reviewCount = 0 %}
+      {% assign maxVisible = 2 %}
+
+      <div id="review-list">
+        {% for key in keys %}
+          {% assign text = product.metafields.custom[key] %}
+          {% unless text == blank %}
+            {% assign reviewCount = reviewCount | plus: 1 %}
+            <div class="review-item" data-index="{{ reviewCount }}" data-rating="5"{% if reviewCount > maxVisible %} style="display:none"{% endif %}>
+              <div class="review-stars">★★★★★</div>
+              <div class="reviewer">Anonymous <span class="verified-badge">✔️ Verified Buyer</span></div>
+              <p class="review-text">{{ text }}</p>
+              <div class="review-actions">
+                <span class="helpful">👍 1 found this helpful</span>
+                <a href="#" class="report-link">Report review</a>
+              </div>
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+
+      {% if reviewCount > maxVisible %}
+        <button class="show-more-reviews" onclick="showMoreReviews()">Show more</button>
+      {% endif %}
+
+      <button class="write-review">Write a review</button>
+  </div>
 </section>
 
 <script>
