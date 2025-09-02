@@ -181,10 +181,8 @@
   <div id="rating-bars-test">
     <h3 style="margin:8px 0;">Rating Breakdown</h3>
     {% for i in (5..1) %}
-      {% comment %} {% assign key = i | append: '_star_pct' %}
-      {% assign key = i | append: '_star' %} {% endcomment %}
-      {% assign pct = product.metafields.custom[key] %}
-      
+      {% assign key = i | append: '_star_pct' %}
+      {% assign pct = product.metafields.custom[key] | default: 0 %}
       <div class="rating-bar" data-stars="{{ i }}" data-pct="{{ pct }}">
         <span style="min-width:34px;">{{ i }} ★</span>
         <div class="bar"><div class="fill" style="width: {{ pct }}%;"></div></div>
