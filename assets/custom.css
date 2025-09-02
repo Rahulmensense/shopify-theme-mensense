@@ -1867,6 +1867,24 @@ ul {
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1366px){
+
+  .mb-40 {
+    margin-bottom: 16px;
+  }
+  .mt-85 {
+    margin-top: 0px;
+}
+.hero-content .section-heading .section-title {
+  font-size: 55px;
+}
+
+.hero-content .hero-btn-wrap {
+  margin-bottom: 32px;
+}
+
+.hero-author ul {
+    width: 13%;
+}
   .about-brand-area-left-auto {
     width: 1314px;
 }
