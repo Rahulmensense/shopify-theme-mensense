@@ -186,6 +186,8 @@
   {% assign star_2 = product.metafields.custom["2_star"] | default: 0 %}
   {% assign star_1 = product.metafields.custom["1_star"] | default: 0 %}
 
+  {% assign reviewCount = 0 %}
+
   <div class="rating-bar" data-stars="5">
     <span>5 ★</span>
     <div class="bar"><div class="fill" style="width: {{ star_5 }}%;"></div></div>
@@ -213,10 +215,7 @@
   </div>
 
   <!-- Review Cards -->
-  
-  {% assign reviewCount = 0 %}
-  <p>Debug: Review 1 = {{ product.metafields.custom["review_1_text"] }}</p>
-  {% if product.metafields.custom.review_1_text %}
+  {% unless product.metafields.custom.review_1_text == blank %}
     {% assign reviewCount = reviewCount | plus: 1 %}
     <div class="review-item">
       <div class="review-stars">{% for s in (1..product.metafields.custom.review_1_rating) %}★{% endfor %}</div>
@@ -232,9 +231,9 @@
         <a href="#" class="report-link">Report review</a>
       </div>
     </div>
-  {% endif %}
+  {% endunless %}
 
-  {% if product.metafields.custom.review_2_text %}
+  {% unless product.metafields.custom.review_2_text == blank %}
     {% assign reviewCount = reviewCount | plus: 1 %}
     <div class="review-item">
       <div class="review-stars">{% for s in (1..product.metafields.custom.review_2_rating) %}★{% endfor %}</div>
@@ -250,9 +249,9 @@
         <a href="#" class="report-link">Report review</a>
       </div>
     </div>
-  {% endif %}
+  {% endunless %}
 
-  {% if product.metafields.custom.review_3_text %}
+  {% unless product.metafields.custom.review_3_text == blank %}
     {% assign reviewCount = reviewCount | plus: 1 %}
     <div class="review-item">
       <div class="review-stars">{% for s in (1..product.metafields.custom.review_3_rating) %}★{% endfor %}</div>
@@ -268,7 +267,7 @@
         <a href="#" class="report-link">Report review</a>
       </div>
     </div>
-  {% endif %}
+  {% endunless %}
 
   {% if reviewCount > 3 %}
     <button class="show-more-reviews" onclick="loadMoreReviews()">Show More</button>
@@ -397,7 +396,7 @@
 
 
     {% comment %} Button Write a review Functionality {% endcomment %}
-
+     
     document.querySelector('.write-review')?.addEventListener('click', function() {
       alert('Review form coming soon!');
     });
