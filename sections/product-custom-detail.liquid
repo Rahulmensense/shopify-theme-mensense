@@ -168,8 +168,6 @@
   </div>
 </section>
 
-
-
 <section class="customer-reviews review-section">
   <h2>Customer Reviews</h2>
 
@@ -230,15 +228,21 @@
 
   <div id="review-list">
     {% for i in (1..10) %}
-    {% capture key_text %}review_{{ i }}_text{% endcapture %}
-    {% capture key_name %}review_{{ i }}_name{% endcapture %}
-    {% capture key_rating %}review_{{ i }}_rating{% endcapture %}
-    {% capture key_verified %}review_{{ i }}_verified{% endcapture %}
+      {% capture key_text %}review_{{ i }}_text{% endcapture %}
+      {% capture key_name %}review_{{ i }}_name{% endcapture %}
+      {% capture key_rating %}review_{{ i }}_rating{% endcapture %}
+      {% capture key_verified %}review_{{ i }}_verified{% endcapture %}
 
-    {% assign text_mf = product.metafields.custom[key_text] %}
-    {% assign name_mf = product.metafields.custom[key_name] %}
-    {% assign rating_mf = product.metafields.custom[key_rating] %}
-    {% assign verified_mf = product.metafields.custom[key_verified] %}
+      {% assign text_mf = product.metafields.custom[key_text] %}
+      {% assign name_mf = product.metafields.custom[key_name] %}
+      {% assign rating_mf = product.metafields.custom[key_rating] %}
+      {% assign verified_mf = product.metafields.custom[key_verified] %}
+
+      {% assign text = text_mf.value | default: text_mf %}
+      {% assign name = name_mf.value | default: name_mf | default: "Anonymous" %}
+      {% assign rating_raw = rating_mf.value | default: rating_mf | default: 0 %}
+      {% assign rating = rating_raw | plus: 0 %}
+      {% assign verified = verified_mf.value | default: verified_mf %}
 
       {% if text != blank %}
         {% assign reviewCount = reviewCount | plus: 1 %}
@@ -260,9 +264,6 @@
       {% endif %}
     {% endfor %}
 
-    {%- comment -%}
-      Emergency fallback: if loop found no reviews, show the emergency text once
-    {%- endcomment -%}
     {% if reviewCount == 0 and product.metafields.custom["review_1_text_emergency"] != blank %}
       <div class="review-item" data-index="1">
         <div class="review-stars">★★★★★</div>
@@ -289,10 +290,12 @@ function showMoreReviews() {
   if (btn) btn.style.display = 'none';
 }
 function filterReviews(value) {
-  // Placeholder: sort/filter logic can be wired to classes or data-* later
   console.log('Filter:', value);
 }
 </script>
+
+
+
 
 
 
