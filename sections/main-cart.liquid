@@ -6,8 +6,16 @@
       <div class="section-background color-{{ section.settings.color_scheme }}"></div>
       <div class="section color-{{ section.settings.color_scheme }} section--{{ section.settings.section_width }}">
         <div class="cart-page spacing-style{% if cart.empty? %} cart-page--empty{% endif %}" style="{% render 'spacing-style', settings: section.settings %}">
-          <div class="cart-page__title">
-            {%- content_for 'block', id: 'cart-page-title', type: '_cart-title' %}
+          <div class="cart-page__title row">
+            <div class="col-lg-4">
+                <h5>PRODUCT</h5>
+            </div>
+            <div class="col-lg-4">
+                <h5>OUANTITY</h5>
+            </div>
+            <div class="col-lg-4">
+                <h5>TOTAL</h5>
+            </div>
           </div>
 
           <div class="cart-page__items">
