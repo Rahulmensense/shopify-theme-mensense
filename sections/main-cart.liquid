@@ -22,11 +22,11 @@
             {%- content_for 'block', id: 'cart-page-items', type: '_cart-products' %}
           </div>
 
-          {% comment %} {%- unless cart.empty? -%}
+          {%- unless cart.empty? -%}
             <div class="cart-page__summary">
               {%- content_for 'block', id: 'cart-page-summary', type: '_cart-summary' -%}
             </div>
-          {%- endunless -%} {% endcomment %}
+          {%- endunless -%}
 
           {% comment %} <div class="cart-page__more-blocks">
             {%- content_for 'blocks' -%}
