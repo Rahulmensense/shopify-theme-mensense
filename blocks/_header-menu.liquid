@@ -45,7 +45,7 @@
             class="menu-list__list list-unstyled"
             role="list"
           >
-            {% comment %} {% for link in block_settings.menu.links %}
+            {% for link in block_settings.menu.links %}
               <li>
                 <a
                   href="{{ link.url }}"
@@ -59,21 +59,8 @@
                 </a>
                 
               </li>
-            {% endfor %} {% endcomment %}
-            {% for link in block_settings.menu.links %}
-              <li>
-                <a
-                  href="{% if link.title == 'Products' %}/products/uv-defence-spf50{% else %}{{ link.url }}{% endif %}"
-                  id="MenuItem-{{ link.handle }}"
-                  class="menu-list__item"
-                  {% if link.current or request.path == '/products/uv-defence-spf50' %}
-                    aria-current="page"
-                  {% endif %}
-                >
-                  {{- link.title -}}
-                </a>
-              </li>
-            {% endfor %}
+            {% endfor %} 
+            
           </ul>
         </div>
       </div>
