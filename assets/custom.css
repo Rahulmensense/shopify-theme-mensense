@@ -2002,7 +2002,7 @@ ul {
   .brand-story-area::before {
     width: 190px;
     height: 148px;
-	
+    top: 7px;
   }
 
   .brand-story-area::after {
