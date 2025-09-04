@@ -1999,6 +1999,12 @@ ul {
 }
 
 @media only screen and (max-width: 767px) {
+  .contact-wrapper {
+    padding: 28px;
+  }
+  .contact-form .submit-btn {
+    width: 100%;
+  }
   .menu-drawer__menu {
     padding-left: 20px !important;
   }
