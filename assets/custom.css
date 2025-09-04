@@ -1872,11 +1872,11 @@ ul {
   }
 
   .text-gradient-banner-bottom {
-    margin-top: -10px;
+    margin-top: 8px;
   }
   .text-gradient-banner-bottom h2 {
-      font-size: 77px;
-      line-height: 106px;
+    font-size: 77px;
+    line-height: 95px;
   }
 
   .hero-author ul {
