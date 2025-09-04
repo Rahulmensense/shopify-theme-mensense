@@ -2094,6 +2094,10 @@ ul {
     margin-bottom: 0px;
   }
 
+  .mob-mb0 .mission-image {
+    padding-bottom: 0px;
+  }
+
   .vision-text {
     margin-right: 10px;
     margin-top: 0;
