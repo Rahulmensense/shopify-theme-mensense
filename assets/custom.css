@@ -1879,6 +1879,15 @@ ul {
     line-height: 95px;
   }
 
+  .section-heading h2 {
+    margin-top: 15px;
+    font-size: 40px;
+  }
+
+  .pb-60 {
+	  padding-top: 0px;
+  }
+
   .hero-author ul {
     width: 26%;
   }
