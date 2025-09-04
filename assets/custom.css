@@ -2005,6 +2005,10 @@ ul {
     display:none;
   }
 
+  section-heading.mb-40 {
+    margin-bottom: 0px;
+  }
+
   .product-grid {
       grid-template-columns: repeat(1,1fr);
   }
@@ -2039,7 +2043,7 @@ ul {
   }
 
   .brand-story-area .promise-content h4 {
-    font-size: 31px;
+    font-size: 27px;
   }
 
   .about-brand-area-left-auto {
