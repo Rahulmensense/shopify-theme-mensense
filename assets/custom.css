@@ -2005,6 +2005,10 @@ ul {
     top: 7px;
   }
 
+  promise-content .section-heading.mb-40 {
+    margin-bottom: 10px;
+  }
+
   .brand-story-area::after {
     display:none;
   }
