@@ -1884,7 +1884,7 @@ ul {
 }
 
 .contact-info {
-  background: #58718F;
+  background: #58718f36
   border-radius: 18px;
   padding: 30px;
 }
@@ -1897,6 +1897,10 @@ ul {
 
 .contact-info .social-icons {
   justify-content: start;
+  flex-direction: column;
+  text-align: left;
+  align-items: baseline;
+  gap: 7px;
 }
 
 .cont-social {
