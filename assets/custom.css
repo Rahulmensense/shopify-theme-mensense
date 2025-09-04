@@ -1856,7 +1856,7 @@ ul {
   background: #f5f5f5;
 }
 
-.content-for-layout[data-template=page.contact].page-width-content {
+.content-for-layout [data-template=page.contact].page-width-content {
   display: none;
 }
 
