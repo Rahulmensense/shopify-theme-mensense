@@ -1949,6 +1949,10 @@ ul {
     gap: 10px;
 }
 
+.contact-info p i {
+  color: #58718F;
+}
+
 .social-icons {
   margin-top: 16px;
 }
