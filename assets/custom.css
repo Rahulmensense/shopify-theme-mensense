@@ -2074,9 +2074,20 @@ ul {
       margin-left: auto;
       margin-right: auto;
   }
+
+  .mission-image {
+    min-width: 100%;
+  }
+  
   .mission-text {
-    margin-top: 0;
-    margin-left: 0px;
+    margin-top: -77px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .mission-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
   }
 
   .vision-text {
