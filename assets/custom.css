@@ -1904,6 +1904,7 @@ ul {
   .hero-section {
     width: 100%;
     height: 100%;
+    background-size: 560px 560px;
     padding-bottom: 10px !important;
   }
   .mt-85 {
@@ -2049,10 +2050,6 @@ ul {
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1366px){
-
-  .hero-section {
-    background-size: 560px 560px;
-  }
 
   .hero-content .section-heading .section-title {
     font-size: 47px;
