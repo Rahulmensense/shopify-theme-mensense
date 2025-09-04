@@ -1856,6 +1856,12 @@ ul {
   background: #f5f5f5;
 }
 
+.content-for-layout[data-template=page.contact] .page-width-content {
+  display: none;
+}
+
+.header[data-sticky-state=active]
+
 .contact-grid {
   display: flex;
   flex-wrap: wrap;
