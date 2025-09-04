@@ -2090,6 +2090,10 @@ ul {
     margin-bottom: 20px;
   }
 
+  .mob-mb0 {
+    margin-bottom: 0px;
+  }
+
   .vision-text {
     margin-right: 10px;
     margin-top: 0;
