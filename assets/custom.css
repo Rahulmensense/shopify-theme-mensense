@@ -1942,11 +1942,12 @@ ul {
 }
 
 .contact-info p {
-    margin-bottom: 8px;
-    font-size: 16px;
+    margin-bottom: 15px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #000;
 }
 
 .contact-info p i {
