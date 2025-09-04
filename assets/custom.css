@@ -1849,6 +1849,27 @@ ul {
 }
 
 
+/*----- CONTACT Pgae CSS -----*/
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.submit-btn {
+  background: #1e3a8a;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
 @media (max-width: 768px) {
   .dermatologist-section .col-md-4 {
     margin-bottom: 30px;
