@@ -1968,6 +1968,7 @@ ul {
 }
 
 .contact-form .submit-btn {
+  width: 23%;
   background: linear-gradient(to right, #11182b, #58718f);
 }
 
