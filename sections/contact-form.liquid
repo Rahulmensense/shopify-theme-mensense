@@ -1,0 +1,67 @@
+{% schema %}
+{
+  "name": "Contact Form",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Contact Form",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+
+<section class="contact-sec">
+  <div class="container">
+    <div class="contact-wrapper page-width">
+      <div class="about-content">
+        <div class="section-heading mb-40">
+          <h2>Contact us</h2>
+          <p>Reach out for inquiries about our premium men's skincare products.</p>
+        </div>
+      </div>
+      <div class="contact-grid">
+        <!-- Left: Form -->
+        <div class="contact-form">
+          {% form 'contact' %}
+            {% if form.posted_successfully? %}
+              <p class="success-msg">✅ Thanks for reaching out! We'll get back to you soon.</p>
+            {% endif %}
+
+            {% if form.errors %}
+              <ul class="error-msg">
+                {% for field in form.errors %}
+                  <li>{{ field | capitalize }} can't be blank</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            <input type="text" name="contact[name]" placeholder="Your Name" required>
+            <input type="email" name="contact[email]" placeholder="Your Email" required>
+            <textarea rows="6" cols="70" name="contact[body]" placeholder="Type your message here" required></textarea>
+            <input type="submit" value="Submit" class="submit-btn">
+          {% endform %}
+        </div>
+
+        <!-- Right: Info -->
+        <div class="contact-info">
+          <p><i class="fa-solid fa-location-dot"></i> Loreum ipsum, loreum ipsum oreum ipsum</p>
+          <p><i class="fa-solid fa-envelope"></i> mensense@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i> 602-216-4143</p>
+          <div class="social-icons">
+            <span>Follow us on:</span>
+            <div class="cont-social">
+              <a href="#"><i class="icon-facebook"><img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/facbook.svg?v=1756535240" alt="facbook"></i></a>
+              <a href="#"><i class="icon-twitter"><img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/twitter.svg?v=1756535240" alt="twitter"></i></a>
+              <a href="#"><i class="icon-instagram"><img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/youtube.svg?v=1756535240" alt="youtube"></i></a>
+              <a href="#"><i class="icon-youtube"><img src="https://cdn.shopify.com/s/files/1/0949/0975/9774/files/instagram.svg?v=1756535240" alt="instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

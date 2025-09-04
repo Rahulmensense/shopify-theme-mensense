@@ -48,7 +48,7 @@ $(document).ready(function(){
   $('.js-main-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true, // ✅ Arrows enabled
+    arrows: false, // ✅ Arrows enabled
     dots: false,
     infinite: true,
     asNavFor: '.js-thumb-slider',
@@ -60,11 +60,51 @@ $(document).ready(function(){
     slidesToScroll: 1,
     asNavFor: '.js-main-slider',
     focusOnSelect: true,
-    arrows: true, // ✅ Arrows enabled for thumbnails too
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-prev">←</button>',
+    nextArrow: '<button type="button" class="slick-next">→</button>',
     dots: false,
     infinite: false
   });
 });
+
+function showMoreReviews() {
+    document.querySelectorAll('#review-list .review-item[style*="display:none"]').forEach(function(el){
+      el.style.display = 'block';
+    });
+    var btn = document.querySelector('.show-more-reviews');
+    if (btn) btn.style.display = 'none';
+  }
+
+  function filterReviews(value) {
+    console.log('Filter selected:', value);
+  }
+
+  function filterReviews(value) {
+    const reviews = Array.from(document.querySelectorAll('#review-list .review-item'));
+    const container = document.getElementById('review-list');
+
+    // Reset all reviews
+    reviews.forEach(r => r.style.display = 'block');
+
+    if (value === 'rating') {
+      reviews.sort((a, b) => {
+        const ratingA = parseInt(a.dataset.rating || 0);
+        const ratingB = parseInt(b.dataset.rating || 0);
+        return ratingB - ratingA;
+      });
+    } else if (value === 'media') {
+      reviews.forEach(r => {
+        if (!r.querySelector('.review-media')) {
+          r.style.display = 'none';
+        }
+      });
+      return;
+    }
+
+    // Reorder DOM
+    reviews.forEach(r => container.appendChild(r));
+  }
 
 
 

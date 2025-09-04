@@ -81,6 +81,7 @@
   # Skip mobile search under specific conditions:
   # Always render if search_row is bottom
   # Don't render when shop.customer_accounts_enabled is false and search_position is left and search_style is not none
+  
   assign skip_mobile_search = false
   if shop.customer_accounts_enabled == false and section.settings.search_position == 'left' and search_style != 'none'
     assign skip_mobile_search = true
@@ -306,18 +307,18 @@
       --color-border: inherit;
       --color-border-rgb: inherit;
 
-      .header__row {
-        /* Faster transition for "in" animation */
+      /* .header__row {
+         Faster transition for "in" animation 
         transition: color var(--animation-values-fast), border-color var(--animation-values-fast),
           background-color var(--animation-values-fast);
-      }
+      } */
     }
 
-    .header__row {
-      /* Slower transition for "out" animation */
+    /* .header__row {
+      Slower transition for "out" animation 
       transition: color var(--animation-values-slow), border-color var(--animation-values-slow),
         background-color var(--animation-values-slow);
-    }
+    } */
   }
 
   :is(.header[transparent]:not([data-sticky-state='active']), .header[transparent='always'][data-sticky-state='active'])
@@ -387,9 +388,8 @@
 
   .header__row {
     position: relative;
-
     /* will default to bg from its color scheme unless --header-bg-color is transparent */
-    background-color: var(--header-bg-color, var(--color-background));
+    background-color:#ffffff3d;
   }
 
   .header__row--top:not(.divider--page-width),

@@ -61,10 +61,11 @@
               {% endif %}
             </div>
 
-            {% assign extra_images = product.images.size | minus: section.settings.slider_image_limit %}
-            {% if extra_images > 0 %}
-              <div class="image-count-badge">+{{ extra_images }} more</div>
-            {% endif %}
+            <form method="post" action="/cart/add">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+              {% render 'quantity-selector' %}
+              <button type="submit">Add to Cart</button>
+            </form>
 
             {% comment %} <p>Debug: Reviews = {{ product.metafields.custom.rating_count }}</p> {% endcomment %}
             {% assign rating = 0 %}
@@ -148,6 +149,17 @@
     "reviewCount": "{{ product.metafields.custom.rating_count }}"
 
   }
+
+  document.querySelector('.quantity__button--increase').addEventListener('click', function() {
+  const input = document.querySelector('.quantity__input');
+  input.value = parseInt(input.value) + 1;
+});
+
+document.querySelector('.quantity__button--decrease').addEventListener('click', function() {
+  const input = document.querySelector('.quantity__input');
+  input.value = Math.max(1, parseInt(input.value) - 1);
+});
+
 }
 </script>
 

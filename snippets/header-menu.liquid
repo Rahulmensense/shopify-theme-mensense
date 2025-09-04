@@ -32,8 +32,8 @@
       on:blur="/deactivate"
       on:pointerenter="/activate"
       on:pointerleave="/deactivate"
-    >
-      <a
+    >  
+      {% comment %} <a
         href="{{ link.url }}"
         class="menu-list__link{% if link.active %} menu-list__link--active{% endif %}"
         {%- if link.links != blank -%}
@@ -43,6 +43,19 @@
         {%- endif -%}
         ref="menuitem"
       >
+        <span class="menu-list__link-title">{{- link.title -}}</span>
+      </a> {% endcomment %}
+
+      <a
+        href="{% if link.title == 'Products' %}/products/uv-defence-spf50{% else %}{{ link.url }}{% endif %}"
+        class="menu-list__link{% if link.active %} menu-list__link--active{% endif %}
+        {%- if link.links != blank -%}
+          aria-controls="submenu-{{ forloop.index }}"
+          aria-haspopup="true"
+          aria-expanded="false"
+        {%- endif -%}
+        ref="menuitem"
+        >
         <span class="menu-list__link-title">{{- link.title -}}</span>
       </a>
       {%- if link.links != blank -%}
@@ -89,7 +102,7 @@
     {% render 'overflow-list', class: class, ref: 'overflowMenu', children: children, minimum-items: 2, defer: true %}
     <!-- Custom Header Button -->
     <div class="header-custom-button">
-      <a href="/pages/contact" class="button button-primary">
+      <a href="#" class="button button-primary">
         Join the Movement
       </a>
     </div>

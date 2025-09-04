@@ -1,39 +1,182 @@
 
 
-<cart-items-component
-  class="cart-items-component"
-  data-section-id="{{ section.id }}"
->
-  <div class="section-background color-{{ section.settings.color_scheme }}"></div>
-  <div
-    class="section color-{{ section.settings.color_scheme }} section--{{ section.settings.section_width }}"
-  >
-    <div
-      class="cart-page spacing-style{% if cart.empty? %} cart-page--empty{% endif %}"
-      style="{% render 'spacing-style', settings: section.settings %}"
-    >
-      <div class="cart-page__title">
-        {%- content_for 'block', id: 'cart-page-title', type: '_cart-title' %}
-      </div>
+<section class="card-section">
+  <div class="container">
+    <cart-items-component class="cart-items-component" data-section-id="{{ section.id }}">
+      <div class="section-background color-{{ section.settings.color_scheme }}"></div>
+      <div class="section color-{{ section.settings.color_scheme }} section--{{ section.settings.section_width }}">
+        <div class="cart-page spacing-style{% if cart.empty? %} cart-page--empty{% endif %}" style="{% render 'spacing-style', settings: section.settings %}">
+          <div class="cart-page__title row">
+            <div class="col-lg-4">
+                <h5 style="">PRODUCT</h5>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="text-center" style="padding-left: 144px;">QUANTITY</h5>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="text-right">TOTAL</h5>
+            </div>
+          </div>
 
-      <div class="cart-page__items">
-        {%- content_for 'block', id: 'cart-page-items', type: '_cart-products' %}
-      </div>
+          <div class="cart-page__items">
+            {%- content_for 'block', id: 'cart-page-items', type: '_cart-products' %}
+          </div>
 
-      {%- unless cart.empty? -%}
-        <div class="cart-page__summary">
-          {%- content_for 'block', id: 'cart-page-summary', type: '_cart-summary' -%}
+          {%- unless cart.empty? -%}
+            <div class="cart-page__summary">
+              {%- content_for 'block', id: 'cart-page-summary', type: '_cart-summary' -%}
+            </div>
+          {%- endunless -%}
+
+          <div class="cart-page__more-blocks">
+            {%- content_for 'blocks' -%}
+          </div>
         </div>
-      {%- endunless -%}
-
-      <div class="cart-page__more-blocks">
-        {%- content_for 'blocks' -%}
       </div>
-    </div>
+    </cart-items-component>
   </div>
-</cart-items-component>
+</section>
 
 {% stylesheet %}
+  .card-section {
+    background: #f1f0ec;
+    padding: 80px 0;
+  }
+
+  .card-section .cart-page__title {
+    padding: 18px 12px;
+    border-bottom: 1px solid #565656;
+  }
+
+  .card-section .cart-page__summary {
+    width: min-content;
+    justify-content: ;
+    float: right;
+  }
+
+  .cart-page__title h5 {
+    color: #000;
+    font-size: 20px;
+  }
+
+  /* 🧱 Card-style layout for cart items */
+  .cart-page__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 0;
+  }
+
+  .cart-page__items .cart-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .cart-page__items .cart-item:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  }
+
+  /* 🖼️ Product image */
+  .cart-page__items .cart-item .cart-item__image {
+    max-width: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* 📄 Product details */
+  .cart-page__items .cart-item .cart-item__details {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .cart-item__details h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .cart-item__details .cart-item__meta {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* 🔢 Quantity selector */
+  .cart-item__quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cart-item__quantity input[type="number"] {
+    width: 60px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  /* 💰 Price and total */
+  .cart-item__price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  /* 🧾 Summary box */
+  .cart-page__summary {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .cart-page__summary h4 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .cart-page__summary .summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+
+  .cart-page__summary .summary-total {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 16px;
+  }
+
+  /* 🛒 Checkout button */
+  .cart-page__summary .checkout-button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .cart-page__summary .checkout-button:hover {
+    background: #333;
+  }
+{% endstylesheet %}
+
+
+{% comment %} {% stylesheet %}
   .cart-page {
     --cart-font-size--2xs: var(--font-size--2xs);
     --cart-font-size--xs: var(--font-size--xs);
@@ -111,7 +254,7 @@
       grid-template-columns: 1fr var(--sidebar-width);
     }
   }
-{% endstylesheet %}
+{% endstylesheet %} {% endcomment %}
 
 {% schema %}
 {
