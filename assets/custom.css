@@ -2091,7 +2091,9 @@ ul {
   }
 
   .vision-text {
-        margin-right: 0;
+    margin-right: 10px;
+    margin-top: 0;
+    margin-bottom: -50px;
   }
 
   .brand-story-text .brand-story-right-img {
