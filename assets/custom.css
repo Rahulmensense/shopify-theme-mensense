@@ -1865,6 +1865,12 @@ ul {
     padding-top: 117px;
 }
 
+.contact-wrapper {
+  background: #E3E5E6;
+  padding: 50px;
+  border-radius: 28px;
+}
+
 .contact-grid {
   display: flex;
   flex-wrap: wrap;
