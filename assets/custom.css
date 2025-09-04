@@ -1964,7 +1964,15 @@ ul {
 }
 
 .contact-form input:hover, .contact-form textarea:hover {
-  background-color: #fff;
+  background-color: #000;
+}
+
+.contact-form .submit-btn {
+  background: linear-gradient(to right, #11182b, #58718f);
+}
+
+.contact-form .submit-btn:hover {
+  background: linear-gradient(to right, #58718f, #11182b);
 }
 
 .social-icons a {
