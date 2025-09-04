@@ -1879,6 +1879,11 @@ ul {
         line-height: normal;
   }
 
+  .our-promise-sec {
+    background-attachment: unset;
+  }
+
+
   .products-section {
     display: flex;
     gap: 41px;
