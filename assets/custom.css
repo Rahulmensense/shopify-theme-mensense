@@ -1895,6 +1895,10 @@ ul {
   color: #1e3a8a;
 }
 
+.contact-info .social-icons {
+  justify-content: start;
+}
+
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 12px;
