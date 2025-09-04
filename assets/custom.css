@@ -1875,14 +1875,14 @@ ul {
     margin-top: 0px;
   }
   .text-gradient-banner-bottom h2 {
-        font-size: 77px;
+        font-size: 80px;
         line-height: normal;
   }
 
   .products-section {
     display: flex;
     gap: 95px;
-    width: 100%;
+    width: 100% !important;
     max-width: 100%;
     align-items: center;
     flex-direction: column;
@@ -1948,8 +1948,8 @@ ul {
   }
 
   .products-we-create-after-shap-one:after {
-        width: 60%;
-      height: 100%;
+      width: 30%;
+      height: 20%;
   }
 
   .banner-about-img {
