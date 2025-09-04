@@ -12,43 +12,49 @@
 }
 {% endschema %}
 
-<div class="contact-wrapper page-width">
-  <div class="contact-grid">
-    <!-- Left: Form -->
-    <div class="contact-form">
-      <h2 class="contact-title">Contact Us</h2>
-      {% form 'contact' %}
-        {% if form.posted_successfully? %}
-          <p class="success-msg">✅ Thanks for reaching out! We'll get back to you soon.</p>
-        {% endif %}
 
-        {% if form.errors %}
-          <ul class="error-msg">
-            {% for field in form.errors %}
-              <li>{{ field | capitalize }} can't be blank</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
+<section class="contact-sec">
+  <div class="conatiner">
+    <div class="contact-wrapper page-width">
+      <div class="contact-grid">
+        <!-- Left: Form -->
+        <div class="contact-form">
+          <h2 class="contact-title">Contact Us</h2>
+          {% form 'contact' %}
+            {% if form.posted_successfully? %}
+              <p class="success-msg">✅ Thanks for reaching out! We'll get back to you soon.</p>
+            {% endif %}
 
-        <input type="text" name="contact[name]" placeholder="Your Name" required>
-        <input type="email" name="contact[email]" placeholder="Your Email" required>
-        <textarea name="contact[body]" placeholder="Type your message here" required></textarea>
-        <input type="submit" value="Submit" class="submit-btn">
-      {% endform %}
-    </div>
+            {% if form.errors %}
+              <ul class="error-msg">
+                {% for field in form.errors %}
+                  <li>{{ field | capitalize }} can't be blank</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
 
-    <!-- Right: Info -->
-    <div class="contact-info">
-      <h4>Reach Us</h4>
-      <p><strong>Email:</strong> mensense@gmail.com</p>
-      <p><strong>Phone:</strong> 602-216-4143</p>
-      <p><strong>Address:</strong> Lorem ipsum, lorem ipsum lorem ipsum</p>
-      <div class="social-icons">
-        <span>Follow us:</span>
-        <a href="#"><i class="icon-facebook"></i></a>
-        <a href="#"><i class="icon-instagram"></i></a>
-        <a href="#"><i class="icon-behance"></i></a>
+            <input type="text" name="contact[name]" placeholder="Your Name" required>
+            <input type="email" name="contact[email]" placeholder="Your Email" required>
+            <textarea name="contact[body]" placeholder="Type your message here" required></textarea>
+            <input type="submit" value="Submit" class="submit-btn">
+          {% endform %}
+        </div>
+
+        <!-- Right: Info -->
+        <div class="contact-info">
+          <h4>Reach Us</h4>
+          <p><strong>Email:</strong> mensense@gmail.com</p>
+          <p><strong>Phone:</strong> 602-216-4143</p>
+          <p><strong>Address:</strong> Lorem ipsum, lorem ipsum lorem ipsum</p>
+          <div class="social-icons">
+            <span>Follow us:</span>
+            <a href="#"><i class="icon-facebook"></i></a>
+            <a href="#"><i class="icon-instagram"></i></a>
+            <a href="#"><i class="icon-behance"></i></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
