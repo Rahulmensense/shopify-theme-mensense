@@ -1899,6 +1899,10 @@ ul {
   justify-content: start;
 }
 
+.cont-social {
+  display: flex;
+}
+
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 12px;
