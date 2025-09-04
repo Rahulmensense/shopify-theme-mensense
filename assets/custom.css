@@ -1941,14 +1941,14 @@ ul {
   }
 
   .dermatologist-section h3 {
-                padding-top: 21px;
-        display: block;
-        text-align: center;
+    padding-top: 21px;
+    display: block;
+    text-align: center;
   }
 
 
   .doctor-hading img {
-        margin-top: auto;
+    margin-top: auto;
   }
   .doctor-hading {
     display: block;
@@ -1969,9 +1969,13 @@ ul {
       margin-bottom: 17px !important;
   }
 
-  .products-we-create-before-shap-one:before {
-        width: 100%;
-      height: 100%;
+  .products-we-create-before-shap-one::before {
+    width: 80%;
+    height: 30%;
+  }
+
+  .story-area.mb-5 {
+    margin-bottom: 0rem !important;
   }
 
   .social-icons {
