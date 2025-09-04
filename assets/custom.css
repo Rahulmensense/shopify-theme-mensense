@@ -1879,6 +1879,10 @@ ul {
       line-height: 106px;
   }
 
+  .hero-author ul {
+    width: 26%;
+  }
+
   .our-promise-sec {
     background-attachment: unset;
   }
