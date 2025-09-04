@@ -2050,6 +2050,12 @@ ul {
         width: 100%;
   }
 
+  .mission-section::before {
+    top: -484px;
+    width: 290px;
+    height: 208px;
+  }
+
   .brand-story-text {
         flex-direction: column;
             gap: 0;
