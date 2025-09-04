@@ -1,0 +1,18 @@
+{% form 'contact' %}
+  {% if form.posted_successfully? %}
+    <p class="success-msg">Thanks for reaching out! We'll get back to you soon.</p>
+  {% endif %}
+
+  {% if form.errors %}
+    <ul class="error-msg">
+      {% for field in form.errors %}
+        <li>{{ field | capitalize }} can't be blank</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <input type="text" name="contact[name]" placeholder="Your Name" required>
+  <input type="email" name="contact[email]" placeholder="Your Email" required>
+  <textarea name="contact[body]" placeholder="Type your message here" required></textarea>
+  <input type="submit" value="Submit" class="submit-btn">
+{% endform %}
