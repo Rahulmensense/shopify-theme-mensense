@@ -21,7 +21,8 @@
     style="{% render 'typography-style', preset: 'custom', settings: block_settings, type: 'heading' %}"
     {{ block.shopify_attributes }}
   >
-    <span>{{ block.settings.text }}</span>{{ suffix }}
+    {% comment %} <span>{{ block.settings.text }}</span>{{ suffix }} {% endcomment %}
+     <h2 class="contact-heading">{{ block.settings.text }}</h2>
   </span>
 {%- endif -%}
 
