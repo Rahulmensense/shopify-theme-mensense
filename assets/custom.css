@@ -1959,6 +1959,10 @@ ul {
   margin-top: 16px;
 }
 
+.contact-info .social-icons span {
+  color: #fff;
+}
+
 .social-icons a {
   margin-right: 10px;
   font-size: 20px;
