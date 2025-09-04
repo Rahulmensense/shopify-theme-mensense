@@ -2050,6 +2050,11 @@ ul {
     padding-bottom: 0;
   }
 
+  .brand-story-area .promise-content {
+    padding-top: 0;
+  }
+
+
   .brand-story-area .promise-content h4 {
     font-size: 27px;
   }
