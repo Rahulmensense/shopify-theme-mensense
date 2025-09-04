@@ -1963,6 +1963,10 @@ ul {
   color: #000;
 }
 
+.contact-form input:hover, .contact-form textarea:hover {
+  background-color: #fff;
+}
+
 .social-icons a {
   margin-right: 10px;
   font-size: 20px;
