@@ -78,7 +78,7 @@
 	line-height: 1;
 	padding: 22px 53px;
 	border-radius: 8px;
-	transition:  0.5s;
+	transition:  0.3s ease-in-out;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
@@ -87,7 +87,7 @@
 
 .ed-primary-btn:hover {
   color: #fff;
-  background: #000;
+  background: linear-gradient(to right,#000,#000);
 }
 
 .hero-content .hero-author {
