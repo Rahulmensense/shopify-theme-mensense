@@ -1883,20 +1883,25 @@ ul {
   flex: 1 1 45%;
 }
 
+.contact-info {
+  background: #58718F;
+  border-radius: 18px;
+  padding: 30px;
+}
+
 .contact-title {
   font-size: 32px;
   margin-bottom: 20px;
   color: #1e3a8a;
 }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 0;
+    border-radius: 9px;
+    font-size: 16px;
 }
 
 .submit-btn {
