@@ -16,15 +16,15 @@
 <section class="contact-sec">
   <div class="container">
     <div class="contact-wrapper page-width">
+      <div class="about-content">
+        <div class="section-heading mb-40">
+          <h2>Contact us</h2>
+          <p>Reach out for inquiries about our premium men's skincare products.</p>
+        </div>
+      </div>
       <div class="contact-grid">
         <!-- Left: Form -->
         <div class="contact-form">
-          <div class="about-content">
-            <div class="section-heading mb-40">
-              <h2>Contact us</h2>
-              <p>Reach out for inquiries about our premium men's skincare products.</p>
-            </div>
-          </div>
           {% form 'contact' %}
             {% if form.posted_successfully? %}
               <p class="success-msg">✅ Thanks for reaching out! We'll get back to you soon.</p>
