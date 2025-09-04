@@ -2050,8 +2050,12 @@ ul {
 
 @media only screen and (min-width: 1200px) and (max-width: 1366px){
 
+  .hero-section {
+    background-size: 560px 560px;
+  }
+
   .hero-content .section-heading .section-title {
-    font-size: 65px;
+    font-size: 47px;
   }
 
   .mb-40 {
