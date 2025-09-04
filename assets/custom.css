@@ -1881,11 +1881,15 @@ ul {
 
   .products-section {
     display: flex;
-    gap: 95px;
+    gap: 41px;
     width: 100% !important;
     max-width: 100%;
     align-items: center;
     flex-direction: column;
+  }
+
+  .products-section .img-area-left-about-sec {
+    width: 100%;
   }
 
   .list-area-about {
