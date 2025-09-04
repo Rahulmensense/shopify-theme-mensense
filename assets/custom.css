@@ -1872,17 +1872,29 @@ ul {
   }
 
   .text-gradient-banner-bottom {
-    margin-top: -35px;
+    margin-top: -25px;
   }
   .text-gradient-banner-bottom h2 {
-        font-size: 80px;
-        line-height: normal;
+      font-size: 77px;
+      line-height: 106px;
   }
 
   .our-promise-sec {
     background-attachment: unset;
   }
 
+  .promise-item {
+    padding: 12px 55px;
+  }
+
+  .dermatologist-section {
+    padding-top: 50px !important;
+    padding-bottom: 0px !important;
+  }
+
+  .shop-by-categories .section-title {
+    font-size: 36px;
+  }
 
   .products-section {
     display: flex;
