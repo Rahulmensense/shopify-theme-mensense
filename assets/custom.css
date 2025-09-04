@@ -1964,7 +1964,7 @@ ul {
 }
 
 .contact-form input:hover, .contact-form textarea:hover {
-  background-color: #000;
+  background-color: #ededed;
 }
 
 .contact-form .submit-btn {
