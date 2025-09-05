@@ -1990,14 +1990,19 @@ ul {
   line-height: 80px;
   text-align: center;
   letter-spacing: -.04em;
-  text-transform: capitalize;
-  color: #f1f0ec;
+  background: linear-gradient(93.62deg, #58718F 5.96%, #11182B 95.95%);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .privacy-policy-section .sub-title, .terms-conditions-section .sub-title, .return-refund-section .sub-title {
   font-size: 18px;
   line-height: 28px;
   padding-top: 20px;
+  color: #000;
 }
 
 .challenge-text {
