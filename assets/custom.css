@@ -1997,6 +1997,80 @@ ul {
     color: #f1f0ec;
 }
 
+.challenge-text {
+	padding: 50px 0;
+}
+.challenge-text .title {
+	position: relative;
+  margin-bottom: 20px;
+}
+
+.challenge-text .title h2 {
+	position: relative;
+	z-index: 1;
+	font-size: 40px;
+	line-height: 50px;
+	margin-bottom: 0;
+}
+
+.challenge-text .title .single-line {
+	display: inline-block;
+	width: 100px;
+	height: 2px;
+	background-color: #016cd3;
+}
+
+.challenge-text .inner-listing li {
+	position: relative;
+	padding-left: 50px;
+	padding-bottom: 30px;
+  list-style: none;
+}
+
+.challenge-text .inner-listing li::before {
+	content: "";
+	position: absolute;
+	left: 15px;
+	width: 2px;
+	height: 100%;
+	background-color: #f2f2f2;
+}
+
+.challenge-text .inner-listing li .in-list {
+	margin-top: 30px;
+}
+
+.challenge-text .inner-listing li::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	background-color: #fff;
+	border: 5px solid #bebebe;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	-ms-border-radius: 50px;
+	border-radius: 50px;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-ms-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+}
+
+.challenge-text .inner-listing li .in-list li {
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+.challenge-text .inner-listing li p {
+	margin-bottom: 0;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #000;
+}
 
 @media (max-width: 768px) {
   .dermatologist-section .col-md-4 {
