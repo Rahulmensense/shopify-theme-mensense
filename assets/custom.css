@@ -2036,7 +2036,7 @@ ul {
 	display: inline-block;
 	width: 100px;
 	height: 2px;
-	background-color: #016cd3;
+	background: linear-gradient(to right,#58718f,#11182b);
 }
 
 .challenge-text .inner-listing li {
@@ -2098,7 +2098,7 @@ ul {
 }
 
 .challenge-text .inner-listing li:hover:after {
-  border-color:#016cd3;
+  border-color:#58718f;
 }
 
 .challenge-text .inner-listing li .in-list li {
