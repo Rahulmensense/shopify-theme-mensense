@@ -2074,6 +2074,14 @@ ul {
 	border-radius: 50px;
 }
 
+.challenge-text .inner-listing li .in-list li:before {
+  display:none;
+}
+
+.challenge-text .inner-listing li:hover:after {
+  border-color:#016cd3;
+}
+
 .challenge-text .inner-listing li .in-list li {
 	padding-left: 20px;
 	padding-bottom: 20px;
