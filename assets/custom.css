@@ -2007,11 +2007,12 @@ ul {
   margin-bottom: 20px;
 }
 
-.challenge-text .title h2 {
+.challenge-text .policy-title h2 {
 	position: relative;
 	z-index: 1;
 	font-size: 40px;
 	line-height: 50px;
+  font-weight: 900;
 	margin-bottom: 0;
 }
 
