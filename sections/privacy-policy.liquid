@@ -3,7 +3,10 @@
   "name": "Privacy Policy",
   "tag": "section",
   "class": "privacy-policy-section",
-  "settings": [],
+  "settings": [
+    { "type": "text", "id": "hero_heading", "label": "Heading", "default": "Privacy Policy" },
+    { "type": "text", "id": "hero_subheading", "label": "Subheading", "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," },
+  ],
   "presets": [
     {
       "name": "Privacy Policy",
@@ -13,6 +16,20 @@
 }
 {% endschema %}
 
+<section class="policy-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-12">
+        <div class="hero-copy">
+          <h1 class="title">{{ section.settings.hero_heading }}</h1>
+          {% if section.settings.hero_subheading != blank %}
+            <p class="sub-title">{{ section.settings.hero_subheading }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <div class="legal-wrapper page-width">
   <h1 class="legal-title">Privacy Policy</h1>
   <div class="legal-content">
