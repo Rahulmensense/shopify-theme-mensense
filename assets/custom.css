@@ -1976,6 +1976,19 @@ ul {
   display: none !important;
 }
 
+[data-template="page.terms-conditions"] .page-width-content {
+  display: none !important;
+}
+
+.terms-conditions-section {
+  background-image: url(/cdn/shop/files/Group_469595.jpg?v=1756577304);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding-top: 280px;
+  padding-bottom: 0px;
+}
+
 .privacy-policy-section {
   background-image: url(/cdn/shop/files/Group_469595.jpg?v=1756577304);
   background-position: top left;
