@@ -1977,12 +1977,9 @@ ul {
 }
 
 .privacy-policy-section, .terms-conditions-section, .return-refund-section {
-  background-image: url(/cdn/shop/files/Group_469595.jpg?v=1756577304);
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  padding-top: 280px;
-  padding-bottom: 0px;
+  padding-top: 100px;
+  padding-bottom: 0;
+  background: linear-gradient(to right,#D5DCE4,#F1F0EC);
 }
 
 .privacy-policy-section .title, .terms-conditions-section .title, .return-refund-section .title {
