@@ -1997,6 +1997,7 @@ ul {
 .privacy-policy-section .sub-title, .terms-conditions-section .sub-title, .return-refund-section .sub-title {
   font-size: 18px;
   line-height: 28px;
+  padding-top: 20px;
 }
 
 .challenge-text {
