@@ -2153,6 +2153,28 @@ ul {
 }
 
 @media only screen and (max-width: 767px) {
+  .privacy-policy-section .title, .terms-conditions-section .title, .return-refund-section .title {
+    font-size: 52px;
+    line-height: normal;
+  }
+
+  .privacy-policy-section .sub-title, .terms-conditions-section .sub-title, .return-refund-section .sub-title {
+    width: 100%;
+  }
+
+  .challenge-text {
+    margin-top: 55px;
+  }
+
+  .challenge-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+
+  .challenge-text h4 {
+    font-size: 1.0rem;
+  }
+
   .contact-wrapper {
     padding: 28px;
   }
