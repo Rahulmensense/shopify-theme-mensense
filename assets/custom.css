@@ -2175,6 +2175,11 @@ ul {
     font-size: 1.0rem;
   }
 
+  .challenge-text .policy-title h2 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
   .contact-wrapper {
     padding: 28px;
   }
