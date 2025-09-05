@@ -2721,6 +2721,10 @@ ul {
     width: 59%;
   }
 
+  .challenge-text {
+    margin-top: 50px;
+  }
+
   .text-gradient-banner-bottom h2 {
     font-size: 294px;
   line-height: normal;
