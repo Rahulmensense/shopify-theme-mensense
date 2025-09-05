@@ -1977,12 +1977,24 @@ ul {
 }
 
 .privacy-policy-section {
-    background-image: url(/cdn/shop/files/Group_469595.jpg?v=1756577304);
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    padding-top: 280px;
-    padding-bottom: 352px;
+  background-image: url(/cdn/shop/files/Group_469595.jpg?v=1756577304);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding-top: 280px;
+  padding-bottom: 352px;
+}
+
+.privacy-policy-section .title {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 117px;
+    line-height: 136px;
+    text-align: center;
+    letter-spacing: -.04em;
+    text-transform: capitalize;
+    color: #f1f0ec;
 }
 
 
