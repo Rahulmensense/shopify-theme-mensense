@@ -374,31 +374,26 @@
   })();
 
 
-
-
-    function loadMoreReviews() {
-      document.querySelectorAll('.review-item').forEach(item => {
-        item.style.display = 'block';
-      });
-      document.querySelector('.show-more-reviews').style.display = 'none';
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const reviews = document.querySelectorAll('.review-item');
-      reviews.forEach((r, i) => {
-        r.style.display = i < 3 ? 'block' : 'none';
-      });
+  function loadMoreReviews() {
+    document.querySelectorAll('.review-item').forEach(item => {
+      item.style.display = 'block';
     });
+    document.querySelector('.show-more-reviews').style.display = 'none';
+  }
 
-
-    {% comment %} Button Write a review Functionality {% endcomment %}
-     
-    document.querySelector('.write-review')?.addEventListener('click', function() {
-      alert('Review form coming soon!');
+  document.addEventListener('DOMContentLoaded', () => {
+    const reviews = document.querySelectorAll('.review-item');
+    reviews.forEach((r, i) => {
+      r.style.display = i < 3 ? 'block' : 'none';
     });
+  });
 
 
-
+  {% comment %} Button Write a review Functionality {% endcomment %}
+    
+  document.querySelector('.write-review')?.addEventListener('click', function() {
+    alert('Review form coming soon!');
+  });
 </script>
 
 
