@@ -1986,15 +1986,15 @@ ul {
 }
 
 .privacy-policy-section .title, .terms-conditions-section .title, .return-refund-section .title {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 117px;
-    line-height: 136px;
-    text-align: center;
-    letter-spacing: -.04em;
-    text-transform: capitalize;
-    color: #f1f0ec;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 80px;
+  text-align: center;
+  letter-spacing: -.04em;
+  text-transform: capitalize;
+  color: #f1f0ec;
 }
 
 .challenge-text {
