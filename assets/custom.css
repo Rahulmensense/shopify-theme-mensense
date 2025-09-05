@@ -2428,6 +2428,10 @@ ul {
 
 @media only screen and (min-width: 1200px) and (max-width: 1366px){
 
+  .challenge-text {
+    margin-top: 50px;
+  }
+
   .hero-content .section-heading .section-title {
     font-size: 47px;
   }
@@ -2565,6 +2569,10 @@ ul {
 @media only screen and (min-width: 1367px) and (max-width: 1400px) {
   .brand-story-text .about-content {
     width: 59%;
+  }
+
+  .challenge-text {
+    margin-top: 50px;
   }
 
   .banner-about-img {
