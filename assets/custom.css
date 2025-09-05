@@ -1970,6 +1970,17 @@ ul {
   color: #1e3a8a;
 }
 
+/*----- CONTACT Pgae CSS -----*/
+.privacy-policy-section {
+    background-image: url(/cdn/shop/files/Group_469595.jpg?v=1756577304);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-top: 280px;
+    padding-bottom: 352px;
+}
+
+
 @media (max-width: 768px) {
   .dermatologist-section .col-md-4 {
     margin-bottom: 30px;
