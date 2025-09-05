@@ -3,7 +3,10 @@
   "name": "Return & Refund Policy",
   "tag": "section",
   "class": "return-refund-section",
-  "settings": [],
+  "settings": [
+    { "type": "text", "id": "hero_heading", "label": "Heading", "default": "Return & Refund Policy" },
+    { "type": "text", "id": "hero_subheading", "label": "Subheading", "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," },
+  ],
   "presets": [
     {
       "name": "Return & Refund Policy",
@@ -13,15 +16,91 @@
 }
 {% endschema %}
 
-<div class="legal-wrapper page-width">
-  <h1 class="legal-title">Return & Refund Policy</h1>
-  <div class="legal-content">
-    <p>We want you to be satisfied with your purchase. If you're not happy, here's how we handle returns and refunds:</p>
-    <ul>
-      <li>✅ Returns are accepted within 7 days of delivery.</li>
-      <li>✅ Products must be unused and in original packaging.</li>
-      <li>✅ Refunds are processed within 5–7 business days after inspection.</li>
-    </ul>
-    <p>To initiate a return, contact us at support@mensense.in with your order ID.</p>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-12 col-lg-12">
+      <div class="hero-copy">
+        <h1 class="title">{{ section.settings.hero_heading }}</h1>
+        {% if section.settings.hero_subheading != blank %}
+          <p class="sub-title">{{ section.settings.hero_subheading }}</p>
+        {% endif %}
+      </div>
+    </div>
   </div>
+</div>
+
+<div class="detail-tabs dt-none">
+  <section class="challenge-text">
+    <div class="container">
+      <div class="policy-title mb-20">
+        <h2><span class="ez-toc-section" id="Who_we_are"></span>Who we are<span class="ez-toc-section-end"></span></h2>
+      <div class="single-line"></div>
+      </div>
+      <p class="mb-20" style="margin-bottom: 20px !important;">Our website address is: <a href="#">https://mensense.com/</a>.</p>
+      <ul class="inner-listing mb-40">
+        <li>
+        <h3>What personal data we collect and why we collect it</h3>
+        <ul class="in-list">
+        <li>
+        <h4>Comments</h4>
+        <p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.</p>
+        <p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>
+        </li>
+        <li>
+        <h4>Media</h4>
+        <p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>
+        </li>
+        </ul>
+        </li>
+      </ul>
+      <ul class="inner-listing mb-40">
+        <li>
+        <h3>Contact forms</h3>
+        <ul class="in-list">
+        <li>
+        <h4>Cookies</h4>
+        <p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>
+        <p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>
+        <p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &#8220;Remember Me&#8221;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>
+        <p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>
+        </li>
+        <li>
+        <h4>Embedded content from other websites</h4>
+        <p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
+        <p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>
+        </li>
+        </ul>
+        </li>
+      </ul>
+      <div class="policy-title mb-20">
+        <h2><span class="ez-toc-section" id="Analytics"></span>Analytics<span class="ez-toc-section-end"></span></h2>
+        <div class="single-line"></div>
+      </div>
+      <h3 class="mb-30">Who we share your data with</h3>
+      <h4 class="mb-20">How long we retain your data</h4>
+      <p class="mb-20">If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>
+      <p class="mb-40">For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>
+      <h3>What rights you have over your data</h3>
+      <p class="mb-40">If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>
+
+      <h3>Where we send your data</h3>
+      <p class="mb-40">Visitor comments may be checked through an automated spam detection service.</p>
+      <div class="policy-title mb-20">
+        <h2><span class="ez-toc-section" id="Your_contact_information"></span>Your contact information<span class="ez-toc-section-end"></span></h2>
+        <div class="single-line"></div>
+      </div>
+      <ul class="inner-listing">
+        <li>
+          <h3>Additional information</h3>
+          <ul class="in-list">
+            <li>How we protect your data</li>
+            <li>What data breach procedures we have in place</li>
+            <li>What third parties we receive data from</li>
+            <li>What automated decision making and/or profiling we do with user data</li>
+            <li>Industry regulatory disclosure requirements</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
 </div>
