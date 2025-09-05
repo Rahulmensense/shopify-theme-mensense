@@ -1971,6 +1971,10 @@ ul {
 }
 
 /*----- CONTACT Pgae CSS -----*/
+[data-template="page.privacy-policy"] .page-width-content {
+  display: none !important;
+}
+
 .privacy-policy-section {
     background-image: url(/cdn/shop/files/Group_469595.jpg?v=1756577304);
     background-position: top left;
