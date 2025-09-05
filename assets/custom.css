@@ -1999,7 +1999,9 @@ ul {
 
 .challenge-text {
 	padding: 50px 0;
+  margin-top: 240px;
 }
+
 .challenge-text .policy-title {
 	position: relative;
   margin-bottom: 20px;
