@@ -8,10 +8,6 @@
   color: #4b617d !important;
 }
 
-.header[data-sticky-state=active] {
-  
-}
-
 .header-custom-button .button-primary {
   background-color: rgb(80 103 132);
 }
@@ -1050,7 +1046,7 @@ ul {
 /*------ Product Custom Detail CSS ------*/
 
 .product-details-area {
-  padding-top: 80px;]
+  padding-top: 80px;
   padding-bottom: 40px;
   background: #F1F0EC;
 }
@@ -1294,7 +1290,7 @@ ul {
   border-radius: 8px;
   width: fit-content;
   position: absolute;
-  box-shadow: 0 0 10px #0000001;
+  box-shadow: 0 0 10px #000001;
 }
 
 .product-detail-grid .share-menu ul {
@@ -1625,14 +1621,6 @@ ul {
   display: block;
   text-align:  center;
 }
-
-
-
-
-
-
-
-
 
 /*----- FAQ CSS -----*/
 
@@ -1982,8 +1970,6 @@ ul {
   color: #1e3a8a;
 }
 
-
-
 @media (max-width: 768px) {
   .dermatologist-section .col-md-4 {
     margin-bottom: 30px;
@@ -2300,7 +2286,7 @@ ul {
   }
 
   .ed-primary-btn {
-    padding: 17px 53px
+    padding: 17px 53px;
   }
 
   .text-gradient-banner-bottom {
@@ -2648,5 +2634,4 @@ ul {
     height: 37px;
     padding: 12px;
   }
-
 }
