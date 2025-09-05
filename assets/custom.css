@@ -1997,6 +1997,11 @@ ul {
   color: #f1f0ec;
 }
 
+.privacy-policy-section .sub-title, .terms-conditions-section .sub-title, .return-refund-section .sub-title {
+  font-size: 18px;
+  line-height: 28px;
+}
+
 .challenge-text {
 	padding: 50px 0;
   margin-top: 240px;
