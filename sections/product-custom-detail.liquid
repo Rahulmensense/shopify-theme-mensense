@@ -395,6 +395,27 @@
   </div>
 </section>
 
+{% stylesheet %}
+  .cart-items__quantity {
+    grid-area: quantity;
+    margin-block-start: var(--margin-xs);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-xs);
+    width: fit-content;
+  }
+
+  .cart-items__quantity .quantity-selector {
+    display: inline-flex;
+    flex: 0 1 var(--quantity-selector-width);
+    font-size: var(--cart-font-size--sm);
+    height: auto;
+  }
+{% endstylesheet %}
+
+
+
 <script>
   function increaseQty() {
     var qty = document.getElementById("Quantity");
