@@ -10,6 +10,10 @@
   @param {boolean} [can_update_quantity] - whether the quantity can be updated, defaults to true
 {%- enddoc -%}
 
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+%}
+
 <section class="product-details-area">
   <div class="container">
     <div class="product-layout">
