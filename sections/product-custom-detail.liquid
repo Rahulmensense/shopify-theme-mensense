@@ -395,38 +395,6 @@
   </div>
 </section>
 
-{% stylesheet %}
-  .cart-items__quantity {
-    grid-area: quantity;
-    margin-block-start: var(--margin-xs);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--gap-xs);
-    width: fit-content;
-  }
-
-  .cart-items__quantity .quantity-selector {
-    display: inline-flex;
-    flex: 0 1 var(--quantity-selector-width);
-    font-size: var(--cart-font-size--sm);
-    height: auto;
-  }
-
-  .cart-items--dividers .cart-items__table-row:last-child {
-    border-block-end: none;
-    padding-block-end: 0;
-    margin-bottom: 0;
-  }
-
-  .cart-items--dividers .cart-items__table-row {
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: var(--cart-items-gap);
-  }
-{% endstylesheet %}
-
-
-
 <script>
   function increaseQty() {
     var qty = document.getElementById("Quantity");
