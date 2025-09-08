@@ -1,3 +1,9 @@
+<script
+  src="{{ 'component-cart-items.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
 <section class="product-details-area">
   <div class="container">
     <div class="product-layout">
@@ -83,7 +89,7 @@
           <!-- Quantity Selector -->
           <div class="quantity-selector">
             <label>Quantity:</label>
-            <div
+                <td
                   class="cart-items__quantity"
                   role="cell"
                   headers="quantity"
@@ -114,8 +120,8 @@
                     {{- 'icon-delete.svg' | inline_asset_content -}}
                     <span class="visually-hidden">Remove</span>
                   </button>
-                </div>
-                <div
+                </td>
+                <td
                   class="cart-items__error hidden"
                   role="cell"
                   ref="cartItemErrorContainer-{{ item.index | plus: 1 }}"
@@ -133,7 +139,7 @@
                       ref="cartItemError-{{ item.index | plus: 1 }}"
                     ></small>
                   </div>
-                </div>
+                </td>
           </div>
 
           <!-- Add to Cart + Buy Now -->
