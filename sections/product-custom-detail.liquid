@@ -449,7 +449,7 @@
   });
 
 
-  document.addEventListener("DOMContentLoaded", function () {
+  {% comment %} document.addEventListener("DOMContentLoaded", function () {
     const qtyInput = document.getElementById("Quantity");
     const cartBubble = document.getElementById("cartCountBubble"); // optional
 
@@ -475,7 +475,7 @@
 
     // Optional: live update when typing manually
     qtyInput.addEventListener("input", updateCartBubble);
-  });
+  }); {% endcomment %}
 </script>
 
 
