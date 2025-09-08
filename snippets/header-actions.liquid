@@ -15,13 +15,14 @@
   {% if settings.cart_type == 'drawer' and template.name != 'cart' %}
     {% render 'cart-drawer' %}
   {% else %}
-    <a
+    {% comment %} <a
       href="{{ routes.cart_url }}"
       class="header-actions__action action__cart"
       aria-label="{{ 'accessibility.cart' | t }} {{ 'accessibility.cart_count' | t }}: {{ cart.item_count }}"
     >
       {% render 'cart-icon-component' %}
-    </a>
+    </a> {% endcomment %}
+    <span id="cartCountBubble" class="cart-count-bubble">1</span>
   {% endif %}
 </header-actions>
 
