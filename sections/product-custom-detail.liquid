@@ -168,7 +168,7 @@
                                 can_update_quantity: can_update_quantity
                               %}
 
-                              <button
+                              {% comment %} <button
                                 class="button button--tertiary cart-items__remove"
                                 type="button"
                                 aria-label="{{ 'accessibility.remove_item' | t: title: item.title | escape }}"
@@ -180,7 +180,7 @@
                               >
                                 {{- 'icon-delete.svg' | inline_asset_content -}}
                                 <span class="visually-hidden">Remove</span>
-                              </button>
+                              </button> {% endcomment %}
                             </td>
                             <td
                               class="cart-items__error hidden"
