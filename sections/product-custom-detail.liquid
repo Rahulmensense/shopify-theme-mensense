@@ -394,6 +394,35 @@
   document.querySelector('.write-review')?.addEventListener('click', function() {
     alert('Review form coming soon!');
   });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const qtyInput = document.getElementById("Quantity");
+    const cartBubble = document.getElementById("cartCountBubble"); // optional
+
+    window.increaseQty = function () {
+      qtyInput.stepUp();
+      updateCartBubble();
+    };
+
+    window.decreaseQty = function () {
+      if (parseInt(qtyInput.value) > 1) {
+        qtyInput.stepDown();
+        updateCartBubble();
+      }
+    };
+
+    function updateCartBubble() {
+      if (cartBubble) {
+        const qty = parseInt(qtyInput.value) || 1;
+        cartBubble.textContent = qty;
+        cartBubble.style.display = "inline-block";
+      }
+    }
+
+    // Optional: live update when typing manually
+    qtyInput.addEventListener("input", updateCartBubble);
+  });
 </script>
 
 
