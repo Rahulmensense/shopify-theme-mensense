@@ -89,7 +89,7 @@
           {% endfor %} {% endcomment %}
 
           <!-- Quantity Selector -->
-          <div class="quantity-selector">
+          <div class="quantity-selector-area">
             <label>Quantity:</label>
             <div
               {{ block.shopify_attributes }}
@@ -97,7 +97,7 @@
               {% if settings.product_title_case == 'uppercase' %}
                 style="--product-title-case: uppercase;"
               {% endif %}
-            >
+              >
               {% if cart.empty? %}
                 {%- if shop.customer_accounts_enabled and customer == null -%}
                   <p>
