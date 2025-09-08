@@ -1143,6 +1143,10 @@ ul {
     margin-bottom: 18px;
 } */
 
+.quantity-selector-area .cart-items__table-row {
+  display: flex;
+}
+
 .product-detail-grid .quantity-selector label {
   font-size: 16px;
   color: #565656;
