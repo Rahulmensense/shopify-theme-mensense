@@ -201,27 +201,6 @@
                                 ></small>
                               </div>
                             </td>
-                            <td
-                              class="cart-items__price cart-secondary-typography"
-                              role="cell"
-                              headers="productTotal"
-                            >
-                              {%- liquid
-                                if settings.currency_code_enabled_cart_items
-                                  assign price = item.final_line_price | money_with_currency
-                                  assign unit_price = item.unit_price | money_with_currency
-                                else
-                                  assign price = item.final_line_price | money
-                                  assign unit_price = item.unit_price | money
-                                endif
-                              -%}
-                              <text-component value="{{ price | strip_html }}">{{ price }}</text-component>
-                              {%- if item.unit_price_measurement -%}
-                                <div class="cart-items__price-unit cart-secondary-typography">
-                                  {% render 'unit-price', price: unit_price, measurement: item.unit_price_measurement %}
-                                </div>
-                              {%- endif -%}
-                            </td>
                           </tr>
                         {% endfor %}
                       </tbody>
