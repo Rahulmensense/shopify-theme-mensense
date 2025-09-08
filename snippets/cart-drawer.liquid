@@ -26,7 +26,7 @@
     on:click="/open"
     aria-label="{{ 'accessibility.open_cart_drawer' | t }} {{ 'accessibility.cart_count' | t}}: {{ cart.item_count }}"
   >
-    <span id="cartCountBubble" class="cart-count-bubble">0</span>
+    {% render 'cart-icon-component' %}
   </button>
 
   <dialog

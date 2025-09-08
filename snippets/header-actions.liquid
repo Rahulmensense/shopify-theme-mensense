@@ -20,7 +20,7 @@
       class="header-actions__action action__cart"
       aria-label="{{ 'accessibility.cart' | t }} {{ 'accessibility.cart_count' | t }}: {{ cart.item_count }}"
     >
-      <span id="cartCountBubble" class="cart-count-bubble">1</span>
+      {% render 'cart-icon-component' %}
     </a>
   {% endif %}
 </header-actions>
