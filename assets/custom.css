@@ -2175,7 +2175,7 @@ ul {
 .video-modal .close {
   position: absolute;
   top: -18px;
-  right: 0%;
+  right: -5%;
   font-size: 40px;
   color: #fff;
   cursor: pointer;
