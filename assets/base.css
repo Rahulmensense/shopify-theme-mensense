@@ -1300,6 +1300,10 @@ button.shopify-payment-button__button--unbranded {
   color: #fff;
 }
 
+.cart-items__empty-button:hover {
+  color: #fff;
+}
+
 .button-secondary {
   font-family: var(--button-font-family-secondary);
   font-weight: var(--button-font-weight-secondary);
