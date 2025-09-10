@@ -108,6 +108,38 @@ function showMoreReviews() {
 
 
 
+function openVideoModal(url) {
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('modalVideo');
+  if (video && modal) {
+    video.src = url;
+    modal.style.display = 'flex';
+  }
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('modalVideo');
+  if (video && modal) {
+    video.pause();
+    video.src = '';
+    modal.style.display = 'none';
+  }
+}
+
+window.addEventListener("load", function () {
+  if ($('.feedback-slider').length > 0 && !$('.feedback-slider').hasClass('slick-initialized')) {
+    $('.feedback-slider').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: false,
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    });
+  }
+});
   
 
 
