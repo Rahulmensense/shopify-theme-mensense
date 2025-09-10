@@ -2144,14 +2144,14 @@ ul {
 
 .video-slider-wrapper {
     width: 100%;
+    margin-top: 80px;
 }
 
 .custom-video-slider video {
-  width: 220px;
+  width: 90%;
   height: auto;
   cursor: pointer;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 .video-modal {
   display: none;
