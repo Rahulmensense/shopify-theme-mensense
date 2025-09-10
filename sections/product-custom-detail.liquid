@@ -285,27 +285,26 @@
           </div>
 
           <div class="product-video-slider">
-            {% assign video_urls = "https://cdn.shopify.com/videos/c/o/v/f7ad10ae51084820b57c8ab84676e893.mp4" | split: "," %}
-            
             <div class="slick-slider">
-              {% for video_url in video_urls %}
-                <div class="video-slide">
-                  <video src="{{ video_url }}" muted playsinline preload="metadata" onclick="openVideoModal('{{ video_url }}')"></video>
-                </div>
-                <div class="video-slide">
-                  <video src="{{ video_url }}" muted playsinline preload="metadata" onclick="openVideoModal('{{ video_url }}')"></video>
-                </div>
-                <div class="video-slide">
-                  <video src="{{ video_url }}" muted playsinline preload="metadata" onclick="openVideoModal('{{ video_url }}')"></video>
-                </div>
-              {% endfor %}
+              <div class="video-slide">
+                <video src="https://cdn.shopify.com/videos/c/o/v/f7ad10ae51084820b57c8ab84676e893.mp4" muted playsinline preload="metadata" onclick="openVideoModal(this.src)"></video>
+              </div>
+              <div class="video-slide">
+                <video src="https://cdn.shopify.com/videos/c/o/v/293ba69de30742baa25c92d96287f6db.mp4" muted playsinline preload="metadata" onclick="openVideoModal(this.src)"></video>
+              </div>
+              <div class="video-slide">
+                <video src="https://cdn.shopify.com/videos/c/o/v/c6b186d06e2847418a70833a686ffdb8.mp4" muted playsinline preload="metadata" onclick="openVideoModal(this.src)"></video>
+              </div>
+              <div class="video-slide">
+                <video src="https://cdn.shopify.com/videos/c/o/v/547df4f79ae24790b40cb68461364eff.mp4" muted playsinline preload="metadata" onclick="openVideoModal(this.src)"></video>
+              </div>
             </div>
           </div>
 
           <!-- Modal -->
           <div id="videoModal" class="video-modal">
             <span class="close" onclick="closeVideoModal()">&times;</span>
-            <video id="modalVideo" controls autoplay src="https://cdn.shopify.com/videos/c/o/v/f7ad10ae51084820b57c8ab84676e893.mp4"></video>
+            <video id="modalVideo" controls autoplay></video>
           </div>
 
         </div>
