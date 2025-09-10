@@ -1299,6 +1299,10 @@ button.shopify-payment-button__button--unbranded {
   color: #fff;
 }
 
+.cart-items__empty-button:hover {
+  color: #fff;
+}
+
 .cart-items__remove {
   background: transparent;
   color: #000;
