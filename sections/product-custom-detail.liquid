@@ -285,7 +285,7 @@
           </div>
 
           <div class="product-video-slider">
-            {% assign video_urls = "https://cdn.shopify.com/s/files/1/0000/0001/files/video1.mp4,https://cdn.shopify.com/s/files/1/0000/0001/files/video2.mp4" | split: "," %}
+            {% assign video_urls = "https://cdn.shopify.com/videos/c/o/v/f7ad10ae51084820b57c8ab84676e893.mp4" | split: "," %}
             
             <div class="slick-slider">
               {% for video_url in video_urls %}
@@ -299,7 +299,7 @@
           <!-- Modal -->
           <div id="videoModal" class="video-modal">
             <span class="close" onclick="closeVideoModal()">&times;</span>
-            <video id="modalVideo" controls autoplay></video>
+            <video id="modalVideo" controls autoplay src="https://cdn.shopify.com/videos/c/o/v/f7ad10ae51084820b57c8ab84676e893.mp4"></video>
           </div>
 
         </div>
