@@ -2173,6 +2173,7 @@ ul {
     text-align: center;
     color: #fff;
     z-index: 9;
+    cursor: pointer;
 }
 
 .video-modal {
