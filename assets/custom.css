@@ -2142,15 +2142,11 @@ ul {
   color: #000;
 }
 
-.slick-slider {
-  display: flex;
-  gap: 20px;
-}
-.video-slide video {
-  width: 200px;
+.feedback-slide video {
+  width: 100%;
   height: auto;
-  cursor: pointer;
   border-radius: 8px;
+  cursor: pointer;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 .video-modal {
