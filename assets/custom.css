@@ -2155,7 +2155,11 @@ ul {
   position: relative;
 }
 
-.custom-video-slider video::before {
+.product-videos-box {
+  position: relative;
+}
+
+.product-videos-box::before {
     content: "\f144";
     width: 24px;
     height: 24px;
