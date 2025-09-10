@@ -108,36 +108,6 @@ function showMoreReviews() {
 
 
 
-function openVideoModal(url) {
-  const modal = document.getElementById('videoModal');
-  const video = document.getElementById('modalVideo');
-  if (video && modal) {
-    video.src = url;
-    modal.style.display = 'flex';
-  }
-}
-
-function closeVideoModal() {
-  const modal = document.getElementById('videoModal');
-  const video = document.getElementById('modalVideo');
-  if (video && modal) {
-    video.pause();
-    video.src = '';
-    modal.style.display = 'none';
-  }
-}
-
-window.addEventListener('load', function () {
-  if (typeof jQuery !== 'undefined' && typeof jQuery.fn.slick === 'function') {
-    $('.custom-video-slider').not('.slick-initialized').slick({
-      infinite: true,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      arrows: true,
-      dots: true
-    });
-  }
-});
   
 
 
