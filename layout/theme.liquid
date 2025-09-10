@@ -42,7 +42,7 @@
     {{ 'slick.css' | asset_url | stylesheet_tag }}
     {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
 
-    {{ 'jquery-1.11.0.min.js' | asset_url | script_tag }}
+    {% comment %} {{ 'jquery-1.11.0.min.js' | asset_url | script_tag }} {% endcomment %}
     {{ 'slick.min.js' | asset_url | script_tag }}
     {{ 'custom.js' | asset_url | script_tag }}
     
