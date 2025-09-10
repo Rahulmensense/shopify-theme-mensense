@@ -71,7 +71,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "Shop all",
-            "link": "shopify://collections/all",
+            "link": "shopify://products/uv-defence-spf50",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
             "width": "fit-content",
