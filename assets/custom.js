@@ -127,11 +127,11 @@ function closeVideoModal() {
   }
 }
 
-// Ensure jQuery and DOM are fully loaded
-window.addEventListener('load', function () {
-  const slider = document.querySelector('.slick-slider');
-  if (slider && !slider.classList.contains('slick-initialized')) {
-    $('.slick-slider').slick({
+// Safe slick initialization
+function initSlickSlider() {
+  const $slider = $('.slick-slider');
+  if ($slider.length && !$slider.hasClass('slick-initialized')) {
+    $slider.slick({
       infinite: true,
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -139,8 +139,14 @@ window.addEventListener('load', function () {
       dots: true
     });
   }
-});
+}
 
+// Run after full page load
+window.addEventListener('load', initSlickSlider);
+
+// Optional: Re-run after AJAX content loads
+document.addEventListener('shopify:section:load', initSlickSlider);
+  
 
 
 
