@@ -298,7 +298,8 @@
               <p><strong>Customer Review:</strong> {{ product.metafields.custom.review_text | truncatewords: 20 }}</p>
             {% endif %}
           </div>
-          <div class="video-slider-wrapper lg-hide">
+        </div>
+        <div class="video-slider-wrapper lg-hide">
             <div class="custom-video-slider">
               <div class="product-videos-box"><video src="https://cdn.shopify.com/videos/c/o/v/f7ad10ae51084820b57c8ab84676e893.mp4" autoplay muted loop playsinline preload="metadata" playsinline onclick="openVideoModal(this.src)"></video></div>
               <div class="product-videos-box"><video src="https://cdn.shopify.com/videos/c/o/v/547df4f79ae24790b40cb68461364eff.mp4" autoplay muted loop playsinline preload="metadata" playsinline onclick="openVideoModal(this.src)"></video></div>
@@ -313,7 +314,6 @@
               <video id="modalVideo" controls autoplay></video>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
