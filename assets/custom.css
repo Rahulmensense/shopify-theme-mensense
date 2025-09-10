@@ -2143,9 +2143,7 @@ ul {
 }
 
 .video-slider-wrapper {
-    position: absolute;
     width: 50%;
-    top: 840px;
 }
 
 .custom-video-slider video {
