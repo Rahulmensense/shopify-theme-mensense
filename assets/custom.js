@@ -107,29 +107,29 @@ function showMoreReviews() {
   }
 
   function openVideoModal(url) {
-    const modal = document.getElementById('videoModal');
-    const video = document.getElementById('modalVideo');
-    video.src = url;
-    modal.style.display = 'flex';
-  }
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('modalVideo');
+  video.src = url;
+  modal.style.display = 'flex';
+}
 
-  function closeVideoModal() {
-    const modal = document.getElementById('videoModal');
-    const video = document.getElementById('modalVideo');
-    video.pause();
-    video.src = '';
-    modal.style.display = 'none';
-  }
+function closeVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('modalVideo');
+  video.pause();
+  video.src = '';
+  modal.style.display = 'none';
+}
 
-  $(document).ready(function(){
-    $('.slick-slider').slick({
-      infinite: true,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      arrows: true,
-      dots: true
-    });
+$(document).ready(function(){
+  $('.slick-slider').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: true,
+    dots: true
   });
+});
 
 
 
