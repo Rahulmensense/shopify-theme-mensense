@@ -36,16 +36,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     {{ 'custom.css' | asset_url | stylesheet_tag }}
     {{ 'slick.css' | asset_url | stylesheet_tag }}
     {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
 
-    {% comment %} {{ 'jquery-1.11.0.min.js' | asset_url | script_tag }} {% endcomment %}
+    {{ 'jquery-1.11.0.min.js' | asset_url | script_tag }}
     {{ 'slick.min.js' | asset_url | script_tag }}
     {{ 'custom.js' | asset_url | script_tag }}
     
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   </head>
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
