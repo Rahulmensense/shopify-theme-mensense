@@ -2142,6 +2142,12 @@ ul {
   color: #000;
 }
 
+.video-slider-wrapper {
+    position: absolute;
+    width: 50%;
+    top: 840px;
+}
+
 .custom-video-slider video {
   width: 220px;
   height: auto;
