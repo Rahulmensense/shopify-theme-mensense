@@ -108,16 +108,40 @@ function showMoreReviews() {
 
 
 
-var $jq = jQuery.noConflict();
-$jq(document).ready(function(){
-  $jq('.slick-slider').slick({
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    arrows: true,
-    dots: true
-  });
-});
+function openVideoModal(url) {
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('modalVideo');
+  if (video && modal) {
+    video.src = url;
+    modal.style.display = 'flex';
+  }
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('modalVideo');
+  if (video && modal) {
+    video.pause();
+    video.src = '';
+    modal.style.display = 'none';
+  }
+}
+
+function initSlickSlider() {
+  const $slider = $('.slick-slider');
+  if ($slider.length && !$slider.hasClass('slick-initialized')) {
+    $slider.slick({
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true
+    });
+  }
+}
+
+window.addEventListener('load', initSlickSlider);
+document.addEventListener('shopify:section:load', initSlickSlider);
   
 
 
