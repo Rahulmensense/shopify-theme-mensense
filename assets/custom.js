@@ -127,16 +127,14 @@ function closeVideoModal() {
   }
 }
 
-window.addEventListener("load", function () {
-  if ($('.feedback-slider').length > 0 && !$('.feedback-slider').hasClass('slick-initialized')) {
-    $('.feedback-slider').slick({
-      autoplay: true,
-      autoplaySpeed: 3000,
-      arrows: false,
-      dots: true,
+window.addEventListener('load', function () {
+  if (typeof jQuery !== 'undefined' && typeof jQuery.fn.slick === 'function') {
+    $('.custom-video-slider').not('.slick-initialized').slick({
       infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true
     });
   }
 });
