@@ -284,20 +284,12 @@
             {% endif %}
           </div>
 
-          <div class="product-video-slider">
-            <div class="slick-slider">
-              <div class="video-slide">
-                <video src="https://cdn.shopify.com/videos/c/o/v/f7ad10ae51084820b57c8ab84676e893.mp4" muted playsinline preload="metadata" onclick="openVideoModal(this.src)"></video>
-              </div>
-              <div class="video-slide">
-                <video src="https://cdn.shopify.com/videos/c/o/v/293ba69de30742baa25c92d96287f6db.mp4" muted playsinline preload="metadata" onclick="openVideoModal(this.src)"></video>
-              </div>
-              <div class="video-slide">
-                <video src="https://cdn.shopify.com/videos/c/o/v/c6b186d06e2847418a70833a686ffdb8.mp4" muted playsinline preload="metadata" onclick="openVideoModal(this.src)"></video>
-              </div>
-              <div class="video-slide">
-                <video src="https://cdn.shopify.com/videos/c/o/v/547df4f79ae24790b40cb68461364eff.mp4" muted playsinline preload="metadata" onclick="openVideoModal(this.src)"></video>
-              </div>
+          <div class="video-slider-wrapper">
+            <div class="custom-video-slider">
+              <div><video src="https://cdn.shopify.com/videos/c/o/v/f7ad10ae51084820b57c8ab84676e893.mp4" muted playsinline onclick="openVideoModal(this.src)"></video></div>
+              <div><video src="https://cdn.shopify.com/videos/c/o/v/293ba69de30742baa25c92d96287f6db.mp4" muted playsinline onclick="openVideoModal(this.src)"></video></div>
+              <div><video src="https://cdn.shopify.com/videos/c/o/v/c6b186d06e2847418a70833a686ffdb8.mp4" muted playsinline onclick="openVideoModal(this.src)"></video></div>
+              <div><video src="https://cdn.shopify.com/videos/c/o/v/547df4f79ae24790b40cb68461364eff.mp4" muted playsinline onclick="openVideoModal(this.src)"></video></div>
             </div>
           </div>
 
@@ -306,7 +298,6 @@
             <span class="close" onclick="closeVideoModal()">&times;</span>
             <video id="modalVideo" controls autoplay></video>
           </div>
-
         </div>
       </div>
     </div>
