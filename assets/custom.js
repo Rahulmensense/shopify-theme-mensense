@@ -108,44 +108,16 @@ function showMoreReviews() {
 
 
 
-function openVideoModal(url) {
-  const modal = document.getElementById('videoModal');
-  const video = document.getElementById('modalVideo');
-  if (video && modal) {
-    video.src = url;
-    modal.style.display = 'flex';
-  }
-}
-
-function closeVideoModal() {
-  const modal = document.getElementById('videoModal');
-  const video = document.getElementById('modalVideo');
-  if (video && modal) {
-    video.pause();
-    video.src = '';
-    modal.style.display = 'none';
-  }
-}
-
-// Safe slick initialization
-function initSlickSlider() {
-  const $slider = $('.slick-slider');
-  if ($slider.length && !$slider.hasClass('slick-initialized')) {
-    $slider.slick({
-      infinite: true,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      arrows: true,
-      dots: true
-    });
-  }
-}
-
-// Run after full page load
-window.addEventListener('load', initSlickSlider);
-
-// Optional: Re-run after AJAX content loads
-document.addEventListener('shopify:section:load', initSlickSlider);
+var $jq = jQuery.noConflict();
+$jq(document).ready(function(){
+  $jq('.slick-slider').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: true,
+    dots: true
+  });
+});
   
 
 
