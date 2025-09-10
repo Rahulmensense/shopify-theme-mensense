@@ -2232,6 +2232,10 @@ ul {
 }
 
 @media only screen and (max-width: 767px) {
+  .video-slider-wrapper {
+    margin-top: -45px;
+    margin-bottom: 17px;
+  }
   .lg-hide {
     display: block;
   }
