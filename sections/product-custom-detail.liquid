@@ -298,21 +298,6 @@
               <p><strong>Customer Review:</strong> {{ product.metafields.custom.review_text | truncatewords: 20 }}</p>
             {% endif %}
           </div>
-          <div class="video-slider-wrapper lg-hide">
-            <div class="custom-video-slider">
-              <div class="product-videos-box"><video src="https://cdn.shopify.com/videos/c/o/v/f7ad10ae51084820b57c8ab84676e893.mp4" autoplay muted loop playsinline preload="metadata" playsinline onclick="openVideoModal(this.src)"></video></div>
-              <div class="product-videos-box"><video src="https://cdn.shopify.com/videos/c/o/v/547df4f79ae24790b40cb68461364eff.mp4" autoplay muted loop playsinline preload="metadata" playsinline onclick="openVideoModal(this.src)"></video></div>
-              <div class="product-videos-box"><video src="https://cdn.shopify.com/videos/c/o/v/c6b186d06e2847418a70833a686ffdb8.mp4" autoplay muted loop playsinline preload="metadata" playsinline onclick="openVideoModal(this.src)"></video></div>
-              <div class="product-videos-box"><video src="https://cdn.shopify.com/videos/c/o/v/293ba69de30742baa25c92d96287f6db.mp4" autoplay muted loop playsinline preload="metadata" playsinline onclick="openVideoModal(this.src)"></video></div>
-            </div>
-          </div>
-          <!-- Modal -->
-          <div id="videoModal" class="video-modal">
-            <div class="videos-area">
-              <span class="close" onclick="closeVideoModal()">&times;</span>
-              <video id="modalVideo" controls autoplay></video>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -321,6 +306,25 @@
 
 <section class="customer-reviews review-section">
   <div class="container">
+    <div clas="row">
+      <div class="col-lg-6 col-12">
+        <div class="video-slider-wrapper lg-hide">
+          <div class="custom-video-slider">
+            <div class="product-videos-box"><video src="https://cdn.shopify.com/videos/c/o/v/f7ad10ae51084820b57c8ab84676e893.mp4" autoplay muted loop playsinline preload="metadata" playsinline onclick="openVideoModal(this.src)"></video></div>
+            <div class="product-videos-box"><video src="https://cdn.shopify.com/videos/c/o/v/547df4f79ae24790b40cb68461364eff.mp4" autoplay muted loop playsinline preload="metadata" playsinline onclick="openVideoModal(this.src)"></video></div>
+            <div class="product-videos-box"><video src="https://cdn.shopify.com/videos/c/o/v/c6b186d06e2847418a70833a686ffdb8.mp4" autoplay muted loop playsinline preload="metadata" playsinline onclick="openVideoModal(this.src)"></video></div>
+            <div class="product-videos-box"><video src="https://cdn.shopify.com/videos/c/o/v/293ba69de30742baa25c92d96287f6db.mp4" autoplay muted loop playsinline preload="metadata" playsinline onclick="openVideoModal(this.src)"></video></div>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div id="videoModal" class="video-modal">
+          <div class="videos-area">
+            <span class="close" onclick="closeVideoModal()">&times;</span>
+            <video id="modalVideo" controls autoplay></video>
+          </div>
+        </div>
+      </div>
+    </div>
     <h2>Customer Reviews</h2>
       <!-- Rating Summary -->
       <div class="rating-summary-details">
