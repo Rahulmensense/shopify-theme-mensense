@@ -1295,6 +1295,11 @@ button.shopify-payment-button__button--unbranded {
   background: linear-gradient(to right,#58718f,#11182b)
 }
 
+.cart-items__empty-button {
+  background: linear-gradient(to right,#58718f,#11182b);
+  color: #fff;
+}
+
 .button-secondary {
   font-family: var(--button-font-family-secondary);
   font-weight: var(--button-font-weight-secondary);
