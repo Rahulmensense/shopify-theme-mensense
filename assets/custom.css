@@ -2169,10 +2169,20 @@ ul {
 }
 .video-modal .close {
   position: absolute;
-  top: 20px; right: 30px;
+  top: 140px;
+  right: 36%;
   font-size: 40px;
-  color: white;
+  color: #fff;
   cursor: pointer;
+  background: #506784;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  justify-content: center;
 }
 
 
