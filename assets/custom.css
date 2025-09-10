@@ -2142,11 +2142,11 @@ ul {
   color: #000;
 }
 
-.feedback-slide video {
-  width: 100%;
+.custom-video-slider video {
+  width: 220px;
   height: auto;
-  border-radius: 8px;
   cursor: pointer;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 .video-modal {
