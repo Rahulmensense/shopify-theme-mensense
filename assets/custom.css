@@ -2202,6 +2202,11 @@ ul {
 }
 
 @media only screen and (max-width: 767px) {
+  .video-modal .close {
+    top: 67px;
+    right: 2%;
+  }
+
   .privacy-policy-section .title, .terms-conditions-section .title, .return-refund-section .title {
     font-size: 52px;
     line-height: normal;
