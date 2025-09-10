@@ -2235,6 +2235,9 @@ ul {
   .lg-hide {
     display: block;
   }
+  .lg-show {
+    display: none;
+  }
   .video-modal .close {
     right: -3%;
   }
