@@ -1291,8 +1291,7 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button:not(.button-secondary, .button-unstyled) {
-  outline-color: linear-gradient(to right,#58718f,#11182b);
-  background: linear-gradient(to right,#58718f,#11182b)
+  outline-color: var(--button-background-color);
 }
 
 .cart-items__empty-button {
@@ -1303,10 +1302,6 @@ button.shopify-payment-button__button--unbranded {
 .cart-items__remove {
   background: transparent;
   color: #000;
-}
-
-.cart-items__empty-button:hover {
-  color: #fff;
 }
 
 .button-secondary {
@@ -1361,7 +1356,7 @@ button.shopify-payment-button__button--unbranded {
 .button:hover,
 button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
   --button-color: var(--color-primary-button-hover-text);
-  background-color: var(--color-primary-button-hover-background);
+  --button-background-color: var(--color-primary-button-hover-background);
   --button-border-color: var(--color-primary-button-hover-border);
 }
 
