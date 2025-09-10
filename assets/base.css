@@ -1292,7 +1292,7 @@ button.shopify-payment-button__button--unbranded {
 
 .button:not(.button-secondary, .button-unstyled) {
   outline-color: linear-gradient(to right,#58718f,#11182b);
-  background: linear-gradient(to right,#58718f,#11182b)''
+  background: linear-gradient(to right,#58718f,#11182b);
 }
 
 .button-secondary {
@@ -1339,7 +1339,7 @@ input:not(:placeholder-shown)::placeholder {
 .button,
 button.shopify-payment-button__button--unbranded {
   --button-color: var(--color-primary-button-text);
-  --button-background-color: var(--color-primary-button-background);
+  background: linear-gradient(to right,#58718f,#11182b);
   --button-border-color: var(--color-primary-button-border);
   --button-border-width: var(--style-border-width-primary);
 }
@@ -1347,13 +1347,13 @@ button.shopify-payment-button__button--unbranded {
 .button:hover,
 button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
   --button-color: var(--color-primary-button-hover-text);
-  --button-background-color: var(--color-primary-button-hover-background);
+  background-color: var(--color-primary-button-hover-background);
   --button-border-color: var(--color-primary-button-hover-border);
 }
 
 .button-secondary {
   --button-color: var(--color-secondary-button-text);
-  --button-background-color: var(--color-secondary-button-background);
+  background: linear-gradient(to right,#58718f,#11182b);
   --button-border-color: var(--color-secondary-button-border);
   --button-border-width: var(--style-border-width-secondary);
 }
