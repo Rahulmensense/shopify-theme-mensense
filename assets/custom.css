@@ -2213,7 +2213,9 @@ ul {
   justify-content: center;
 }
 
-
+.lg-hide {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .dermatologist-section .col-md-4 {
