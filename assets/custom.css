@@ -2152,6 +2152,22 @@ ul {
   height: auto;
   cursor: pointer;
   border-radius: 8px;
+  position: relative;
+}
+
+.custom-video-slider video::before {
+    content: "\f144";
+    width: 24px;
+    height: 24px;
+    background: #ee944166;
+    position: absolute;
+    left: 0;
+    font-family: FontAwesome;
+    border-radius: 20px;
+    font-size: 16px;
+    top: 0px;
+    text-align: center;
+    color: #ee9441;
 }
 .video-modal {
   display: none;
