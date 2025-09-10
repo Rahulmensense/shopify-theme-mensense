@@ -283,6 +283,25 @@
               <p><strong>Customer Review:</strong> {{ product.metafields.custom.review_text | truncatewords: 20 }}</p>
             {% endif %}
           </div>
+
+          <div class="product-video-slider">
+            {% assign video_urls = "https://cdn.shopify.com/s/files/1/0000/0001/files/video1.mp4,https://cdn.shopify.com/s/files/1/0000/0001/files/video2.mp4" | split: "," %}
+            
+            <div class="slick-slider">
+              {% for video_url in video_urls %}
+                <div class="video-slide">
+                  <video src="{{ video_url }}" muted playsinline preload="metadata" onclick="openVideoModal('{{ video_url }}')"></video>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div id="videoModal" class="video-modal">
+            <span class="close" onclick="closeVideoModal()">&times;</span>
+            <video id="modalVideo" controls autoplay></video>
+          </div>
+
         </div>
       </div>
     </div>
