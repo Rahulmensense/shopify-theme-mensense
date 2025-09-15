@@ -21,7 +21,15 @@
             <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
           </a>
           <h3 class="product-title">{{ product.title }}</h3>
-          <p class="product-price">{{ product.price | money }}</p>
+          {% assign conversion_rate = 0.012 %}
+          {% assign usd_price = product.price | times: conversion_rate | round: 2 %}
+
+          <p class="product-price">
+            ₹{{ product.price | money }}  
+            <br>
+            💵 USD: ${{ usd_price }}
+          </p>
+
 
           <div class="product-actions-icons">
             <form method="post" action="/cart/add">
