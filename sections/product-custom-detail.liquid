@@ -56,12 +56,15 @@
             {% assign conversion_rate = 0.012 %}
             {% assign usd_price = product.price | times: conversion_rate | round: 2 %}
             <p class="product-price">
-              <span class="sale-price">{{ price | money }}</span>
+              ₹{{ product.price | money }}  
               <br>
               USD: ${{ usd_price }}
+            </p>
+            {% comment %} <p class="product-price">
+              <span class="sale-price">{{ price | money }}</span>
               <span class="compare-price">{{ compare | money }}</span>
               <span class="discount-badge">{{ discount }}% OFF</span>
-            </p>
+            </p> {% endcomment %}
           {% else %}
             <p class="product-price"><span class="sale-price">{{ price | money }}</span></p>
           {% endif %}
