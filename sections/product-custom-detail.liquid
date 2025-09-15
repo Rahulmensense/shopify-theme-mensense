@@ -52,9 +52,13 @@
           {% assign price = product.variants.first.price %}
           {% assign compare = product.variants.first.compare_at_price %}
           {% if compare > price %}
-            {% assign discount = compare | minus: price | times: 100 | divided_by: compare | round %}
+            {% comment %} {% assign discount = compare | minus: price | times: 100 | divided_by: compare | round %} {% endcomment %}
+            {% assign conversion_rate = 0.012 %}
+            {% assign usd_price = product.price | times: conversion_rate | round: 2 %}
             <p class="product-price">
               <span class="sale-price">{{ price | money }}</span>
+              <br>
+              USD: ${{ usd_price }}
               <span class="compare-price">{{ compare | money }}</span>
               <span class="discount-badge">{{ discount }}% OFF</span>
             </p>
