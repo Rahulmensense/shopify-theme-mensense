@@ -71,13 +71,13 @@
           {% if compare > price %}
             {% assign discount = compare | minus: price | times: 100 | divided_by: compare | round %}
             <p class="product-price">
-              <span class="sale-price">₹{{ price | money }} / 💵 ${{ usd_price }}</span><br>
-              <span class="compare-price">₹{{ compare | money }} / 💵 ${{ usd_compare }}</span><br>
+              <span class="sale-price">₹{{ price | money }} /  ${{ usd_price }}</span><br>
+              <span class="compare-price">₹{{ compare | money }} /  ${{ usd_compare }}</span><br>
               <span class="discount-badge">{{ discount }}% OFF</span>
             </p>
           {% else %}
             <p class="product-price">
-              <span class="sale-price">₹{{ price | money }} / 💵 ${{ usd_price }}</span>
+              <span class="sale-price">₹{{ price | money }} /  ${{ usd_price }}</span>
             </p>
           {% endif %}
 
