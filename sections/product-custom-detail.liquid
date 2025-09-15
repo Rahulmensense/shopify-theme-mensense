@@ -49,35 +49,22 @@
           <p class="product-brand">Brand: <strong>{{ product.vendor }}</strong></p>
 
           <!-- Price & Discount -->
-          {% comment %} {% assign price = product.variants.first.price %}
-          {% assign compare = product.variants.first.compare_at_price %}
-          {% if compare > price %}
-            {% assign discount = compare | minus: price | times: 100 | divided_by: compare | round %}
-            <p class="product-price">
-              <span class="sale-price">{{ price | money }}</span>
-              <span class="compare-price">{{ compare | money }}</span>
-              <span class="discount-badge">{{ discount }}% OFF</span>
-            </p>
-          {% else %}
-            <p class="product-price"><span class="sale-price">{{ price | money }}</span></p>
-          {% endif %} {% endcomment %}
-
           {% assign price = product.variants.first.price %}
           {% assign compare = product.variants.first.compare_at_price %}
           {% assign conversion_rate = 0.012 %}
-          {% assign usd_price = price | times: conversion_rate | round: 2 %}
-          {% assign usd_compare = compare | times: conversion_rate | round: 2 %}
+          {% assign usd_price = price | times: conversion_rate | divided_by: 100 | round: 2 %}
+          {% assign usd_compare = compare | times: conversion_rate | divided_by: 100 | round: 2 %}
 
           {% if compare > price %}
             {% assign discount = compare | minus: price | times: 100 | divided_by: compare | round %}
             <p class="product-price">
-              <span class="sale-price">₹{{ price | money }} /  ${{ usd_price }}</span><br>
-              <span class="compare-price">₹{{ compare | money }} /  ${{ usd_compare }}</span><br>
+              <span class="sale-price">₹{{ price | money }} / 💵 ${{ usd_price }}</span>
+              <span class="compare-price">₹{{ compare | money }} / 💵 ${{ usd_compare }}</span>
               <span class="discount-badge">{{ discount }}% OFF</span>
             </p>
           {% else %}
             <p class="product-price">
-              <span class="sale-price">₹{{ price | money }} /  ${{ usd_price }}</span>
+              <span class="sale-price">₹{{ price | money }} / 💵 ${{ usd_price }}</span>
             </p>
           {% endif %}
 
@@ -106,6 +93,7 @@
           {% if stock < 10 %}
             <p class="low-stock">Low stock: {{ stock }} left</p>
           {% endif %}
+
 
           <!-- Size -->
           <p class="product-size">Size: {{ product.variants.first.title }}</p>
