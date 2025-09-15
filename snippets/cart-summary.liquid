@@ -2,39 +2,36 @@
   Renders the cart summary totals.
 {%- enddoc -%}
 
-{% assign conversion_rate = 0.012 %}
-{% assign usd_original_total = cart.original_total_price | times: conversion_rate | divided_by: 100 | round: 2 %}
-{% assign usd_total = cart.total_price | times: conversion_rate | divided_by: 100 | round: 2 %}
-
 <div class="cart__summary-totals">
+  {% # We need to keep this node in place to allow morphing to work properly # %}
   <div class="cart__original-total-container cart-primary-typography">
-    <span class="cart__summary-item cart__original-total">
-      <span class="cart__original-total-label">{{ 'content.cart_subtotal' | t }}</span>
-      <span class="cart__original-total-value cart-secondary-typography">
-        ₹{{ cart.original_total_price | money }}
-        <br>💵 USD: ${{ usd_original_total }}
+    {%- if cart.cart_level_discount_applications.size > 0 -%}
+      <span class="cart__summary-item cart__original-total">
+        <span class="cart__original-total-label">{{ 'content.cart_subtotal' | t }}</span>
+        <span class="cart__original-total-value cart-secondary-typography">
+          {{- cart.original_total_price | money -}}
+        </span>
       </span>
-    </span>
-
-    {% if cart.cart_level_discount_applications.size > 0 %}
       <div class="cart__summary-discounts">
-        <ul class="discounts list-unstyled" role="list" aria-label="{{ 'content.discounts' | t }}">
-          {% for discount in cart.cart_level_discount_applications %}
-            {% assign usd_discount = discount.total_allocated_amount | times: conversion_rate | divided_by: 100 | round: 2 %}
+        <ul
+          class="discounts list-unstyled"
+          role="list"
+          aria-label="{{ 'content.discounts' | t }}"
+        >
+          {%- for discount in cart.cart_level_discount_applications -%}
             <li class="cart__summary-item cart__discount">
               <span class="cart__discount-label">
-                {{ 'icon-discount.svg' | inline_asset_content }}
+                {{- 'icon-discount.svg' | inline_asset_content -}}
                 {{ discount.title | escape }}
               </span>
-              <span class="cart__discount-value cart-secondary-typography">
-                -₹{{ discount.total_allocated_amount | money }}
-                <br>💵 -${{ usd_discount }}
+              <span class="cart__discount-value cart-secondary-typography"
+                >-{{ discount.total_allocated_amount | money -}}
               </span>
             </li>
-          {% endfor %}
+          {%- endfor -%}
         </ul>
       </div>
-    {% endif %}
+    {%- endif -%}
   </div>
 
   {% if settings.show_cart_note or settings.show_add_discount_code %}
@@ -42,6 +39,7 @@
       {% if settings.show_cart_note %}
         {% render 'cart-note' %}
       {% endif %}
+
       {% if settings.show_add_discount_code %}
         {% render 'cart-discount', section_id: section.id %}
       {% endif %}
@@ -57,19 +55,21 @@
   -%}
 
   <div class="cart__total-container">
-    <span class="cart__summary-item cart__total" role="status">
+    <span
+      class="cart__summary-item cart__total"
+      role="status"
+    >
       <span class="cart__total-label cart-primary-typography">{{ 'content.cart_estimated_total' | t }}</span>
       <text-component
         ref="cartTotal"
         value="{{ total_price | strip_html }}"
         class="cart__total-value cart-secondary-typography"
+        {% comment %} Used by payment_terms web component {% endcomment %}
         data-cart-subtotal
       >
-        ₹{{ total_price }}
-        <br>💵 USD: ${{ usd_total }}
+        {{ total_price }}
       </text-component>
     </span>
-
     {% if settings.show_installments %}
       <span class="cart__summary-item cart__installments">
         {% form 'cart', cart %}
@@ -77,7 +77,6 @@
         {% endform %}
       </span>
     {% endif %}
-
     <div class="cart__summary-item tax-note cart-primary-typography">
       {% render 'tax-info', has_discounts_enabled: settings.show_add_discount_code %}
     </div>
